@@ -1,0 +1,1582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище IsSupportModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Components">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="TypeComponentID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Computers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OSID" Type="int" Nullable="false" />
+          <Property Name="MultimediaSystemID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="TypeEquipmentID" Type="int" Nullable="false" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="InventoryNumber" Type="nvarchar" MaxLength="150" />
+          <Property Name="StatusDeviceID" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+          <Property Name="MultimediaSystemID" Type="int" />
+        </EntityType>
+        <EntityType Name="HistoryKartridj">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KartridjID" Type="int" Nullable="false" />
+          <Property Name="DateChange" Type="date" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="RoomID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HistoryOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="DateChange" Type="datetime" />
+          <Property Name="StatusOrderID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="RoomID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kartridjs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="NumberOfKartridj" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrinterID" Type="int" Nullable="false" />
+          <Property Name="RoomID" Type="int" Nullable="false" />
+          <Property Name="DatePay" Type="date" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Keyboards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ComputerID" Type="int" />
+          <Property Name="StatusDeviceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Monitors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="InventoryNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="ComputerID" Type="int" />
+          <Property Name="StatusDeviceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ComputerID" Type="int" />
+          <Property Name="StatusDeviceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MultimediaSystems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateCreatet" Type="datetime" />
+          <Property Name="DateClose" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="RoomID" Type="int" Nullable="false" />
+          <Property Name="StatusOrderID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="BitDepth" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Printers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusDevice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="StatusKartridj">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="StatusOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Descripption" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="SystemUnitComponents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemUnitID" Type="int" Nullable="false" />
+          <Property Name="ComponentID" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SystemUnits">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="SeralNumber" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="InventoryNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ComputerID" Type="int" />
+          <Property Name="StatusDeviceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeComponent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypesEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <Association Name="FK_Components_TypeComponent">
+          <End Role="TypeComponent" Type="Self.TypeComponent" Multiplicity="1" />
+          <End Role="Components" Type="Self.Components" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeComponent">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Components">
+              <PropertyRef Name="TypeComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Computers_MultimediaSystems">
+          <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MultimediaSystems">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="MultimediaSystemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Computers_OS">
+          <End Role="OS" Type="Self.OS" Multiplicity="1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="OSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipments_MultimediaSystems">
+          <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="0..1" />
+          <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MultimediaSystems">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipments">
+              <PropertyRef Name="MultimediaSystemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipments_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="0..1" />
+          <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipments">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipments_TypesEquipment">
+          <End Role="TypesEquipment" Type="Self.TypesEquipment" Multiplicity="1" />
+          <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypesEquipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipments">
+              <PropertyRef Name="TypeEquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryKartridj_Kartridjs">
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="1" />
+          <End Role="HistoryKartridj" Type="Self.HistoryKartridj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kartridjs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistoryKartridj">
+              <PropertyRef Name="KartridjID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryOrder_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="HistoryOrder" Type="Self.HistoryOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistoryOrder">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kartridjs_Printers">
+          <End Role="Printers" Type="Self.Printers" Multiplicity="1" />
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Printers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kartridjs">
+              <PropertyRef Name="PrinterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kartridjs_Rooms">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kartridjs">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kartridjs_StatusKartridj">
+          <End Role="StatusKartridj" Type="Self.StatusKartridj" Multiplicity="1" />
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusKartridj">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kartridjs">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keyboards_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Keyboards" Type="Self.Keyboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Keyboards">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keyboards_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
+          <End Role="Keyboards" Type="Self.Keyboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Keyboards">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitors_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Monitors" Type="Self.Monitors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Monitors">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitors_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
+          <End Role="Monitors" Type="Self.Monitors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Monitors">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MultimediaSystems_Rooms">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MultimediaSystems">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Rooms">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_StatusOrders">
+          <End Role="StatusOrders" Type="Self.StatusOrders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="StatusOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUnitComponents_Components">
+          <End Role="Components" Type="Self.Components" Multiplicity="1" />
+          <End Role="SystemUnitComponents" Type="Self.SystemUnitComponents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SystemUnitComponents">
+              <PropertyRef Name="ComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUnitComponents_SystemUnits">
+          <End Role="SystemUnits" Type="Self.SystemUnits" Multiplicity="1" />
+          <End Role="SystemUnitComponents" Type="Self.SystemUnitComponents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SystemUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SystemUnitComponents">
+              <PropertyRef Name="ComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUnits_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="SystemUnits" Type="Self.SystemUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SystemUnits">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище IsSupportModelContainer">
+          <EntitySet Name="Components" EntityType="Self.Components" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Computers" EntityType="Self.Computers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipments" EntityType="Self.Equipments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoryKartridj" EntityType="Self.HistoryKartridj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoryOrder" EntityType="Self.HistoryOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kartridjs" EntityType="Self.Kartridjs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Keyboards" EntityType="Self.Keyboards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Monitors" EntityType="Self.Monitors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mouse" EntityType="Self.Mouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MultimediaSystems" EntityType="Self.MultimediaSystems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OS" EntityType="Self.OS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Printers" EntityType="Self.Printers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusDevice" EntityType="Self.StatusDevice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusKartridj" EntityType="Self.StatusKartridj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusOrders" EntityType="Self.StatusOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemUnitComponents" EntityType="Self.SystemUnitComponents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemUnits" EntityType="Self.SystemUnits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeComponent" EntityType="Self.TypeComponent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypesEquipment" EntityType="Self.TypesEquipment" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Components_TypeComponent" Association="Self.FK_Components_TypeComponent">
+            <End Role="TypeComponent" EntitySet="TypeComponent" />
+            <End Role="Components" EntitySet="Components" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Computers_MultimediaSystems" Association="Self.FK_Computers_MultimediaSystems">
+            <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Computers_OS" Association="Self.FK_Computers_OS">
+            <End Role="OS" EntitySet="OS" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipments_MultimediaSystems" Association="Self.FK_Equipments_MultimediaSystems">
+            <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+            <End Role="Equipments" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipments_StatusDevice" Association="Self.FK_Equipments_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Equipments" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipments_TypesEquipment" Association="Self.FK_Equipments_TypesEquipment">
+            <End Role="TypesEquipment" EntitySet="TypesEquipment" />
+            <End Role="Equipments" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryKartridj_Kartridjs" Association="Self.FK_HistoryKartridj_Kartridjs">
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+            <End Role="HistoryKartridj" EntitySet="HistoryKartridj" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryOrder_Orders" Association="Self.FK_HistoryOrder_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="HistoryOrder" EntitySet="HistoryOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kartridjs_Printers" Association="Self.FK_Kartridjs_Printers">
+            <End Role="Printers" EntitySet="Printers" />
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kartridjs_Rooms" Association="Self.FK_Kartridjs_Rooms">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kartridjs_StatusKartridj" Association="Self.FK_Kartridjs_StatusKartridj">
+            <End Role="StatusKartridj" EntitySet="StatusKartridj" />
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keyboards_Computers" Association="Self.FK_Keyboards_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Keyboards" EntitySet="Keyboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keyboards_StatusDevice" Association="Self.FK_Keyboards_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Keyboards" EntitySet="Keyboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitors_Computers" Association="Self.FK_Monitors_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Monitors" EntitySet="Monitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitors_StatusDevice" Association="Self.FK_Monitors_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Monitors" EntitySet="Monitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Computers" Association="Self.FK_Mouse_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_StatusDevice" Association="Self.FK_Mouse_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MultimediaSystems_Rooms" Association="Self.FK_MultimediaSystems_Rooms">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Rooms" Association="Self.FK_Orders_Rooms">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_StatusOrders" Association="Self.FK_Orders_StatusOrders">
+            <End Role="StatusOrders" EntitySet="StatusOrders" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUnitComponents_Components" Association="Self.FK_SystemUnitComponents_Components">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUnitComponents_SystemUnits" Association="Self.FK_SystemUnitComponents_SystemUnits">
+            <End Role="SystemUnits" EntitySet="SystemUnits" />
+            <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUnits_Computers" Association="Self.FK_SystemUnits_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="SystemUnits" EntitySet="SystemUnits" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IsSupportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Components">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeComponentID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TypeComponent" Relationship="Self.FK_Components_TypeComponent" FromRole="Components" ToRole="TypeComponent" />
+          <NavigationProperty Name="SystemUnitComponents" Relationship="Self.FK_SystemUnitComponents_Components" FromRole="Components" ToRole="SystemUnitComponents" />
+        </EntityType>
+        <EntityType Name="Computers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OSID" Type="Int32" Nullable="false" />
+          <Property Name="MultimediaSystemID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_Computers_MultimediaSystems" FromRole="Computers" ToRole="MultimediaSystems" />
+          <NavigationProperty Name="OS" Relationship="Self.FK_Computers_OS" FromRole="Computers" ToRole="OS" />
+          <NavigationProperty Name="Keyboards" Relationship="Self.FK_Keyboards_Computers" FromRole="Computers" ToRole="Keyboards" />
+          <NavigationProperty Name="Monitors" Relationship="Self.FK_Monitors_Computers" FromRole="Computers" ToRole="Monitors" />
+          <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_Computers" FromRole="Computers" ToRole="Mouse" />
+          <NavigationProperty Name="SystemUnits" Relationship="Self.FK_SystemUnits_Computers" FromRole="Computers" ToRole="SystemUnits" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Employees" FromRole="Employees" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Equipments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeEquipmentID" Type="Int32" Nullable="false" />
+          <Property Name="SerialNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InventoryNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="StatusDeviceID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MultimediaSystemID" Type="Int32" />
+          <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_Equipments_MultimediaSystems" FromRole="Equipments" ToRole="MultimediaSystems" />
+          <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Equipments_StatusDevice" FromRole="Equipments" ToRole="StatusDevice" />
+          <NavigationProperty Name="TypesEquipment" Relationship="Self.FK_Equipments_TypesEquipment" FromRole="Equipments" ToRole="TypesEquipment" />
+        </EntityType>
+        <EntityType Name="HistoryKartridj">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KartridjID" Type="Int32" Nullable="false" />
+          <Property Name="DateChange" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="RoomID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kartridjs" Relationship="Self.FK_HistoryKartridj_Kartridjs" FromRole="HistoryKartridj" ToRole="Kartridjs" />
+        </EntityType>
+        <EntityType Name="HistoryOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="DateChange" Type="DateTime" Precision="3" />
+          <Property Name="StatusOrderID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="RoomID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_HistoryOrder_Orders" FromRole="HistoryOrder" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Kartridjs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NumberOfKartridj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrinterID" Type="Int32" Nullable="false" />
+          <Property Name="RoomID" Type="Int32" Nullable="false" />
+          <Property Name="DatePay" Type="DateTime" Precision="0" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HistoryKartridj" Relationship="Self.FK_HistoryKartridj_Kartridjs" FromRole="Kartridjs" ToRole="HistoryKartridj" />
+          <NavigationProperty Name="Printers" Relationship="Self.FK_Kartridjs_Printers" FromRole="Kartridjs" ToRole="Printers" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK_Kartridjs_Rooms" FromRole="Kartridjs" ToRole="Rooms" />
+          <NavigationProperty Name="StatusKartridj" Relationship="Self.FK_Kartridjs_StatusKartridj" FromRole="Kartridjs" ToRole="StatusKartridj" />
+        </EntityType>
+        <EntityType Name="Keyboards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SerialNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ComputerID" Type="Int32" />
+          <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Keyboards_Computers" FromRole="Keyboards" ToRole="Computers" />
+          <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Keyboards_StatusDevice" FromRole="Keyboards" ToRole="StatusDevice" />
+        </EntityType>
+        <EntityType Name="Monitors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SerialNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InventoryNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ComputerID" Type="Int32" />
+          <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Monitors_Computers" FromRole="Monitors" ToRole="Computers" />
+          <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Monitors_StatusDevice" FromRole="Monitors" ToRole="StatusDevice" />
+        </EntityType>
+        <EntityType Name="Mouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SerialNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ComputerID" Type="Int32" />
+          <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Mouse_Computers" FromRole="Mouse" ToRole="Computers" />
+          <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Mouse_StatusDevice" FromRole="Mouse" ToRole="StatusDevice" />
+        </EntityType>
+        <EntityType Name="MultimediaSystems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Computers_MultimediaSystems" FromRole="MultimediaSystems" ToRole="Computers" />
+          <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipments_MultimediaSystems" FromRole="MultimediaSystems" ToRole="Equipments" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK_MultimediaSystems_Rooms" FromRole="MultimediaSystems" ToRole="Rooms" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreatet" Type="DateTime" Precision="3" />
+          <Property Name="DateClose" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RoomID" Type="Int32" Nullable="false" />
+          <Property Name="StatusOrderID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Orders_Employees" FromRole="Orders" ToRole="Employees" />
+          <NavigationProperty Name="HistoryOrder" Relationship="Self.FK_HistoryOrder_Orders" FromRole="Orders" ToRole="HistoryOrder" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK_Orders_Rooms" FromRole="Orders" ToRole="Rooms" />
+          <NavigationProperty Name="StatusOrders" Relationship="Self.FK_Orders_StatusOrders" FromRole="Orders" ToRole="StatusOrders" />
+        </EntityType>
+        <EntityType Name="OS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BitDepth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_Computers_OS" FromRole="OS" ToRole="Computers" />
+        </EntityType>
+        <EntityType Name="Printers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kartridjs" Relationship="Self.FK_Kartridjs_Printers" FromRole="Printers" ToRole="Kartridjs" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Kartridjs" Relationship="Self.FK_Kartridjs_Rooms" FromRole="Rooms" ToRole="Kartridjs" />
+          <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_MultimediaSystems_Rooms" FromRole="Rooms" ToRole="MultimediaSystems" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Rooms" FromRole="Rooms" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="StatusDevice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipments_StatusDevice" FromRole="StatusDevice" ToRole="Equipments" />
+          <NavigationProperty Name="Keyboards" Relationship="Self.FK_Keyboards_StatusDevice" FromRole="StatusDevice" ToRole="Keyboards" />
+          <NavigationProperty Name="Monitors" Relationship="Self.FK_Monitors_StatusDevice" FromRole="StatusDevice" ToRole="Monitors" />
+          <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_StatusDevice" FromRole="StatusDevice" ToRole="Mouse" />
+        </EntityType>
+        <EntityType Name="StatusKartridj">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kartridjs" Relationship="Self.FK_Kartridjs_StatusKartridj" FromRole="StatusKartridj" ToRole="Kartridjs" />
+        </EntityType>
+        <EntityType Name="StatusOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descripption" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_StatusOrders" FromRole="StatusOrders" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SystemUnitComponents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemUnitID" Type="Int32" Nullable="false" />
+          <Property Name="ComponentID" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Components" Relationship="Self.FK_SystemUnitComponents_Components" FromRole="SystemUnitComponents" ToRole="Components" />
+          <NavigationProperty Name="SystemUnits" Relationship="Self.FK_SystemUnitComponents_SystemUnits" FromRole="SystemUnitComponents" ToRole="SystemUnits" />
+        </EntityType>
+        <EntityType Name="SystemUnits">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SeralNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InventoryNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ComputerID" Type="Int32" />
+          <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Computers" Relationship="Self.FK_SystemUnits_Computers" FromRole="SystemUnits" ToRole="Computers" />
+          <NavigationProperty Name="SystemUnitComponents" Relationship="Self.FK_SystemUnitComponents_SystemUnits" FromRole="SystemUnits" ToRole="SystemUnitComponents" />
+        </EntityType>
+        <EntityType Name="TypeComponent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Components" Relationship="Self.FK_Components_TypeComponent" FromRole="TypeComponent" ToRole="Components" />
+        </EntityType>
+        <EntityType Name="TypesEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipments_TypesEquipment" FromRole="TypesEquipment" ToRole="Equipments" />
+        </EntityType>
+        <Association Name="FK_Components_TypeComponent">
+          <End Role="TypeComponent" Type="Self.TypeComponent" Multiplicity="1" />
+          <End Role="Components" Type="Self.Components" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeComponent">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Components">
+              <PropertyRef Name="TypeComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUnitComponents_Components">
+          <End Role="Components" Type="Self.Components" Multiplicity="1" />
+          <End Role="SystemUnitComponents" Type="Self.SystemUnitComponents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SystemUnitComponents">
+              <PropertyRef Name="ComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Computers_MultimediaSystems">
+          <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MultimediaSystems">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="MultimediaSystemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Computers_OS">
+          <End Role="OS" Type="Self.OS" Multiplicity="1" />
+          <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Computers">
+              <PropertyRef Name="OSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keyboards_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Keyboards" Type="Self.Keyboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Keyboards">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitors_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Monitors" Type="Self.Monitors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Monitors">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUnits_Computers">
+          <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
+          <End Role="SystemUnits" Type="Self.SystemUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Computers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SystemUnits">
+              <PropertyRef Name="ComputerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipments_MultimediaSystems">
+          <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="0..1" />
+          <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MultimediaSystems">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipments">
+              <PropertyRef Name="MultimediaSystemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipments_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="0..1" />
+          <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipments">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipments_TypesEquipment">
+          <End Role="TypesEquipment" Type="Self.TypesEquipment" Multiplicity="1" />
+          <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypesEquipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Equipments">
+              <PropertyRef Name="TypeEquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryKartridj_Kartridjs">
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="1" />
+          <End Role="HistoryKartridj" Type="Self.HistoryKartridj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kartridjs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistoryKartridj">
+              <PropertyRef Name="KartridjID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryOrder_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="HistoryOrder" Type="Self.HistoryOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistoryOrder">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kartridjs_Printers">
+          <End Role="Printers" Type="Self.Printers" Multiplicity="1" />
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Printers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kartridjs">
+              <PropertyRef Name="PrinterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kartridjs_Rooms">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kartridjs">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kartridjs_StatusKartridj">
+          <End Role="StatusKartridj" Type="Self.StatusKartridj" Multiplicity="1" />
+          <End Role="Kartridjs" Type="Self.Kartridjs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusKartridj">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kartridjs">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keyboards_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
+          <End Role="Keyboards" Type="Self.Keyboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Keyboards">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitors_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
+          <End Role="Monitors" Type="Self.Monitors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Monitors">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mouse_StatusDevice">
+          <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
+          <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDevice">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mouse">
+              <PropertyRef Name="StatusDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MultimediaSystems_Rooms">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MultimediaSystems">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Rooms">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_StatusOrders">
+          <End Role="StatusOrders" Type="Self.StatusOrders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="StatusOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUnitComponents_SystemUnits">
+          <End Role="SystemUnits" Type="Self.SystemUnits" Multiplicity="1" />
+          <End Role="SystemUnitComponents" Type="Self.SystemUnitComponents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SystemUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SystemUnitComponents">
+              <PropertyRef Name="ComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IsSupportContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Components" EntityType="Self.Components" />
+          <EntitySet Name="Computers" EntityType="Self.Computers" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="Equipments" EntityType="Self.Equipments" />
+          <EntitySet Name="HistoryKartridj" EntityType="Self.HistoryKartridj" />
+          <EntitySet Name="HistoryOrder" EntityType="Self.HistoryOrder" />
+          <EntitySet Name="Kartridjs" EntityType="Self.Kartridjs" />
+          <EntitySet Name="Keyboards" EntityType="Self.Keyboards" />
+          <EntitySet Name="Monitors" EntityType="Self.Monitors" />
+          <EntitySet Name="Mouse" EntityType="Self.Mouse" />
+          <EntitySet Name="MultimediaSystems" EntityType="Self.MultimediaSystems" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="OS" EntityType="Self.OS" />
+          <EntitySet Name="Printers" EntityType="Self.Printers" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" />
+          <EntitySet Name="StatusDevice" EntityType="Self.StatusDevice" />
+          <EntitySet Name="StatusKartridj" EntityType="Self.StatusKartridj" />
+          <EntitySet Name="StatusOrders" EntityType="Self.StatusOrders" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="SystemUnitComponents" EntityType="Self.SystemUnitComponents" />
+          <EntitySet Name="SystemUnits" EntityType="Self.SystemUnits" />
+          <EntitySet Name="TypeComponent" EntityType="Self.TypeComponent" />
+          <EntitySet Name="TypesEquipment" EntityType="Self.TypesEquipment" />
+          <AssociationSet Name="FK_Components_TypeComponent" Association="Self.FK_Components_TypeComponent">
+            <End Role="TypeComponent" EntitySet="TypeComponent" />
+            <End Role="Components" EntitySet="Components" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUnitComponents_Components" Association="Self.FK_SystemUnitComponents_Components">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Computers_MultimediaSystems" Association="Self.FK_Computers_MultimediaSystems">
+            <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Computers_OS" Association="Self.FK_Computers_OS">
+            <End Role="OS" EntitySet="OS" />
+            <End Role="Computers" EntitySet="Computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keyboards_Computers" Association="Self.FK_Keyboards_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Keyboards" EntitySet="Keyboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitors_Computers" Association="Self.FK_Monitors_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Monitors" EntitySet="Monitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_Computers" Association="Self.FK_Mouse_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUnits_Computers" Association="Self.FK_SystemUnits_Computers">
+            <End Role="Computers" EntitySet="Computers" />
+            <End Role="SystemUnits" EntitySet="SystemUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipments_MultimediaSystems" Association="Self.FK_Equipments_MultimediaSystems">
+            <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+            <End Role="Equipments" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipments_StatusDevice" Association="Self.FK_Equipments_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Equipments" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipments_TypesEquipment" Association="Self.FK_Equipments_TypesEquipment">
+            <End Role="TypesEquipment" EntitySet="TypesEquipment" />
+            <End Role="Equipments" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryKartridj_Kartridjs" Association="Self.FK_HistoryKartridj_Kartridjs">
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+            <End Role="HistoryKartridj" EntitySet="HistoryKartridj" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryOrder_Orders" Association="Self.FK_HistoryOrder_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="HistoryOrder" EntitySet="HistoryOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kartridjs_Printers" Association="Self.FK_Kartridjs_Printers">
+            <End Role="Printers" EntitySet="Printers" />
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kartridjs_Rooms" Association="Self.FK_Kartridjs_Rooms">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kartridjs_StatusKartridj" Association="Self.FK_Kartridjs_StatusKartridj">
+            <End Role="StatusKartridj" EntitySet="StatusKartridj" />
+            <End Role="Kartridjs" EntitySet="Kartridjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keyboards_StatusDevice" Association="Self.FK_Keyboards_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Keyboards" EntitySet="Keyboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitors_StatusDevice" Association="Self.FK_Monitors_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Monitors" EntitySet="Monitors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mouse_StatusDevice" Association="Self.FK_Mouse_StatusDevice">
+            <End Role="StatusDevice" EntitySet="StatusDevice" />
+            <End Role="Mouse" EntitySet="Mouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MultimediaSystems_Rooms" Association="Self.FK_MultimediaSystems_Rooms">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Rooms" Association="Self.FK_Orders_Rooms">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_StatusOrders" Association="Self.FK_Orders_StatusOrders">
+            <End Role="StatusOrders" EntitySet="StatusOrders" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUnitComponents_SystemUnits" Association="Self.FK_SystemUnitComponents_SystemUnits">
+            <End Role="SystemUnits" EntitySet="SystemUnits" />
+            <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище IsSupportModelContainer" CdmEntityContainer="IsSupportContext">
+          <EntitySetMapping Name="Components">
+            <EntityTypeMapping TypeName="IsSupportModel.Components">
+              <MappingFragment StoreEntitySet="Components">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TypeComponentID" ColumnName="TypeComponentID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Computers">
+            <EntityTypeMapping TypeName="IsSupportModel.Computers">
+              <MappingFragment StoreEntitySet="Computers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OSID" ColumnName="OSID" />
+                <ScalarProperty Name="MultimediaSystemID" ColumnName="MultimediaSystemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="IsSupportModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipments">
+            <EntityTypeMapping TypeName="IsSupportModel.Equipments">
+              <MappingFragment StoreEntitySet="Equipments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TypeEquipmentID" ColumnName="TypeEquipmentID" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+                <ScalarProperty Name="StatusDeviceID" ColumnName="StatusDeviceID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MultimediaSystemID" ColumnName="MultimediaSystemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryKartridj">
+            <EntityTypeMapping TypeName="IsSupportModel.HistoryKartridj">
+              <MappingFragment StoreEntitySet="HistoryKartridj">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KartridjID" ColumnName="KartridjID" />
+                <ScalarProperty Name="DateChange" ColumnName="DateChange" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryOrder">
+            <EntityTypeMapping TypeName="IsSupportModel.HistoryOrder">
+              <MappingFragment StoreEntitySet="HistoryOrder">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="DateChange" ColumnName="DateChange" />
+                <ScalarProperty Name="StatusOrderID" ColumnName="StatusOrderID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kartridjs">
+            <EntityTypeMapping TypeName="IsSupportModel.Kartridjs">
+              <MappingFragment StoreEntitySet="Kartridjs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="NumberOfKartridj" ColumnName="NumberOfKartridj" />
+                <ScalarProperty Name="PrinterID" ColumnName="PrinterID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="DatePay" ColumnName="DatePay" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Keyboards">
+            <EntityTypeMapping TypeName="IsSupportModel.Keyboards">
+              <MappingFragment StoreEntitySet="Keyboards">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
+                <ScalarProperty Name="StatusDeviceID" ColumnName="StatusDeviceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monitors">
+            <EntityTypeMapping TypeName="IsSupportModel.Monitors">
+              <MappingFragment StoreEntitySet="Monitors">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+                <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
+                <ScalarProperty Name="StatusDeviceID" ColumnName="StatusDeviceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mouse">
+            <EntityTypeMapping TypeName="IsSupportModel.Mouse">
+              <MappingFragment StoreEntitySet="Mouse">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
+                <ScalarProperty Name="StatusDeviceID" ColumnName="StatusDeviceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MultimediaSystems">
+            <EntityTypeMapping TypeName="IsSupportModel.MultimediaSystems">
+              <MappingFragment StoreEntitySet="MultimediaSystems">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="IsSupportModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DateCreatet" ColumnName="DateCreatet" />
+                <ScalarProperty Name="DateClose" ColumnName="DateClose" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="StatusOrderID" ColumnName="StatusOrderID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OS">
+            <EntityTypeMapping TypeName="IsSupportModel.OS">
+              <MappingFragment StoreEntitySet="OS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BitDepth" ColumnName="BitDepth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Printers">
+            <EntityTypeMapping TypeName="IsSupportModel.Printers">
+              <MappingFragment StoreEntitySet="Printers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="IsSupportModel.Rooms">
+              <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusDevice">
+            <EntityTypeMapping TypeName="IsSupportModel.StatusDevice">
+              <MappingFragment StoreEntitySet="StatusDevice">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusKartridj">
+            <EntityTypeMapping TypeName="IsSupportModel.StatusKartridj">
+              <MappingFragment StoreEntitySet="StatusKartridj">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusOrders">
+            <EntityTypeMapping TypeName="IsSupportModel.StatusOrders">
+              <MappingFragment StoreEntitySet="StatusOrders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Descripption" ColumnName="Descripption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="IsSupportModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemUnitComponents">
+            <EntityTypeMapping TypeName="IsSupportModel.SystemUnitComponents">
+              <MappingFragment StoreEntitySet="SystemUnitComponents">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SystemUnitID" ColumnName="SystemUnitID" />
+                <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemUnits">
+            <EntityTypeMapping TypeName="IsSupportModel.SystemUnits">
+              <MappingFragment StoreEntitySet="SystemUnits">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SeralNumber" ColumnName="SeralNumber" />
+                <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+                <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
+                <ScalarProperty Name="StatusDeviceID" ColumnName="StatusDeviceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeComponent">
+            <EntityTypeMapping TypeName="IsSupportModel.TypeComponent">
+              <MappingFragment StoreEntitySet="TypeComponent">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypesEquipment">
+            <EntityTypeMapping TypeName="IsSupportModel.TypesEquipment">
+              <MappingFragment StoreEntitySet="TypesEquipment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
