@@ -15,7 +15,7 @@ namespace IsSupport
      /// <returns>Возваращает пароль в виде хеш-суммы</returns>
         List<Employees> employees;
 
-        Guid CreateHash(string password)
+        public Guid CreateHash(string password)
         {
             byte[] bytes = Encoding.Unicode.GetBytes(password);
             MD5CryptoServiceProvider MCP = new MD5CryptoServiceProvider();
@@ -27,14 +27,14 @@ namespace IsSupport
             }
             return new Guid(hash);
         }
-        bool CompareHash(string password)
+        public bool CompareHash(string password)
         {
             var passwordHash = CreateHash(password);
             employees = Helper.GetIsSupportContext().Employees.ToList();
             bool flag = false;
             foreach (Employees employee in employees)
             {
-                if (employee.Password == passwordHash)
+                if (employee.Password.Equals(passwordHash))
                 {
                     flag = true;
                     break;
@@ -42,7 +42,7 @@ namespace IsSupport
             }
             return flag; 
         }
-        int ReturnUser(string password)
+        public int ReturnUser(string password)
         {
             List<Employees> employees = Helper.GetIsSupportContext().Employees.ToList();
             int userID = 0;
@@ -51,7 +51,7 @@ namespace IsSupport
             {
                 foreach(Employees employees1 in employees)
                 {
-                    if (employees1.Password == hashPassword)
+                    if (employees1.Password.Equals(hashPassword))
                     {
                         userID = employees1.ID;
                         break;
