@@ -67,7 +67,7 @@ namespace IsSupport.Pages
             try
             {
                 Helper.GetIsSupportContext().SaveChanges();
-                MessageBox.Show("Вы зарешестрировались!");
+                MessageBox.Show("Вы зарегестрировались!");
                 NavigationService.GoBack();
             }
             catch (Exception ex)

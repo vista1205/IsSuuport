@@ -20,7 +20,6 @@ namespace IsSupport.Pages
     /// </summary>
     public partial class AutorizationPage : Page
     {
-        List<Employees> employees;
         public AutorizationPage()
         {
             InitializeComponent();
@@ -57,13 +56,8 @@ namespace IsSupport.Pages
                 hash_Helper.ReturnUser(PassordTextBox.Password);
                 MainWindow mw = new MainWindow();
                 mw.Show();
-                foreach (Window window in App.Current.Windows)
-                {
-                    if (window is AddEmployee)
-                    {
-                        window.Close();
-                    }
-                }
+                Helper helper = new Helper();  
+                helper.CloseWindow();
             }
         }
     }

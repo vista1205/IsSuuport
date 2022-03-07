@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IsSupport.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,13 @@ namespace IsSupport
         {
             InitializeComponent();
             Application.Current.ShutdownMode = ShutdownMode.OnLastWindowClose;
+            MyFrame.Content = new OrdersPage();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            UserSecret userSecret = new UserSecret();
+            userSecret.DeleteUserSecret();
         }
     }
 }

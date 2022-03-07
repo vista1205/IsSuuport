@@ -10,7 +10,6 @@ namespace IsSupport
         public string PathSecret()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            //string path = @"%APPDATA%\microsoft\UserSecrets";
             string pathAll = Path.Combine(path, @"Microsoft\UserSecret\0B098861-6467-4A2D-ACF5-E8E60B62A65B");
             if (!Directory.Exists(pathAll))
             {
@@ -29,12 +28,12 @@ namespace IsSupport
             
             return fileName;
         }
-        public async void AddUserSecert(int id)
+        public void AddUserSecert(int id)
         {
            var employees=Helper.GetIsSupportContext().Employees.Where(x=>x.ID==id).FirstOrDefault();
             using(FileStream fs = new FileStream(FileSecret(), FileMode.OpenOrCreate))
             {
-                await JsonSerializer.SerializeAsync<Employees>(fs, employees);
+                JsonSerializer.Serialize(fs, employees);
             }
         }
         public int ReturnUserID()
@@ -43,6 +42,14 @@ namespace IsSupport
             {
                 var employees = JsonSerializer.Deserialize<Employees>(fs);
                 return (int)employees?.ID;
+            }
+        }
+        public void DeleteUserSecret()
+        {
+            string filename = Path.Combine(PathSecret(), "secrets.json");
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
             }
         }
     }

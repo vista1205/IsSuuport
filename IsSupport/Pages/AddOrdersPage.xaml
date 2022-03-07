@@ -1,0 +1,30 @@
+﻿<Page x:Class="IsSupport.Pages.AddOrdersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddOrdersPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="239*"/>
+            <ColumnDefinition Width="561*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Описание заявки" Style="{StaticResource TextBlockDefault}" Grid.Row="0" Grid.Column="0"/>
+        <TextBlock Text="Выберите кабинет" Style="{StaticResource TextBlockDefault}" Grid.Row="1" Grid.Column="0"/>
+        <Button x:Name="BtnAddOrders" Click="BtnAddOrders_Click" Content="Зарегестрировать" Style="{StaticResource ButtonDefault}" Grid.Row="2" Grid.Column="0"></Button>
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap" x:Name="TextDescription" Text="{Binding Description}" Grid.Row="0" Grid.Column="1" Margin="5,10,10,10"></TextBox>
+        <ComboBox SelectedItem="{Binding Rooms}" Grid.Column="1" x:Name="ComboRooms" DisplayMemberPath="Title"
+                  IsEditable="True" IsTextSearchCaseSensitive="False" TextBoxBase.TextChanged="ComboRooms_TextChanged" Margin="5,10,10,10" Grid.Row="1"
+                  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+    </Grid>
+</Page>

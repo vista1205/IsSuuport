@@ -25,9 +25,5 @@ namespace IsSupport
             InitializeComponent();
             MyFrameAddEmployee.Content = new AutorizationPage();
         }
-        public void AddEmployeesClose()
-        {
-            this.Close();
-        }
     }
 }

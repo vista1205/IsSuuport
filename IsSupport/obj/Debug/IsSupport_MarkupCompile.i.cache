@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\
+C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\
 IsSupport
 none
 false
 DEBUG;TRACE
-C:\Users\Family\source\repos\IsSuuport\IsSupport\App.xaml
-4-519506742
+C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\App.xaml
+61150165267
 2347139001
-381608216356
-28402498345
-AddEmployee.xaml;MainWindow.xaml;Pages\AutorizationPage.xaml;Pages\RegistrationPage.xaml;
+40517739387
+28648889755
+AddEmployee.xaml;MainWindow.xaml;Pages\AddOrdersPage.xaml;Pages\AutorizationPage.xaml;Pages\OrdersPage.xaml;Pages\RegistrationPage.xaml;
 
 True
 

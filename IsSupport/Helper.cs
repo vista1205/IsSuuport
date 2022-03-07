@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace IsSupport
 {
@@ -16,6 +17,16 @@ namespace IsSupport
                 _context = new IsSupportContext();
             }
             return _context;
+        }
+        public void CloseWindow()
+        {
+            foreach (Window window in App.Current.Windows)
+            {
+                if (window is AddEmployee)
+                {
+                    window.Close();
+                }
+            }
         }
     }
 }
