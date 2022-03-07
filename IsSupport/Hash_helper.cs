@@ -42,7 +42,7 @@ namespace IsSupport
             }
             return flag; 
         }
-        public int ReturnUser(string password)
+        public void ReturnUser(string password)
         {
             List<Employees> employees = Helper.GetIsSupportContext().Employees.ToList();
             int userID = 0;
@@ -58,8 +58,21 @@ namespace IsSupport
                     }
                 }                
             }
-            return userID;
-        } 
+            UserSecret userSecret = new UserSecret();
+            userSecret.AddUserSecert(userID);
+        }
+        public bool LoginCorrect(string login)
+        {
+            bool flag = false;
+            foreach(Employees employees in Helper.GetIsSupportContext().Employees)
+            {
+                if (employees.Login.Equals(login))
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
 
     }
 }

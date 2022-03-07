@@ -23,6 +23,7 @@ namespace IsSupport
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.ShutdownMode = ShutdownMode.OnLastWindowClose;
         }
     }
 }

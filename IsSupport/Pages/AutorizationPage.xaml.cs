@@ -20,6 +20,7 @@ namespace IsSupport.Pages
     /// </summary>
     public partial class AutorizationPage : Page
     {
+        List<Employees> employees;
         public AutorizationPage()
         {
             InitializeComponent();
@@ -28,6 +29,42 @@ namespace IsSupport.Pages
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new RegistrationPage());
+        }
+
+        private void AutorizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            Hash_helper hash_Helper = new Hash_helper();
+            StringBuilder errors = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(LoginTextBox.Text))
+            {
+                errors.AppendLine("Вы не ввели логин!");
+            }
+            if (string.IsNullOrEmpty(PassordTextBox.Password))
+            {
+                errors.AppendLine("Вы не ввели пароль!");
+            }
+            if (!hash_Helper.CompareHash(PassordTextBox.Password) || !hash_Helper.LoginCorrect(LoginTextBox.Text))
+            {
+                errors.AppendLine("Вы ввели некорректно логин или пароль!");
+            }
+            if(errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+            if (hash_Helper.CompareHash(PassordTextBox.Password) && hash_Helper.LoginCorrect(LoginTextBox.Text))
+            {
+                hash_Helper.ReturnUser(PassordTextBox.Password);
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                foreach (Window window in App.Current.Windows)
+                {
+                    if (window is AddEmployee)
+                    {
+                        window.Close();
+                    }
+                }
+            }
         }
     }
 }
