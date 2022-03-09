@@ -30,7 +30,7 @@ namespace IsSupport
         }
         public void AddUserSecert(int id)
         {
-           var employees=Helper.GetIsSupportContext().Employees.Where(x=>x.ID==id).FirstOrDefault();
+            var employees=Helper.GetIsSupportContext().Employees.Where(x=>x.ID==id).FirstOrDefault();
             using(FileStream fs = new FileStream(FileSecret(), FileMode.OpenOrCreate))
             {
                 JsonSerializer.Serialize(fs, employees);

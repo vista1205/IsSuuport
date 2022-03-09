@@ -100,3 +100,7 @@ C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\OrdersPage.g.
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\OrdersPage.baml
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\AddOrdersPage.g.cs
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\AddOrdersPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\AddOrdersPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\OrdersPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\AddOrdersPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\OrdersPage.baml
