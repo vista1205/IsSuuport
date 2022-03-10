@@ -69,15 +69,15 @@ namespace IsSupport.Pages
         private void ComboRooms_TextChanged(object sender, TextChangedEventArgs e)
         {
             var tb = (TextBox)e.OriginalSource;
-            if (tb.SelectionStart != 0)
+            if (tb.SelectionStart == 0)
             {
                 ComboRooms.SelectedItem = null;
             }
-            if(tb.SelectionStart==0 && ComboRooms.SelectedItem == null)
+            if (tb.SelectionStart == 0 && ComboRooms.SelectedItem == null)
             {
                 ComboRooms.IsDropDownOpen = false;
             }
-            ComboRooms.IsDropDownOpen=true;
+            ComboRooms.IsDropDownOpen = true;
             if (string.IsNullOrEmpty(ComboRooms.Text))
             {
                 ComboRooms.ItemsSource = _rooms;

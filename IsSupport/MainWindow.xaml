@@ -8,7 +8,7 @@
         Title="MainWindow" Height="500" Width="900" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="ThreeDBorderWindow">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0">
@@ -17,7 +17,6 @@
                     <MenuItem Header="Выход"/>                    
                 </MenuItem>
             </Menu>
-
         </StackPanel>
         <Frame x:Name="MyFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
