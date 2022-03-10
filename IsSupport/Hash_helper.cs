@@ -42,25 +42,21 @@ namespace IsSupport
             }
             return flag; 
         }
-        public void ReturnUser(string password)
+        public void ReturnUser(string login)
         {
-            List<Employees> employees = Helper.GetIsSupportContext().Employees.ToList();
-            int userID = 0;
-            var hashPassword=CreateHash(password);
-            if (CompareHash(password))
+            int userId = 0;
+            foreach(Employees employees in Helper.GetIsSupportContext().Employees)
             {
-                foreach(Employees employees1 in employees)
+                if (employees.Login.Equals(login))
                 {
-                    if (employees1.Password.Equals(hashPassword))
-                    {
-                        userID = employees1.ID;
-                        break;
-                    }
-                }                
+                    userId = employees.ID;
+                    break;
+                }
             }
             UserSecret userSecret = new UserSecret();
-            userSecret.AddUserSecert(userID);
+            userSecret.AddUserSecert(userId);
         }
+
         public bool LoginCorrect(string login)
         {
             bool flag = false;

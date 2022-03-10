@@ -84,5 +84,10 @@ namespace IsSupport.Pages
             }
             ComboRooms.ItemsSource = _rooms.Where((item) => { return item.Title.Contains(ComboRooms.Text); });
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

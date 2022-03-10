@@ -46,19 +46,20 @@ namespace IsSupport.Pages
             {
                 errors.AppendLine("Вы ввели некорректно логин или пароль!");
             }
-            if(errors.Length > 0)
+            if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
+
             if (hash_Helper.CompareHash(PassordTextBox.Password) && hash_Helper.LoginCorrect(LoginTextBox.Text))
             {
-                hash_Helper.ReturnUser(PassordTextBox.Password);
+                hash_Helper.ReturnUser(LoginTextBox.Text);
                 MainWindow mw = new MainWindow();
                 mw.Show();
-                Helper helper = new Helper();  
+                Helper helper = new Helper();
                 helper.CloseWindow();
             }
-        }
+        } 
     }
 }

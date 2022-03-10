@@ -24,6 +24,7 @@ namespace IsSupport.Pages
         public OrdersPage()
         {
             InitializeComponent();
+            DGridOrders.ItemsSource = Helper.GetIsSupportContext().Orders.Where(x => x.StatusOrderID == 1 || x.StatusOrderID == 2).ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -41,10 +42,9 @@ namespace IsSupport.Pages
             Orders orders = Helper.GetIsSupportContext().Orders.Where(x => x.ID == item).FirstOrDefault();
             orders.StatusOrderID = 2;
             orders.EmployeeID = _secret.ReturnUserID();
-            Helper.GetIsSupportContext().SaveChanges();
+            Helper.GetIsSupportContext().SaveChanges();            
             Helper.GetIsSupportContext().ChangeTracker.Entries().ToList().ForEach(entry => entry.Reload());
             DGridOrders.ItemsSource = Helper.GetIsSupportContext().Orders.Where(x => x.StatusOrderID == 1 || x.StatusOrderID == 2).ToList();
-
         }
 
         private void BtnAddOrders_Click(object sender, RoutedEventArgs e)
@@ -58,7 +58,7 @@ namespace IsSupport.Pages
             Orders orders = Helper.GetIsSupportContext().Orders.Where(x => x.ID == item).FirstOrDefault();
             orders.StatusOrderID = 3;
             orders.EmployeeID = _secret.ReturnUserID();
-            orders.DateClose = DateTime.Now;
+            orders.DateClose = DateTime.Now;            
             Helper.GetIsSupportContext().SaveChanges();
             Helper.GetIsSupportContext().ChangeTracker.Entries().ToList().ForEach(entry => entry.Reload());
             DGridOrders.ItemsSource = Helper.GetIsSupportContext().Orders.Where(x => x.StatusOrderID == 1 || x.StatusOrderID == 2).ToList();
