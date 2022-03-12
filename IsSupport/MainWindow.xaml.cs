@@ -21,6 +21,9 @@ namespace IsSupport
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserSecret userSecret = new UserSecret();
+
+        Helper helper = new Helper();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,8 +33,20 @@ namespace IsSupport
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            UserSecret userSecret = new UserSecret();
             userSecret.DeleteUserSecret();
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            AddEmployee addEmployee = new AddEmployee();
+            helper.CloseParentWondow();
+            addEmployee.Show();
+            userSecret.DeleteUserSecret();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            helper.CloseParentWondow();
         }
     }
 }

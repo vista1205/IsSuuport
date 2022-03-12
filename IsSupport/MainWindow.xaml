@@ -14,7 +14,34 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Menu x:Name="MainMenu" Width="auto" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Time New Roman" FontSize="14" FontWeight="Bold">
                 <MenuItem Header="Главная">
-                    <MenuItem Header="Выход"/>                    
+                    <MenuItem x:Name="Logout" Header="Выход из профиля" Click="Logout_Click"/>
+                    <MenuItem x:Name="Exit" Header="Выход" Click="Exit_Click"/>                    
+                </MenuItem>
+                <MenuItem Header="Заявки">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Зарегестрировать"/>
+                    <MenuItem Header="Отчёт"/>
+                </MenuItem>
+                <MenuItem Header="Картриджи">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Выдать"/>
+                    <MenuItem Header="Принять"/>
+                    <MenuItem Header="Заправка"/>
+                    <MenuItem Header="Добавить принтер"/>
+                    <MenuItem Header="Отчёт"/>
+                    <MenuItem Header="Статусы">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Кабинеты">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Мультимедийная система">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавиьт"/>
+                    </MenuItem>
                 </MenuItem>
             </Menu>
         </StackPanel>

@@ -28,5 +28,15 @@ namespace IsSupport
                 }
             }
         }
+        public void CloseParentWondow()
+        {
+            foreach (Window window in App.Current.Windows)
+            {
+                if (window is MainWindow)
+                {
+                    window.Close();
+                }
+            }
+        }
     }
 }
