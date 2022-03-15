@@ -48,5 +48,15 @@ namespace IsSupport
         {
             helper.CloseParentWondow();
         }
+
+        private void ListOrdersMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new OrdersPage();
+        }
+
+        private void AddOrdersPageMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new AddOrdersPage();
+        }
     }
 }

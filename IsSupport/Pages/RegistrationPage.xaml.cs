@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,6 +80,19 @@ namespace IsSupport.Pages
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void OpenImage_Click(object sender, RoutedEventArgs e)
+        {
+            string imageName;
+            string pathImage;
+            OpenFileDialog openFileDialog = new OpenFileDialog(); 
+            if(openFileDialog.ShowDialog() == true)
+            {
+                imageName = openFileDialog.SafeFileName;
+                pathImage = openFileDialog.FileName.Replace(imageName, "");
+
+            }
         }
     }
 }

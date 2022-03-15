@@ -18,8 +18,8 @@
                     <MenuItem x:Name="Exit" Header="Выход" Click="Exit_Click"/>                    
                 </MenuItem>
                 <MenuItem Header="Заявки">
-                    <MenuItem Header="Список"/>
-                    <MenuItem Header="Зарегестрировать"/>
+                    <MenuItem x:Name="ListOrdersMenu" Click="ListOrdersMenu_Click" Header="Список"/>
+                    <MenuItem x:Name="AddOrdersPageMenu" Click="AddOrdersPageMenu_Click" Header="Зарегестрировать"/>
                     <MenuItem Header="Отчёт"/>
                 </MenuItem>
                 <MenuItem Header="Картриджи">
@@ -41,6 +41,62 @@
                     <MenuItem Header="Мультимедийная система">
                         <MenuItem Header="Список"/>
                         <MenuItem Header="Добавиьт"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Оборудование">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Клавиатуры">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="Отчёт"/>
+                    </MenuItem>
+                    <MenuItem Header="Системный блок">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="Компоненты">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                        </MenuItem>
+                        <MenuItem Header="Типы компонентов">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                        </MenuItem>
+                        <MenuItem Header="Мыши">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                            <MenuItem Header="Отчёт"/>
+                        </MenuItem>
+                        <MenuItem Header="Мониторы">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                            <MenuItem Header="Отчёт"/>
+                        </MenuItem>
+                        <MenuItem Header="Статус устройства">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                        </MenuItem>
+                        <MenuItem Header="Отчёт"/>
+                    </MenuItem>
+                    <MenuItem Header="Компьютер">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="ОС">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                        </MenuItem>
+                    </MenuItem>                    
+                </MenuItem>
+                <MenuItem Header="Прочее оборудование">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Статус устройства">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                    </MenuItem>
+                    <MenuItem Header="Тип оборудования">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="Отчёт"/>
                     </MenuItem>
                 </MenuItem>
             </Menu>
