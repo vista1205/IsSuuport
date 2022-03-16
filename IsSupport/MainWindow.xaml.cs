@@ -1,4 +1,5 @@
 ﻿using IsSupport.Pages;
+using IsSupport.Pages.Cartridgs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,11 @@ namespace IsSupport
         private void AddOrdersPageMenu_Click(object sender, RoutedEventArgs e)
         {
             MyFrame.Content = new AddOrdersPage();
+        }
+
+        private void ListCartridgeMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new CartList();
         }
     }
 }

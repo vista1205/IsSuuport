@@ -1,4 +1,6 @@
 ﻿using Microsoft.Win32;
+using System.IO;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,6 +93,7 @@ namespace IsSupport.Pages
             {
                 imageName = openFileDialog.SafeFileName;
                 pathImage = openFileDialog.FileName.Replace(imageName, "");
+                //File.Copy(System.IO.Path.Combine(pathImage, imageName), Path.Combine())
 
             }
         }

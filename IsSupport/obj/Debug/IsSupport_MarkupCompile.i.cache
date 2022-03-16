@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\App.xaml
-61150165267
+11-1518656809
 2347139001
-40517739387
+461183744536
 28648889755
-AddEmployee.xaml;MainWindow.xaml;Pages\AddOrdersPage.xaml;Pages\AutorizationPage.xaml;Pages\OrdersPage.xaml;Pages\RegistrationPage.xaml;
+AddEmployee.xaml;MainWindow.xaml;Pages\AddOrdersPage.xaml;Pages\AutorizationPage.xaml;Pages\Cartridgs\CartList.xaml;Pages\Cartridgs\CartridgeIssueListPage.xaml;Pages\Cartridgs\CartridgePage.xaml;Pages\Cartridgs\CartridgeRefuelListPage.xaml;Pages\Cartridgs\CartridgeWaitingListPage.xaml;Pages\OrdersPage.xaml;Pages\RegistrationPage.xaml;
 
 True
 

@@ -23,7 +23,7 @@
                     <MenuItem Header="Отчёт"/>
                 </MenuItem>
                 <MenuItem Header="Картриджи">
-                    <MenuItem Header="Список"/>
+                    <MenuItem x:Name="ListCartridgeMenu" Click="ListCartridgeMenu_Click" Header="Список"/>
                     <MenuItem Header="Добавить"/>
                     <MenuItem Header="Выдать"/>
                     <MenuItem Header="Принять"/>

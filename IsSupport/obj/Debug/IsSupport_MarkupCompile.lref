@@ -1,9 +1,14 @@
 ﻿
-FC:\Users\Family\source\repos\IsSuuport\IsSupport\App.xaml;;
-FC:\Users\Family\source\repos\IsSuuport\IsSupport\AddEmployee.xaml;;
-FC:\Users\Family\source\repos\IsSuuport\IsSupport\MainWindow.xaml;;
-FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\AddOrdersPage.xaml;;
-FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\AutorizationPage.xaml;;
-FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\OrdersPage.xaml;;
-FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\RegistrationPage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\App.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\AddEmployee.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\MainWindow.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\AddOrdersPage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\AutorizationPage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartList.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgePage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\OrdersPage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\RegistrationPage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgeIssueListPage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgeRefuelListPage.xaml;;
+FC:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgeWaitingListPage.xaml;;
 

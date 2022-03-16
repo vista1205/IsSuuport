@@ -148,12 +148,28 @@
     <Compile Include="Pages\AutorizationPage.xaml.cs">
       <DependentUpon>AutorizationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Cartridgs\CartList.xaml.cs">
+      <DependentUpon>CartList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgeIssueListPage.xaml.cs">
+      <DependentUpon>CartridgeIssueListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgePage.xaml.cs">
+      <DependentUpon>CartridgePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgeRefuelListPage.xaml.cs">
+      <DependentUpon>CartridgeRefuelListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgeWaitingListPage.xaml.cs">
+      <DependentUpon>CartridgeWaitingListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Partial.cs" />
     <Compile Include="Printers.cs">
       <DependentUpon>IsSupportModel.tt</DependentUpon>
     </Compile>
@@ -217,6 +233,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AutorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgeIssueListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgeRefuelListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgeWaitingListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
