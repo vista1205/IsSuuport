@@ -14,7 +14,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" Grid.Row="0">
-            <ComboBox Name="CmbPrintFilter" SelectedIndex="0" DisplayMemberPath="Title" SelectionChanged="CmbPrintFilter_SelectionChanged"/>
+            <TextBlock Text="Сотриторвка по принтеру" Margin="5,2,0,0"/>
+            <ComboBox Name="CmbPrintFilter" SelectedIndex="0" DisplayMemberPath="Title" SelectionChanged="CmbPrintFilter_SelectionChanged" Margin="5,2,0,0"/>
+            <TextBlock Text="Посик по номеру картриджа" Margin="5,2,0,0"/>
+            <TextBox x:Name="SearchBox" KeyUp="SearchBox_KeyUp" Width="100" Margin="15,2,0,0"/>
         </WrapPanel>
         <DataGrid x:Name="DGridCartridgeList" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
             <DataGrid.Columns>

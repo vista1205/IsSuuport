@@ -20,10 +20,12 @@ namespace IsSupport.Pages
     /// </summary>
     public partial class CartridgePage : Page
     {
+        List<Kartridjs> kart=new List<Kartridjs>();
         public CartridgePage()
         {
             InitializeComponent();
             CmbPrintFilter.ItemsSource = Helper.GetIsSupportContext().Printers.ToList();
+            kart=Helper.GetIsSupportContext().Kartridjs.Where(x => x.StatusID == 1).ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -38,6 +40,12 @@ namespace IsSupport.Pages
         {
             var item = (CmbPrintFilter.SelectedItem as Printers).ID;
             DGridCartridgeList.ItemsSource = Helper.GetIsSupportContext().Kartridjs.Where(x => x.StatusID == 1 && x.PrinterID == item).ToList();
-        }        
+        }
+
+        private void SearchBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            var filter=kart.Where((x=>x.NumberOfKartridj.ToUpperInvariant().Contains(SearchBox.Text.ToUpperInvariant())));
+            DGridCartridgeList.ItemsSource = filter;
+        }
     }
 }
