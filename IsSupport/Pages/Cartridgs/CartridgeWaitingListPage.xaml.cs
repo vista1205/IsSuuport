@@ -25,7 +25,7 @@ namespace IsSupport.Pages.Cartridgs
         {
             InitializeComponent();
             CmbPrintFilter.ItemsSource = Helper.GetIsSupportContext().Printers.ToList();
-            kart= kart.Where(x => x.StatusID == 3).ToList();
+            kart = kart.Where(x => x.StatusID == 3).ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

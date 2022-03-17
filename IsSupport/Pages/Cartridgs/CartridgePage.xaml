@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" Grid.Row="0">
             <TextBlock Text="Сотриторвка по принтеру" Margin="5,2,0,0"/>
@@ -69,5 +70,9 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <WrapPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Margin="5,2,0,0" TextWrapping="Wrap" Text="Добавить новый картридж" VerticalAlignment="Center"/>
+            <Button Name="AddKartridg" Content="Добавить" Margin="5,2,0,2" Style="{StaticResource ButtonDefault}"/>
+        </WrapPanel>
     </Grid>
 </Page>

@@ -148,6 +148,9 @@
     <Compile Include="Pages\AutorizationPage.xaml.cs">
       <DependentUpon>AutorizationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Cartridgs\AddKartridgPage.xaml.cs">
+      <DependentUpon>AddKartridgPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Cartridgs\CartList.xaml.cs">
       <DependentUpon>CartList.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AutorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\AddKartridgPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
