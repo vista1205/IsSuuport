@@ -27,8 +27,17 @@
         <TextBox x:Name="NumberOfKartridjBoxKartridg" Text="{Binding NumberOfKartridj}" Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxDefault}"/>
         <ComboBox x:Name="CmbPrinterName" SelectedIndex="0" Grid.Row="2" Grid.Column="1" DisplayMemberPath="Title"/>
         <WrapPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1">
-            <Button Name="BtnAddImageKartridg" Content="Выбрать" Style="{StaticResource ButtonDefault}"/>
-            <Image Source="{Binding ImagePath, TargetNullValue=picture.png}" Width="100" Height="100"></Image>
+            <!--<Button Name="BtnAddImageKartridg" Content="Выбрать" Style="{StaticResource ButtonDefault}"/>
+            <Image Source="{Binding ImagePath, TargetNullValue=picture.png}" Width="100" Height="100"></Image>-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="BtnAddImageKartridg" Click="BtnAddImageKartridg_Click" Grid.Column="0" Content="Выбрать" Style="{StaticResource ButtonDefault}"/>
+                <Image x:Name="PreviewImage" Margin="5,2,0,0" Stretch="Fill" Grid.Column="2" Width="100" Height="100"></Image>
+            </Grid>
         </WrapPanel>
     </Grid>
 </Page>

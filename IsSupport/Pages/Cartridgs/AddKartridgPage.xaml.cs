@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.Win32;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,25 @@ namespace IsSupport.Pages.Cartridgs
         public AddKartridgPage()
         {
             InitializeComponent();
+            CmbPrinterName.ItemsSource = Helper.GetIsSupportContext().Printers.ToList();
+        }
+
+        private void BtnAddImageKartridg_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            string pathImage = null;
+            string nameImage = null;
+            if(ofd.ShowDialog() == true)
+            {
+                ofd.InitialDirectory = Environment.CurrentDirectory + "images\\Kartridj\\";
+                ofd.Filter = "Image files (*.BMP, *.JPJ, *.JPEG)|*.bmp; *.jpj;*.jpeg";
+                ofd.RestoreDirectory = true;
+                nameImage = ofd.SafeFileName;
+                pathImage = ofd.FileName.Replace(nameImage, "");
+            }
+                
+
+            
         }
     }
 }
