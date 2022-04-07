@@ -7,7 +7,6 @@ C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\bin\Debug\EntityFramework.xml
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\IsSupport.csproj.AssemblyReference.cache
-C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\IsSupport.csproj.SuggestedBindingRedirects.cache
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\AddEmployee.g.cs
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\MainWindow.g.cs
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\AutorizationPage.g.cs
@@ -124,3 +123,6 @@ C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\Cartr
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgePage.baml
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeRefuelListPage.baml
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeWaitingListPage.baml
+C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddKartridgPage.g.cs
+C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddKartridgPage.baml
+C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\IsSupport.csproj.SuggestedBindingRedirects.cache

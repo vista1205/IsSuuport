@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,21 @@ namespace IsSupport
                     window.Close();
                 }
             }
+        }
+        public static string KartridgCopyImage(string pathimage, string filename)
+        {
+            string path = Environment.CurrentDirectory + "\\images\\Kartridj\\";            
+            string newpath = path + filename;
+            FileInfo fileinf = new FileInfo(newpath);
+            if (fileinf.Exists)
+            {
+                return "\\images\\Kartridj\\" + filename;
+            }
+            else
+            {
+                File.Copy(pathimage + filename, newpath, true);
+                return "\\images\\Kartridj\\" + filename;
+            }            
         }
     }
 }

@@ -47,5 +47,10 @@ namespace IsSupport.Pages
             var filter=kart.Where((x=>x.NumberOfKartridj.ToUpperInvariant().Contains(SearchBox.Text.ToUpperInvariant())));
             DGridCartridgeList.ItemsSource = filter;
         }
+
+        private void AddKartridg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
