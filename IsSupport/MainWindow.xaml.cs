@@ -64,5 +64,10 @@ namespace IsSupport
         {
             MyFrame.Content = new CartList();
         }
+
+        private void AddKartridg_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new AddKartridgPage();
+        }
     }
 }

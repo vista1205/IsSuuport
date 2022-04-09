@@ -24,7 +24,7 @@
                 </MenuItem>
                 <MenuItem Header="Картриджи">
                     <MenuItem x:Name="ListCartridgeMenu" Click="ListCartridgeMenu_Click" Header="Список"/>
-                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Добавить" x:Name="AddKartridg" Click="AddKartridg_Click"/>
                     <MenuItem Header="Выдать"/>
                     <MenuItem Header="Принять"/>
                     <MenuItem Header="Заправка"/>

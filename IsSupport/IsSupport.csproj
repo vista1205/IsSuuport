@@ -154,6 +154,9 @@
     <Compile Include="Pages\Cartridgs\CartList.xaml.cs">
       <DependentUpon>CartList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Cartridgs\CartReceivingAndIssuing.xaml.cs">
+      <DependentUpon>CartReceivingAndIssuing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Cartridgs\CartridgeIssueListPage.xaml.cs">
       <DependentUpon>CartridgeIssueListPage.xaml</DependentUpon>
     </Compile>
@@ -244,6 +247,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Cartridgs\CartList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartReceivingAndIssuing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
