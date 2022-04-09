@@ -69,5 +69,20 @@ namespace IsSupport
         {
             MyFrame.Content = new AddKartridgPage();
         }
+
+        private void CartridgIssue_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new CartReceivingAndIssuing();
+        }
+
+        private void CartridgReceving_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new CartridgRecevingPage();
+        }
+
+        private void CartridgeRefil_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new CartridgRecevingPage(3);
+        }
     }
 }

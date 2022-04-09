@@ -19,7 +19,7 @@ namespace IsSupport
         {
             this.HistoryKartridj = new HashSet<HistoryKartridj>();
         }
-    
+
         public int ID { get; set; }
         public string Title { get; set; }
         public string NumberOfKartridj { get; set; }

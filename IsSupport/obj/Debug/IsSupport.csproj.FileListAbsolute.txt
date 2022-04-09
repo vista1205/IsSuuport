@@ -113,12 +113,10 @@ C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\Car
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeWaitingListPage.g.cs
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeRefuelListPage.baml
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeWaitingListPage.baml
-C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartList.g.cs
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeIssueListPage.g.cs
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgePage.g.cs
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeRefuelListPage.g.cs
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeWaitingListPage.g.cs
-C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartList.baml
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeIssueListPage.baml
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgePage.baml
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgeRefuelListPage.baml
@@ -126,3 +124,11 @@ C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\Cartr
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddKartridgPage.g.cs
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddKartridgPage.baml
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\IsSupport.csproj.SuggestedBindingRedirects.cache
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddKartridgPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddKartridgPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartListPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartIssuingPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgRecevingPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartListPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartIssuingPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgRecevingPage.baml

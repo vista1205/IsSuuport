@@ -24,10 +24,10 @@
                 </MenuItem>
                 <MenuItem Header="Картриджи">
                     <MenuItem x:Name="ListCartridgeMenu" Click="ListCartridgeMenu_Click" Header="Список"/>
-                    <MenuItem Header="Добавить" x:Name="AddKartridg" Click="AddKartridg_Click"/>
-                    <MenuItem Header="Выдать"/>
-                    <MenuItem Header="Принять"/>
-                    <MenuItem Header="Заправка"/>
+                    <MenuItem x:Name="AddKartridg" Header="Добавить" Click="AddKartridg_Click"/>
+                    <MenuItem x:Name="CartridgIssue" Header="Выдать" Click="CartridgIssue_Click"/>
+                    <MenuItem x:Name="CartridgReceving" Header="Принять" Click="CartridgReceving_Click"/>
+                    <MenuItem x:Name="CartridgeRefil" Header="Заправка" Click="CartridgeRefil_Click"/>
                     <MenuItem Header="Добавить принтер"/>
                     <MenuItem Header="Отчёт"/>
                     <MenuItem Header="Статусы">

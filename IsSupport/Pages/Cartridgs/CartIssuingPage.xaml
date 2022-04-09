@@ -1,0 +1,34 @@
+﻿<Page x:Class="IsSupport.Pages.Cartridgs.CartReceivingAndIssuing"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CartReceivingAndIssuing">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Выберите картридж для выдачи:" Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Выберите кабинет, куда будет передаваться:" Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockDefault}"/>
+        <ComboBox x:Name="CmbCartridgIssue" SelectedItem="{Binding Kartridjs}" SelectedValue="NumberOfKartridj" Grid.Row="0"
+                  Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                  DisplayMemberPath="NumberOfKartridj" />
+        <!--IsEditable="True" IsTextSearchEnabled="False" TextBoxBase.TextChanged="CmbCartridgIssue_TextChanged"/>-->
+        <ComboBox Name="CmbRoomsCartridg" SelectedItem="{Binding Kartridjs.Rooms}" 
+                  Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" 
+                  HorizontalContentAlignment="Center" DisplayMemberPath="Title" />
+        <!--IsEditable="True" IsTextSearchEnabled="False" TextBoxBase.TextChanged="CmbRoomsCartridg_TextChanged"/>-->
+        <Button Grid.Row="2" Click="BtnKartridgIssue_Click" Grid.Column="0" Name="BtnKartridgIssue" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Выдать" Style="{StaticResource ButtonDefault}"/>
+        <Button Grid.Row="2" Click="BtnKartridgReturn_Click" Grid.Column="1" Name="BtnKartridgReturn" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Отмена" Style="{StaticResource ButtonDefault}"/>
+    </Grid>
+</Page>
