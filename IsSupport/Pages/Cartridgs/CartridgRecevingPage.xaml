@@ -22,7 +22,7 @@
         <TextBlock x:Name="TblAbout" Text="Выберите картридж, который сдают:" Grid.ColumnSpan="3" Style="{StaticResource TextBlockDefault}"/>
         <ComboBox Name="CmbRecevingCartridg" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                   SelectedItem="{Binding Kartridjs}" SelectedValue="NumberOfKartridj" DisplayMemberPath="NumberOfKartridj"/>
-                  <!--IsEditable="True" IsTextSearchEnabled="False" TextBoxBase.TextChanged="CmbRecevingCartridg_TextChanged"-->
+        <!--IsEditable="True" IsTextSearchEnabled="False" TextBoxBase.TextChanged="CmbRecevingCartridg_TextChanged"/>-->
         <Button Name="BtnRecevingKartridg" Click="BtnRecevingKartridg_Click" Content="Принять"
                 Style="{StaticResource ButtonDefault}" VerticalAlignment="Center" HorizontalAlignment="Center"
                 Grid.Row="2"

@@ -5,6 +5,8 @@ FC:\Users\Family\source\repos\IsSuuport\IsSupport\MainWindow.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\AddOrdersPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\AutorizationPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\AddKartridgPage.xaml;;
+FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\AddPrintersPage.xaml;;
+FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\AddStatusCartridgs.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartListPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartIssuingPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgeIssueListPage.xaml;;
@@ -12,6 +14,7 @@ FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgePage.
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgeRefuelListPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgeWaitingListPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\CartridgRecevingPage.xaml;;
+FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Cartridgs\StatusKartridgsPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\OrdersPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\RegistrationPage.xaml;;
 

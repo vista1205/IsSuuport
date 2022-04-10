@@ -151,6 +151,12 @@
     <Compile Include="Pages\Cartridgs\AddKartridgPage.xaml.cs">
       <DependentUpon>AddKartridgPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Cartridgs\AddPrintersPage.xaml.cs">
+      <DependentUpon>AddPrintersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\AddStatusCartridgs.xaml.cs">
+      <DependentUpon>AddStatusCartridgs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Cartridgs\CartListPage.xaml.cs">
       <DependentUpon>CartListPage.xaml</DependentUpon>
     </Compile>
@@ -171,6 +177,9 @@
     </Compile>
     <Compile Include="Pages\Cartridgs\CartridgRecevingPage.xaml.cs">
       <DependentUpon>CartridgRecevingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\StatusKartridgsPage.xaml.cs">
+      <DependentUpon>StatusKartridgsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
@@ -250,6 +259,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Cartridgs\AddPrintersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\AddStatusCartridgs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Cartridgs\CartListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -275,6 +292,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Cartridgs\CartridgRecevingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\StatusKartridgsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

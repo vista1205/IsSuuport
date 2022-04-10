@@ -132,3 +132,9 @@ C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\Cartr
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartListPage.baml
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartIssuingPage.baml
 C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\CartridgRecevingPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddPrintersPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddStatusCartridgs.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\StatusKartridgsPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddPrintersPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\AddStatusCartridgs.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Cartridgs\StatusKartridgsPage.baml

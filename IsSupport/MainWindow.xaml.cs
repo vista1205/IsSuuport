@@ -84,5 +84,20 @@ namespace IsSupport
         {
             MyFrame.Content = new CartridgRecevingPage(3);
         }
+
+        private void PrintersAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new AddPrintersPage();
+        }
+
+        private void StatusCartridgs_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new StatusKartridgsPage();
+        }
+
+        private void AddStatusCartridgs_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new AddStatusCartridgs(null);
+        }
     }
 }

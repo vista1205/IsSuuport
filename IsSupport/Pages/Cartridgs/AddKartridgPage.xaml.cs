@@ -69,7 +69,7 @@ namespace IsSupport.Pages.Cartridgs
             }
             if (flag)
             {
-                erros.AppendLine("Необходимо указать уникальнгый номер картриджа!");
+                erros.AppendLine("Необходимо указать уникальный номер картриджа!");
             }
             if (_cartridgContext.Printers == null)
             {

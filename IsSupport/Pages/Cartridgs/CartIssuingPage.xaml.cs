@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-//using static IsSupport.Views.VMKartridgs;
+using static IsSupport.Views.VMKartridgs;
 
 namespace IsSupport.Pages.Cartridgs
 {
@@ -21,10 +21,6 @@ namespace IsSupport.Pages.Cartridgs
     /// </summary>
     public partial class CartReceivingAndIssuing : Page
     {
-        public class VMKartridjs
-        {
-            public Kartridjs Kartridjs { get; set; }
-        }
         public VMKartridjs VmKartridgs { get; set; }=new VMKartridjs();
         private List<Rooms> _rooms = new List<Rooms>();
         private List<Kartridjs> _kartridjs = new List<Kartridjs>();

@@ -28,11 +28,11 @@
                     <MenuItem x:Name="CartridgIssue" Header="Выдать" Click="CartridgIssue_Click"/>
                     <MenuItem x:Name="CartridgReceving" Header="Принять" Click="CartridgReceving_Click"/>
                     <MenuItem x:Name="CartridgeRefil" Header="Заправка" Click="CartridgeRefil_Click"/>
-                    <MenuItem Header="Добавить принтер"/>
+                    <MenuItem x:Name="PrintersAdd" Header="Добавить принтер" Click="PrintersAdd_Click"/>
                     <MenuItem Header="Отчёт"/>
                     <MenuItem Header="Статусы">
-                        <MenuItem Header="Список"/>
-                        <MenuItem Header="Добавить"/>
+                        <MenuItem x:Name="StatusCartridgs" Header="Список" Click="StatusCartridgs_Click"/>
+                        <MenuItem x:Name="AddStatusCartridgs" Header="Добавить" Click="AddStatusCartridgs_Click"/>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Кабинеты">

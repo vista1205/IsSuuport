@@ -54,5 +54,20 @@ namespace IsSupport
                 return "\\images\\Kartridj\\" + filename;
             }            
         }
+        public static string PrintersCopyImage(string pathimage, string filename)
+        {
+            string path = Environment.CurrentDirectory + "\\images\\Printers\\";
+            string newpath=path + filename;
+            FileInfo fi = new FileInfo(newpath);
+            if (fi.Exists)
+            {
+                return "\\images\\Printers\\" + filename;
+            }
+            else
+            {
+                File.Copy(pathimage+filename, newpath, true);
+                return "\\images\\Printers\\" + filename;
+            }
+        }
     }
 }
