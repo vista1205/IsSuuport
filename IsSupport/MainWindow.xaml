@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IsSupport"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="900" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="ThreeDBorderWindow">
+        Title="ИС Техническая поддержка Перспективы" Height="500" Width="900" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="ThreeDBorderWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -51,15 +51,15 @@
                         <MenuItem Header="Отчёт"/>
                     </MenuItem>
                     <MenuItem Header="Системный блок">
-                        <MenuItem Header="Список"/>
+                        <MenuItem x:Name="SystemUnitsList" Click="SystemUnitsList_Click" Header="Список"/>
                         <MenuItem Header="Добавить"/>
                         <MenuItem Header="Компоненты">
-                            <MenuItem Header="Список"/>
-                            <MenuItem Header="Добавить"/>
+                            <MenuItem x:Name="ComponentList" Click="ComponentList_Click" Header="Список"/>
+                            <MenuItem x:Name="ComponentAdd" Click="ComponentAdd_Click" Header="Добавить"/>
                         </MenuItem>
                         <MenuItem Header="Типы компонентов">
-                            <MenuItem Header="Список"/>
-                            <MenuItem Header="Добавить"/>
+                            <MenuItem x:Name="TypeComponentsList" Click="TypeComponentsList_Click" Header="Список"/>
+                            <MenuItem x:Name="TypeComponentAdd" Click="TypeComponentAdd_Click" Header="Добавить"/>
                         </MenuItem>
                         <MenuItem Header="Мыши">
                             <MenuItem Header="Список"/>
@@ -81,8 +81,8 @@
                         <MenuItem Header="Список"/>
                         <MenuItem Header="Добавить"/>
                         <MenuItem Header="ОС">
-                            <MenuItem Header="Список"/>
-                            <MenuItem Header="Добавить"/>
+                            <MenuItem Header="Список" Name="OSList" Click="OSList_Click"/>
+                            <MenuItem Header="Добавить" Name="AddNewOS" Click="AddNewOS_Click"/>
                         </MenuItem>
                     </MenuItem>                    
                 </MenuItem>

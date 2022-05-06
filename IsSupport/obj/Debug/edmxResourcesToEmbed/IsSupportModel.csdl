@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="IsSupportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Components">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TypeComponentID" Type="Int32" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="TypeComponent" Relationship="Self.FK_Components_TypeComponent" FromRole="Components" ToRole="TypeComponent" />
-    <NavigationProperty Name="SystemUnitComponents" Relationship="Self.FK_SystemUnitComponents_Components" FromRole="Components" ToRole="SystemUnitComponents" />
-  </EntityType>
   <EntityType Name="Computers">
     <Key>
       <PropertyRef Name="ID" />
@@ -23,7 +12,7 @@
     <NavigationProperty Name="Keyboards" Relationship="Self.FK_Keyboards_Computers" FromRole="Computers" ToRole="Keyboards" />
     <NavigationProperty Name="Monitors" Relationship="Self.FK_Monitors_Computers" FromRole="Computers" ToRole="Monitors" />
     <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_Computers" FromRole="Computers" ToRole="Mouse" />
-    <NavigationProperty Name="SystemUnits" Relationship="Self.FK_SystemUnits_Computers" FromRole="Computers" ToRole="SystemUnits" />
+    <NavigationProperty Name="SystemUnits" Relationship="IsSupportModel.FK_SystemUnits_Computers" FromRole="Computers" ToRole="SystemUnits" />
   </EntityType>
   <EntityType Name="Employees">
     <Key>
@@ -50,8 +39,8 @@
     <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="MultimediaSystemID" Type="Int32" />
     <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_Equipments_MultimediaSystems" FromRole="Equipments" ToRole="MultimediaSystems" />
-    <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Equipments_StatusDevice" FromRole="Equipments" ToRole="StatusDevice" />
     <NavigationProperty Name="TypesEquipment" Relationship="Self.FK_Equipments_TypesEquipment" FromRole="Equipments" ToRole="TypesEquipment" />
+    <NavigationProperty Name="StatusDevice" Relationship="IsSupportModel.FK_Equipments_StatusDevice" FromRole="Equipments" ToRole="StatusDevice" />
   </EntityType>
   <EntityType Name="HistoryKartridj">
     <Key>
@@ -103,7 +92,7 @@
     <Property Name="ComputerID" Type="Int32" />
     <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Computers" Relationship="Self.FK_Keyboards_Computers" FromRole="Keyboards" ToRole="Computers" />
-    <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Keyboards_StatusDevice" FromRole="Keyboards" ToRole="StatusDevice" />
+    <NavigationProperty Name="StatusDevice" Relationship="IsSupportModel.FK_Keyboards_StatusDevice" FromRole="Keyboards" ToRole="StatusDevice" />
   </EntityType>
   <EntityType Name="Monitors">
     <Key>
@@ -116,7 +105,7 @@
     <Property Name="ComputerID" Type="Int32" />
     <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Computers" Relationship="Self.FK_Monitors_Computers" FromRole="Monitors" ToRole="Computers" />
-    <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Monitors_StatusDevice" FromRole="Monitors" ToRole="StatusDevice" />
+    <NavigationProperty Name="StatusDevice" Relationship="IsSupportModel.FK_Monitors_StatusDevice" FromRole="Monitors" ToRole="StatusDevice" />
   </EntityType>
   <EntityType Name="Mouse">
     <Key>
@@ -128,7 +117,7 @@
     <Property Name="ComputerID" Type="Int32" />
     <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Computers" Relationship="Self.FK_Mouse_Computers" FromRole="Mouse" ToRole="Computers" />
-    <NavigationProperty Name="StatusDevice" Relationship="Self.FK_Mouse_StatusDevice" FromRole="Mouse" ToRole="StatusDevice" />
+    <NavigationProperty Name="StatusDevice" Relationship="IsSupportModel.FK_Mouse_StatusDevice" FromRole="Mouse" ToRole="StatusDevice" />
   </EntityType>
   <EntityType Name="MultimediaSystems">
     <Key>
@@ -184,18 +173,6 @@
     <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_MultimediaSystems_Rooms" FromRole="Rooms" ToRole="MultimediaSystems" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Rooms" FromRole="Rooms" ToRole="Orders" />
   </EntityType>
-  <EntityType Name="StatusDevice">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipments_StatusDevice" FromRole="StatusDevice" ToRole="Equipments" />
-    <NavigationProperty Name="Keyboards" Relationship="Self.FK_Keyboards_StatusDevice" FromRole="StatusDevice" ToRole="Keyboards" />
-    <NavigationProperty Name="Monitors" Relationship="Self.FK_Monitors_StatusDevice" FromRole="StatusDevice" ToRole="Monitors" />
-    <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_StatusDevice" FromRole="StatusDevice" ToRole="Mouse" />
-  </EntityType>
   <EntityType Name="StatusKartridj">
     <Key>
       <PropertyRef Name="ID" />
@@ -224,37 +201,13 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="SystemUnitComponents">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SystemUnitID" Type="Int32" Nullable="false" />
-    <Property Name="ComponentID" Type="Int32" Nullable="false" />
-    <Property Name="Count" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Components" Relationship="Self.FK_SystemUnitComponents_Components" FromRole="SystemUnitComponents" ToRole="Components" />
-    <NavigationProperty Name="SystemUnits" Relationship="Self.FK_SystemUnitComponents_SystemUnits" FromRole="SystemUnitComponents" ToRole="SystemUnits" />
-  </EntityType>
-  <EntityType Name="SystemUnits">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SeralNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="InventoryNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ComputerID" Type="Int32" />
-    <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Computers" Relationship="Self.FK_SystemUnits_Computers" FromRole="SystemUnits" ToRole="Computers" />
-    <NavigationProperty Name="SystemUnitComponents" Relationship="Self.FK_SystemUnitComponents_SystemUnits" FromRole="SystemUnits" ToRole="SystemUnitComponents" />
-  </EntityType>
   <EntityType Name="TypeComponent">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Components" Relationship="Self.FK_Components_TypeComponent" FromRole="TypeComponent" ToRole="Components" />
+    <NavigationProperty Name="Components" Relationship="IsSupportModel.FK_Components_TypeComponent" FromRole="TypeComponent" ToRole="Components" />
   </EntityType>
   <EntityType Name="TypesEquipment">
     <Key>
@@ -265,30 +218,6 @@
     <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipments_TypesEquipment" FromRole="TypesEquipment" ToRole="Equipments" />
   </EntityType>
-  <Association Name="FK_Components_TypeComponent">
-    <End Role="TypeComponent" Type="Self.TypeComponent" Multiplicity="1" />
-    <End Role="Components" Type="Self.Components" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TypeComponent">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Components">
-        <PropertyRef Name="TypeComponentID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SystemUnitComponents_Components">
-    <End Role="Components" Type="Self.Components" Multiplicity="1" />
-    <End Role="SystemUnitComponents" Type="Self.SystemUnitComponents" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Components">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemUnitComponents">
-        <PropertyRef Name="ComponentID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Computers_MultimediaSystems">
     <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="1" />
     <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
@@ -349,18 +278,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SystemUnits_Computers">
-    <End Role="Computers" Type="Self.Computers" Multiplicity="0..1" />
-    <End Role="SystemUnits" Type="Self.SystemUnits" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Computers">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemUnits">
-        <PropertyRef Name="ComputerID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Orders_Employees">
     <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -382,18 +299,6 @@
       </Principal>
       <Dependent Role="Equipments">
         <PropertyRef Name="MultimediaSystemID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Equipments_StatusDevice">
-    <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="0..1" />
-    <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StatusDevice">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Equipments">
-        <PropertyRef Name="StatusDeviceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -469,42 +374,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Keyboards_StatusDevice">
-    <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
-    <End Role="Keyboards" Type="Self.Keyboards" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StatusDevice">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Keyboards">
-        <PropertyRef Name="StatusDeviceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Monitors_StatusDevice">
-    <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
-    <End Role="Monitors" Type="Self.Monitors" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StatusDevice">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Monitors">
-        <PropertyRef Name="StatusDeviceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Mouse_StatusDevice">
-    <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
-    <End Role="Mouse" Type="Self.Mouse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StatusDevice">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Mouse">
-        <PropertyRef Name="StatusDeviceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_MultimediaSystems_Rooms">
     <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
     <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="*" />
@@ -541,20 +410,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SystemUnitComponents_SystemUnits">
-    <End Role="SystemUnits" Type="Self.SystemUnits" Multiplicity="1" />
-    <End Role="SystemUnitComponents" Type="Self.SystemUnitComponents" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SystemUnits">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="SystemUnitComponents">
-        <PropertyRef Name="ComponentID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="IsSupportContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Components" EntityType="Self.Components" />
     <EntitySet Name="Computers" EntityType="Self.Computers" />
     <EntitySet Name="Employees" EntityType="Self.Employees" />
     <EntitySet Name="Equipments" EntityType="Self.Equipments" />
@@ -569,22 +425,11 @@
     <EntitySet Name="OS" EntityType="Self.OS" />
     <EntitySet Name="Printers" EntityType="Self.Printers" />
     <EntitySet Name="Rooms" EntityType="Self.Rooms" />
-    <EntitySet Name="StatusDevice" EntityType="Self.StatusDevice" />
     <EntitySet Name="StatusKartridj" EntityType="Self.StatusKartridj" />
     <EntitySet Name="StatusOrders" EntityType="Self.StatusOrders" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <EntitySet Name="SystemUnitComponents" EntityType="Self.SystemUnitComponents" />
-    <EntitySet Name="SystemUnits" EntityType="Self.SystemUnits" />
     <EntitySet Name="TypeComponent" EntityType="Self.TypeComponent" />
     <EntitySet Name="TypesEquipment" EntityType="Self.TypesEquipment" />
-    <AssociationSet Name="FK_Components_TypeComponent" Association="Self.FK_Components_TypeComponent">
-      <End Role="TypeComponent" EntitySet="TypeComponent" />
-      <End Role="Components" EntitySet="Components" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SystemUnitComponents_Components" Association="Self.FK_SystemUnitComponents_Components">
-      <End Role="Components" EntitySet="Components" />
-      <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
-    </AssociationSet>
     <AssociationSet Name="FK_Computers_MultimediaSystems" Association="Self.FK_Computers_MultimediaSystems">
       <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
       <End Role="Computers" EntitySet="Computers" />
@@ -605,20 +450,12 @@
       <End Role="Computers" EntitySet="Computers" />
       <End Role="Mouse" EntitySet="Mouse" />
     </AssociationSet>
-    <AssociationSet Name="FK_SystemUnits_Computers" Association="Self.FK_SystemUnits_Computers">
-      <End Role="Computers" EntitySet="Computers" />
-      <End Role="SystemUnits" EntitySet="SystemUnits" />
-    </AssociationSet>
     <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK_Equipments_MultimediaSystems" Association="Self.FK_Equipments_MultimediaSystems">
       <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
-      <End Role="Equipments" EntitySet="Equipments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Equipments_StatusDevice" Association="Self.FK_Equipments_StatusDevice">
-      <End Role="StatusDevice" EntitySet="StatusDevice" />
       <End Role="Equipments" EntitySet="Equipments" />
     </AssociationSet>
     <AssociationSet Name="FK_Equipments_TypesEquipment" Association="Self.FK_Equipments_TypesEquipment">
@@ -645,18 +482,6 @@
       <End Role="StatusKartridj" EntitySet="StatusKartridj" />
       <End Role="Kartridjs" EntitySet="Kartridjs" />
     </AssociationSet>
-    <AssociationSet Name="FK_Keyboards_StatusDevice" Association="Self.FK_Keyboards_StatusDevice">
-      <End Role="StatusDevice" EntitySet="StatusDevice" />
-      <End Role="Keyboards" EntitySet="Keyboards" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Monitors_StatusDevice" Association="Self.FK_Monitors_StatusDevice">
-      <End Role="StatusDevice" EntitySet="StatusDevice" />
-      <End Role="Monitors" EntitySet="Monitors" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mouse_StatusDevice" Association="Self.FK_Mouse_StatusDevice">
-      <End Role="StatusDevice" EntitySet="StatusDevice" />
-      <End Role="Mouse" EntitySet="Mouse" />
-    </AssociationSet>
     <AssociationSet Name="FK_MultimediaSystems_Rooms" Association="Self.FK_MultimediaSystems_Rooms">
       <End Role="Rooms" EntitySet="Rooms" />
       <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
@@ -669,9 +494,202 @@
       <End Role="StatusOrders" EntitySet="StatusOrders" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_SystemUnitComponents_SystemUnits" Association="Self.FK_SystemUnitComponents_SystemUnits">
+    <EntitySet Name="StatusDevice" EntityType="IsSupportModel.StatusDevice" />
+    <EntitySet Name="SystemUnits" EntityType="IsSupportModel.SystemUnits" />
+    <AssociationSet Name="FK_SystemUnits_Computers" Association="IsSupportModel.FK_SystemUnits_Computers">
+      <End Role="Computers" EntitySet="Computers" />
+      <End Role="SystemUnits" EntitySet="SystemUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipments_StatusDevice" Association="IsSupportModel.FK_Equipments_StatusDevice">
+      <End Role="StatusDevice" EntitySet="StatusDevice" />
+      <End Role="Equipments" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Keyboards_StatusDevice" Association="IsSupportModel.FK_Keyboards_StatusDevice">
+      <End Role="StatusDevice" EntitySet="StatusDevice" />
+      <End Role="Keyboards" EntitySet="Keyboards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Monitors_StatusDevice" Association="IsSupportModel.FK_Monitors_StatusDevice">
+      <End Role="StatusDevice" EntitySet="StatusDevice" />
+      <End Role="Monitors" EntitySet="Monitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mouse_StatusDevice" Association="IsSupportModel.FK_Mouse_StatusDevice">
+      <End Role="StatusDevice" EntitySet="StatusDevice" />
+      <End Role="Mouse" EntitySet="Mouse" />
+    </AssociationSet>
+    <EntitySet Name="Components" EntityType="IsSupportModel.Components" />
+    <AssociationSet Name="FK_Components_TypeComponent" Association="IsSupportModel.FK_Components_TypeComponent">
+      <End Role="TypeComponent" EntitySet="TypeComponent" />
+      <End Role="Components" EntitySet="Components" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUnits_StatusDevice" Association="IsSupportModel.FK_SystemUnits_StatusDevice">
+      <End Role="StatusDevice" EntitySet="StatusDevice" />
+      <End Role="SystemUnits" EntitySet="SystemUnits" />
+    </AssociationSet>
+    <EntitySet Name="SystemUnitComponents" EntityType="IsSupportModel.SystemUnitComponents" />
+    <AssociationSet Name="FK_SystemUnitComponents_Components" Association="IsSupportModel.FK_SystemUnitComponents_Components">
+      <End Role="Components" EntitySet="Components" />
+      <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUnitComponents_SystemUnits" Association="IsSupportModel.FK_SystemUnitComponents_SystemUnits">
       <End Role="SystemUnits" EntitySet="SystemUnits" />
       <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="StatusDevice">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Equipments" Relationship="IsSupportModel.FK_Equipments_StatusDevice" FromRole="StatusDevice" ToRole="Equipments" />
+    <NavigationProperty Name="Keyboards" Relationship="IsSupportModel.FK_Keyboards_StatusDevice" FromRole="StatusDevice" ToRole="Keyboards" />
+    <NavigationProperty Name="Monitors" Relationship="IsSupportModel.FK_Monitors_StatusDevice" FromRole="StatusDevice" ToRole="Monitors" />
+    <NavigationProperty Name="Mouse" Relationship="IsSupportModel.FK_Mouse_StatusDevice" FromRole="StatusDevice" ToRole="Mouse" />
+    <NavigationProperty Name="SystemUnits" Relationship="IsSupportModel.FK_SystemUnits_StatusDevice" FromRole="StatusDevice" ToRole="SystemUnits" />
+  </EntityType>
+  <EntityType Name="SystemUnits">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SeralNumber" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="InventoryNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ComputerID" Type="Int32" />
+    <Property Name="StatusDeviceID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Computers" Relationship="IsSupportModel.FK_SystemUnits_Computers" FromRole="SystemUnits" ToRole="Computers" />
+    <NavigationProperty Name="StatusDevice" Relationship="IsSupportModel.FK_SystemUnits_StatusDevice" FromRole="SystemUnits" ToRole="StatusDevice" />
+    <NavigationProperty Name="SystemUnitComponents" Relationship="IsSupportModel.FK_SystemUnitComponents_SystemUnits" FromRole="SystemUnits" ToRole="SystemUnitComponents" />
+  </EntityType>
+  <Association Name="FK_SystemUnits_Computers">
+    <End Type="IsSupportModel.Computers" Role="Computers" Multiplicity="0..1" />
+    <End Type="IsSupportModel.SystemUnits" Role="SystemUnits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Computers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemUnits">
+        <PropertyRef Name="ComputerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipments_StatusDevice">
+    <End Type="IsSupportModel.StatusDevice" Role="StatusDevice" Multiplicity="0..1" />
+    <End Type="IsSupportModel.Equipments" Role="Equipments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDevice">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Equipments">
+        <PropertyRef Name="StatusDeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Keyboards_StatusDevice">
+    <End Type="IsSupportModel.StatusDevice" Role="StatusDevice" Multiplicity="1" />
+    <End Type="IsSupportModel.Keyboards" Role="Keyboards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDevice">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Keyboards">
+        <PropertyRef Name="StatusDeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Monitors_StatusDevice">
+    <End Type="IsSupportModel.StatusDevice" Role="StatusDevice" Multiplicity="1" />
+    <End Type="IsSupportModel.Monitors" Role="Monitors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDevice">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Monitors">
+        <PropertyRef Name="StatusDeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mouse_StatusDevice">
+    <End Type="IsSupportModel.StatusDevice" Role="StatusDevice" Multiplicity="1" />
+    <End Type="IsSupportModel.Mouse" Role="Mouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDevice">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Mouse">
+        <PropertyRef Name="StatusDeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Components">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TypeComponentID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TypeComponent" Relationship="IsSupportModel.FK_Components_TypeComponent" FromRole="Components" ToRole="TypeComponent" />
+    <NavigationProperty Name="SystemUnitComponents" Relationship="IsSupportModel.FK_SystemUnitComponents_Components" FromRole="Components" ToRole="SystemUnitComponents" />
+  </EntityType>
+  <Association Name="FK_Components_TypeComponent">
+    <End Type="IsSupportModel.TypeComponent" Role="TypeComponent" Multiplicity="1" />
+    <End Type="IsSupportModel.Components" Role="Components" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeComponent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Components">
+        <PropertyRef Name="TypeComponentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUnits_StatusDevice">
+    <End Type="IsSupportModel.StatusDevice" Role="StatusDevice" Multiplicity="1" />
+    <End Type="IsSupportModel.SystemUnits" Role="SystemUnits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDevice">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemUnits">
+        <PropertyRef Name="StatusDeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SystemUnitComponents">
+    <Key>
+      <PropertyRef Name="SystemUnitID" />
+      <PropertyRef Name="ComponentID" />
+    </Key>
+    <Property Name="SystemUnitID" Type="Int32" Nullable="false" />
+    <Property Name="ComponentID" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Components" Relationship="IsSupportModel.FK_SystemUnitComponents_Components" FromRole="SystemUnitComponents" ToRole="Components" />
+    <NavigationProperty Name="SystemUnits" Relationship="IsSupportModel.FK_SystemUnitComponents_SystemUnits" FromRole="SystemUnitComponents" ToRole="SystemUnits" />
+  </EntityType>
+  <Association Name="FK_SystemUnitComponents_Components">
+    <End Type="IsSupportModel.Components" Role="Components" Multiplicity="1" />
+    <End Type="IsSupportModel.SystemUnitComponents" Role="SystemUnitComponents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Components">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemUnitComponents">
+        <PropertyRef Name="ComponentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUnitComponents_SystemUnits">
+    <End Type="IsSupportModel.SystemUnits" Role="SystemUnits" Multiplicity="1" />
+    <End Type="IsSupportModel.SystemUnitComponents" Role="SystemUnitComponents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUnits">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemUnitComponents">
+        <PropertyRef Name="ComponentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -181,6 +181,30 @@
     <Compile Include="Pages\Cartridgs\StatusKartridgsPage.xaml.cs">
       <DependentUpon>StatusKartridgsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MultimediaSystem\ComponentsListPage.xaml.cs">
+      <DependentUpon>ComponentsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\ComponetAddPage.xaml.cs">
+      <DependentUpon>ComponetAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\OSAddPage.xaml.cs">
+      <DependentUpon>OSAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\OSListPage.xaml.cs">
+      <DependentUpon>OSListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\SystemUnitAddPage.xaml.cs">
+      <DependentUpon>SystemUnitAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\SystemUnitsListPage.xaml.cs">
+      <DependentUpon>SystemUnitsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\TypeComponentAddPage.xaml.cs">
+      <DependentUpon>TypeComponentAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\TypeComponentListPage.xaml.cs">
+      <DependentUpon>TypeComponentListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
@@ -296,6 +320,38 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Cartridgs\StatusKartridgsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\ComponentsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\ComponetAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\OSAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\OSListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\SystemUnitAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\SystemUnitsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\TypeComponentAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\TypeComponentListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

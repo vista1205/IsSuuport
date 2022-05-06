@@ -7,7 +7,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="TypeComponentID" Type="int" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar" MaxLength="350" />
   </EntityType>
   <EntityType Name="Computers">
     <Key>
@@ -184,9 +184,9 @@
   </EntityType>
   <EntityType Name="SystemUnitComponents">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="SystemUnitID" />
+      <PropertyRef Name="ComponentID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SystemUnitID" Type="int" Nullable="false" />
     <Property Name="ComponentID" Type="int" Nullable="false" />
     <Property Name="Count" Type="int" Nullable="false" />
@@ -505,6 +505,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_SystemUnits_StatusDevice">
+    <End Role="StatusDevice" Type="Self.StatusDevice" Multiplicity="1" />
+    <End Role="SystemUnits" Type="Self.SystemUnits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDevice">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SystemUnits">
+        <PropertyRef Name="StatusDeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище IsSupportModelContainer">
     <EntitySet Name="Components" EntityType="Self.Components" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Computers" EntityType="Self.Computers" Schema="dbo" store:Type="Tables" />
@@ -623,6 +635,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_SystemUnits_Computers" Association="Self.FK_SystemUnits_Computers">
       <End Role="Computers" EntitySet="Computers" />
+      <End Role="SystemUnits" EntitySet="SystemUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUnits_StatusDevice" Association="Self.FK_SystemUnits_StatusDevice">
+      <End Role="StatusDevice" EntitySet="StatusDevice" />
       <End Role="SystemUnits" EntitySet="SystemUnits" />
     </AssociationSet>
   </EntityContainer>

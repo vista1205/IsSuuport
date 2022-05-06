@@ -46,13 +46,13 @@
                    Style="{StaticResource TextBlockDefault}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        <TextBlock Text="Login"
+        <TextBlock Text="Логин"
                    Grid.Row="4"
                    Grid.Column="0"
                    Style="{StaticResource TextBlockDefault}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        <TextBlock Text="Password"
+        <TextBlock Text="Пароль"
                    Grid.Row="5"
                    Grid.Column="0"
                    Style="{StaticResource TextBlockDefault}"

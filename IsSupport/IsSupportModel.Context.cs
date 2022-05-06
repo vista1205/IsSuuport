@@ -25,7 +25,6 @@ namespace IsSupport
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Components> Components { get; set; }
         public virtual DbSet<Computers> Computers { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Equipments> Equipments { get; set; }
@@ -40,13 +39,14 @@ namespace IsSupport
         public virtual DbSet<OS> OS { get; set; }
         public virtual DbSet<Printers> Printers { get; set; }
         public virtual DbSet<Rooms> Rooms { get; set; }
-        public virtual DbSet<StatusDevice> StatusDevice { get; set; }
         public virtual DbSet<StatusKartridj> StatusKartridj { get; set; }
         public virtual DbSet<StatusOrders> StatusOrders { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<SystemUnitComponents> SystemUnitComponents { get; set; }
-        public virtual DbSet<SystemUnits> SystemUnits { get; set; }
         public virtual DbSet<TypeComponent> TypeComponent { get; set; }
         public virtual DbSet<TypesEquipment> TypesEquipment { get; set; }
+        public virtual DbSet<StatusDevice> StatusDevice { get; set; }
+        public virtual DbSet<SystemUnits> SystemUnits { get; set; }
+        public virtual DbSet<Components> Components { get; set; }
+        public virtual DbSet<SystemUnitComponents> SystemUnitComponents { get; set; }
     }
 }

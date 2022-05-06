@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IsSupport"
         mc:Ignorable="d"
-        Title="AddEmployee" Height="400" Width="550" WindowStartupLocation="CenterScreen">
+        Title="Авторизация" Height="400" Width="550" WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="MyFrameAddEmployee" Content="Frame" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
     </Grid>

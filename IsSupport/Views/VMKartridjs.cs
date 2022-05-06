@@ -13,4 +13,11 @@ namespace IsSupport.Views
             public Kartridjs Kartridjs { get; set; }
         }
     }
+    public class VMComponents
+    {
+        public class VMComponent
+        {
+            public Components Component { get; set; }
+        }
+    }
 }

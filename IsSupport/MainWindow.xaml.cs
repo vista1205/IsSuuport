@@ -1,5 +1,7 @@
 ﻿using IsSupport.Pages;
 using IsSupport.Pages.Cartridgs;
+using IsSupport.Pages.MultimediaSystem;
+using IsSupport.Pages.MultimediaSystems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,6 +100,41 @@ namespace IsSupport
         private void AddStatusCartridgs_Click(object sender, RoutedEventArgs e)
         {
             MyFrame.Content = new AddStatusCartridgs(null);
+        }
+
+        private void OSList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new OSListPage();
+        }
+
+        private void AddNewOS_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new OSAddPage();
+        }
+
+        private void SystemUnitsList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new SystemUnitsListPage();
+        }
+
+        private void TypeComponentsList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new TypeComponentListPage();
+        }
+
+        private void TypeComponentAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new TypeComponentAddPage();
+        }
+
+        private void ComponentList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new ComponentsListPage();
+        }
+
+        private void ComponentAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new ComponetAddPage();
         }
     }
 }

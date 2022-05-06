@@ -14,7 +14,6 @@ namespace IsSupport
     
     public partial class SystemUnitComponents
     {
-        public int ID { get; set; }
         public int SystemUnitID { get; set; }
         public int ComponentID { get; set; }
         public int Count { get; set; }
