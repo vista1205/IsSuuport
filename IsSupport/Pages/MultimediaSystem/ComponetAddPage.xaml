@@ -1,0 +1,31 @@
+﻿<Page x:Class="IsSupport.Pages.MultimediaSystem.ComponetAddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ComponetAddPage" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Наименование компонента" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Тип компонента" Style="{StaticResource TextBlockDefault}" Grid.Row="1"/>
+        <TextBlock Text="Описание компонента" Style="{StaticResource TextBlockDefault}" Grid.Row="2"/>
+        <TextBox x:Name="TbTitleComponent" Text="{Binding Title}" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxDefault}"/>
+        <ComboBox x:Name="CmbListTypeComponent" DisplayMemberPath="Title" SelectedItem="{Binding TypeComponent}" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="TbDescription" Text="{Binding Description}" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="BtnAddComponent" Content="Сохранить" Grid.Row="4" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddComponent_Click"/>
+        <Button x:Name="BtnCancel" Content="Отмена" Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonStatusCartridg}" Click="BtnCancel_Click"/>
+    </Grid>
+</Page>

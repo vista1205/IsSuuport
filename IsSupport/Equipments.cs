@@ -24,7 +24,7 @@ namespace IsSupport
         public Nullable<int> MultimediaSystemID { get; set; }
     
         public virtual MultimediaSystems MultimediaSystems { get; set; }
-        public virtual StatusDevice StatusDevice { get; set; }
         public virtual TypesEquipment TypesEquipment { get; set; }
+        public virtual StatusDevice StatusDevice { get; set; }
     }
 }

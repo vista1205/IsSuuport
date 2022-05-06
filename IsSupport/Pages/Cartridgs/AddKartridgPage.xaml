@@ -1,0 +1,46 @@
+﻿<Page x:Class="IsSupport.Pages.Cartridgs.AddKartridgPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddKartridgPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Название картриджа" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Номер картриджа" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Выберите принтер для картриджа" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Выберите изображение" Style="{StaticResource TextBlockDefault}"/>
+        <TextBox x:Name="TitleBoxKartridg" Text="{Binding Title}" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxDefault}"/>
+        <TextBox x:Name="NumberOfKartridjBoxKartridg" Text="{Binding NumberOfKartridj}" Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxDefault}"/>
+        <ComboBox x:Name="CmbPrinterName" SelectedItem="{Binding Printers}" Grid.Row="2" Grid.Column="1" DisplayMemberPath="Title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <WrapPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1">
+            <!--<Button Name="BtnAddImageKartridg" Content="Выбрать" Style="{StaticResource ButtonDefault}"/>
+            <Image Source="{Binding ImagePath, TargetNullValue=picture.png}" Width="100" Height="100"></Image>-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="BtnAddImageKartridg" Click="BtnAddImageKartridg_Click" Grid.Column="0" Content="Выбрать" Style="{StaticResource ButtonDefault}"/>
+                <Image x:Name="PreviewImage" Margin="5,2,0,0" Stretch="Fill" Grid.Column="2" Width="100" Height="100"></Image>
+            </Grid>            
+        </WrapPanel>
+        <Button Name="BtnAddKartridg" Margin="5,2,5,0" Click="BtnAddKartridg_Click" Grid.Column="0" Grid.Row="4" Content="Добавить" Style="{StaticResource ButtonDefault}"/>
+        <Button Name="BtnCancelKartridg" Margin="5,2,5,0" Click="BtnCancelKartridg_Click" Grid.Column="1" Grid.Row="4" Content="Отмена" Style="{StaticResource ButtonDefault}"/>
+    </Grid>
+</Page>

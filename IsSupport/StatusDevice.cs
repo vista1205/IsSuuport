@@ -21,6 +21,7 @@ namespace IsSupport
             this.Keyboards = new HashSet<Keyboards>();
             this.Monitors = new HashSet<Monitors>();
             this.Mouse = new HashSet<Mouse>();
+            this.SystemUnits = new HashSet<SystemUnits>();
         }
     
         public int ID { get; set; }
@@ -35,5 +36,7 @@ namespace IsSupport
         public virtual ICollection<Monitors> Monitors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mouse> Mouse { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SystemUnits> SystemUnits { get; set; }
     }
 }

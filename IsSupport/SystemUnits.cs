@@ -28,6 +28,7 @@ namespace IsSupport
         public int StatusDeviceID { get; set; }
     
         public virtual Computers Computers { get; set; }
+        public virtual StatusDevice StatusDevice { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SystemUnitComponents> SystemUnitComponents { get; set; }
     }

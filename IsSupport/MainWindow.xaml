@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IsSupport"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="900" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="ThreeDBorderWindow">
+        Title="ИС Техническая поддержка Перспективы" Height="500" Width="900" Closed="Window_Closed" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowStyle="ThreeDBorderWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -14,7 +14,90 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Menu x:Name="MainMenu" Width="auto" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Time New Roman" FontSize="14" FontWeight="Bold">
                 <MenuItem Header="Главная">
-                    <MenuItem Header="Выход"/>                    
+                    <MenuItem x:Name="Logout" Header="Выход из профиля" Click="Logout_Click"/>
+                    <MenuItem x:Name="Exit" Header="Выход" Click="Exit_Click"/>                    
+                </MenuItem>
+                <MenuItem Header="Заявки">
+                    <MenuItem x:Name="ListOrdersMenu" Click="ListOrdersMenu_Click" Header="Список"/>
+                    <MenuItem x:Name="AddOrdersPageMenu" Click="AddOrdersPageMenu_Click" Header="Зарегестрировать"/>
+                    <MenuItem Header="Отчёт"/>
+                </MenuItem>
+                <MenuItem Header="Картриджи">
+                    <MenuItem x:Name="ListCartridgeMenu" Click="ListCartridgeMenu_Click" Header="Список"/>
+                    <MenuItem x:Name="AddKartridg" Header="Добавить" Click="AddKartridg_Click"/>
+                    <MenuItem x:Name="CartridgIssue" Header="Выдать" Click="CartridgIssue_Click"/>
+                    <MenuItem x:Name="CartridgReceving" Header="Принять" Click="CartridgReceving_Click"/>
+                    <MenuItem x:Name="CartridgeRefil" Header="Заправка" Click="CartridgeRefil_Click"/>
+                    <MenuItem x:Name="PrintersAdd" Header="Добавить принтер" Click="PrintersAdd_Click"/>
+                    <MenuItem Header="Отчёт"/>
+                    <MenuItem Header="Статусы">
+                        <MenuItem x:Name="StatusCartridgs" Header="Список" Click="StatusCartridgs_Click"/>
+                        <MenuItem x:Name="AddStatusCartridgs" Header="Добавить" Click="AddStatusCartridgs_Click"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Кабинеты">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Мультимедийная система">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавиьт"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Оборудование">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Клавиатуры">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="Отчёт"/>
+                    </MenuItem>
+                    <MenuItem Header="Системный блок">
+                        <MenuItem x:Name="SystemUnitsList" Click="SystemUnitsList_Click" Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="Компоненты">
+                            <MenuItem x:Name="ComponentList" Click="ComponentList_Click" Header="Список"/>
+                            <MenuItem x:Name="ComponentAdd" Click="ComponentAdd_Click" Header="Добавить"/>
+                        </MenuItem>
+                        <MenuItem Header="Типы компонентов">
+                            <MenuItem x:Name="TypeComponentsList" Click="TypeComponentsList_Click" Header="Список"/>
+                            <MenuItem x:Name="TypeComponentAdd" Click="TypeComponentAdd_Click" Header="Добавить"/>
+                        </MenuItem>
+                        <MenuItem Header="Мыши">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                            <MenuItem Header="Отчёт"/>
+                        </MenuItem>
+                        <MenuItem Header="Мониторы">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                            <MenuItem Header="Отчёт"/>
+                        </MenuItem>
+                        <MenuItem Header="Статус устройства">
+                            <MenuItem Header="Список"/>
+                            <MenuItem Header="Добавить"/>
+                        </MenuItem>
+                        <MenuItem Header="Отчёт"/>
+                    </MenuItem>
+                    <MenuItem Header="Компьютер">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="ОС">
+                            <MenuItem Header="Список" Name="OSList" Click="OSList_Click"/>
+                            <MenuItem Header="Добавить" Name="AddNewOS" Click="AddNewOS_Click"/>
+                        </MenuItem>
+                    </MenuItem>                    
+                </MenuItem>
+                <MenuItem Header="Прочее оборудование">
+                    <MenuItem Header="Список"/>
+                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Статус устройства">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                    </MenuItem>
+                    <MenuItem Header="Тип оборудования">
+                        <MenuItem Header="Список"/>
+                        <MenuItem Header="Добавить"/>
+                        <MenuItem Header="Отчёт"/>
+                    </MenuItem>
                 </MenuItem>
             </Menu>
         </StackPanel>

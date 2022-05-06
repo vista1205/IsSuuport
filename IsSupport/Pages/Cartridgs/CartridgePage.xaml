@@ -1,0 +1,78 @@
+﻿<Page x:Class="IsSupport.Pages.CartridgePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CartridgePage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="Сотриторвка по принтеру" Margin="5,2,0,0"/>
+            <ComboBox Name="CmbPrintFilter" SelectedIndex="0" DisplayMemberPath="Title" SelectionChanged="CmbPrintFilter_SelectionChanged" Margin="5,2,0,0"/>
+            <TextBlock Text="Посик по номеру картриджа" Margin="5,2,0,0"/>
+            <TextBox x:Name="SearchBox" KeyUp="SearchBox_KeyUp" Width="100" Margin="15,2,0,0"/>
+        </WrapPanel>
+        <DataGrid x:Name="DGridCartridgeList" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding ImagePath, TargetNullValue=picture.png}" Width="100" Height="100"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Номер картриджа" Binding="{Binding NumberOfKartridj}" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Тип Принтера" Binding="{Binding Printers.Title}" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Дата приобретения" Binding="{Binding DatePay, StringFormat=\{0:dd.MM.yy HH:mm\}}" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="KartIssue" Content="Выдать"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <WrapPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Margin="5,2,0,0" TextWrapping="Wrap" Text="Добавить новый картридж" VerticalAlignment="Center"/>
+            <Button Name="AddKartridg" Content="Добавить" Margin="5,2,0,2" Style="{StaticResource ButtonDefault}"/>
+        </WrapPanel>
+    </Grid>
+</Page>

@@ -12,7 +12,7 @@ namespace IsSupport
     using System;
     using System.Collections.Generic;
     using System.Text.Json.Serialization;
-
+    
     public partial class Employees
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

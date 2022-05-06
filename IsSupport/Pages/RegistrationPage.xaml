@@ -46,13 +46,13 @@
                    Style="{StaticResource TextBlockDefault}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        <TextBlock Text="Login"
+        <TextBlock Text="Логин"
                    Grid.Row="4"
                    Grid.Column="0"
                    Style="{StaticResource TextBlockDefault}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        <TextBlock Text="Password"
+        <TextBlock Text="Пароль"
                    Grid.Row="5"
                    Grid.Column="0"
                    Style="{StaticResource TextBlockDefault}"
@@ -92,14 +92,15 @@
                  Style="{StaticResource PasswordBoxDefault}"
                  VerticalAlignment="Center"
                  HorizontalAlignment="Center"/>
-        <Button x:Name="RegistrationButton"
+        <!--<Button x:Name="RegistrationButton"
                 Content="Зарегестрироваться"
                 Grid.Row="6"
                 Grid.Column="0"                
                 Click="RegistrationButton_Click"
                 Style="{StaticResource ButtonDefault}"
                 VerticalAlignment="Center"
-                HorizontalAlignment="Center"/>
+                HorizontalAlignment="Center"/>-->
+        <Button x:Name="OpenImage" Content="Добавить картинку" Style="{StaticResource ButtonDefault}" Grid.Row="6" Grid.Column="0" Margin="10" Click="OpenImage_Click"/>
         <Button x:Name="BackButton"
                 Content="Отмена"
                 Grid.Row="6"

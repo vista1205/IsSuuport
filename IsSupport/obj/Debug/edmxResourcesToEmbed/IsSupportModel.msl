@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище IsSupportModelContainer" CdmEntityContainer="IsSupportContext">
-    <EntitySetMapping Name="Components">
-      <EntityTypeMapping TypeName="IsSupportModel.Components">
-        <MappingFragment StoreEntitySet="Components">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="TypeComponentID" ColumnName="TypeComponentID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Computers">
       <EntityTypeMapping TypeName="IsSupportModel.Computers">
         <MappingFragment StoreEntitySet="Computers">
@@ -164,15 +154,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="StatusDevice">
-      <EntityTypeMapping TypeName="IsSupportModel.StatusDevice">
-        <MappingFragment StoreEntitySet="StatusDevice">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="StatusKartridj">
       <EntityTypeMapping TypeName="IsSupportModel.StatusKartridj">
         <MappingFragment StoreEntitySet="StatusKartridj">
@@ -202,28 +183,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SystemUnitComponents">
-      <EntityTypeMapping TypeName="IsSupportModel.SystemUnitComponents">
-        <MappingFragment StoreEntitySet="SystemUnitComponents">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="SystemUnitID" ColumnName="SystemUnitID" />
-          <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
-          <ScalarProperty Name="Count" ColumnName="Count" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SystemUnits">
-      <EntityTypeMapping TypeName="IsSupportModel.SystemUnits">
-        <MappingFragment StoreEntitySet="SystemUnits">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="SeralNumber" ColumnName="SeralNumber" />
-          <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
-          <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
-          <ScalarProperty Name="StatusDeviceID" ColumnName="StatusDeviceID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TypeComponent">
       <EntityTypeMapping TypeName="IsSupportModel.TypeComponent">
         <MappingFragment StoreEntitySet="TypeComponent">
@@ -238,6 +197,46 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusDevice">
+      <EntityTypeMapping TypeName="IsSupportModel.StatusDevice">
+        <MappingFragment StoreEntitySet="StatusDevice">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUnits">
+      <EntityTypeMapping TypeName="IsSupportModel.SystemUnits">
+        <MappingFragment StoreEntitySet="SystemUnits">
+          <ScalarProperty Name="StatusDeviceID" ColumnName="StatusDeviceID" />
+          <ScalarProperty Name="ComputerID" ColumnName="ComputerID" />
+          <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+          <ScalarProperty Name="SeralNumber" ColumnName="SeralNumber" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Components">
+      <EntityTypeMapping TypeName="IsSupportModel.Components">
+        <MappingFragment StoreEntitySet="Components">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeComponentID" ColumnName="TypeComponentID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUnitComponents">
+      <EntityTypeMapping TypeName="IsSupportModel.SystemUnitComponents">
+        <MappingFragment StoreEntitySet="SystemUnitComponents">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
+          <ScalarProperty Name="SystemUnitID" ColumnName="SystemUnitID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

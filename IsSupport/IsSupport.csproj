@@ -148,12 +148,70 @@
     <Compile Include="Pages\AutorizationPage.xaml.cs">
       <DependentUpon>AutorizationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Cartridgs\AddKartridgPage.xaml.cs">
+      <DependentUpon>AddKartridgPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\AddPrintersPage.xaml.cs">
+      <DependentUpon>AddPrintersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\AddStatusCartridgs.xaml.cs">
+      <DependentUpon>AddStatusCartridgs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartListPage.xaml.cs">
+      <DependentUpon>CartListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartIssuingPage.xaml.cs">
+      <DependentUpon>CartIssuingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgeIssueListPage.xaml.cs">
+      <DependentUpon>CartridgeIssueListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgePage.xaml.cs">
+      <DependentUpon>CartridgePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgeRefuelListPage.xaml.cs">
+      <DependentUpon>CartridgeRefuelListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgeWaitingListPage.xaml.cs">
+      <DependentUpon>CartridgeWaitingListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\CartridgRecevingPage.xaml.cs">
+      <DependentUpon>CartridgRecevingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cartridgs\StatusKartridgsPage.xaml.cs">
+      <DependentUpon>StatusKartridgsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\ComponentsListPage.xaml.cs">
+      <DependentUpon>ComponentsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\ComponetAddPage.xaml.cs">
+      <DependentUpon>ComponetAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\OSAddPage.xaml.cs">
+      <DependentUpon>OSAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\OSListPage.xaml.cs">
+      <DependentUpon>OSListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\SystemUnitAddPage.xaml.cs">
+      <DependentUpon>SystemUnitAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\SystemUnitsListPage.xaml.cs">
+      <DependentUpon>SystemUnitsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\TypeComponentAddPage.xaml.cs">
+      <DependentUpon>TypeComponentAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\TypeComponentListPage.xaml.cs">
+      <DependentUpon>TypeComponentListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Partial.cs" />
     <Compile Include="Printers.cs">
       <DependentUpon>IsSupportModel.tt</DependentUpon>
     </Compile>
@@ -185,6 +243,7 @@
       <DependentUpon>IsSupportModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserSecret.cs" />
+    <Compile Include="Views\VMKartridjs.cs" />
     <Page Include="AddEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +276,82 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AutorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\AddKartridgPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\AddPrintersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\AddStatusCartridgs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartIssuingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgeIssueListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgeRefuelListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgeWaitingListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\CartridgRecevingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Cartridgs\StatusKartridgsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\ComponentsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\ComponetAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\OSAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\OSListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\SystemUnitAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\SystemUnitsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\TypeComponentAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\TypeComponentListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -278,6 +413,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
