@@ -41,7 +41,7 @@ namespace IsSupport.Pages.MultimediaSystem
 
         private void BtnAddSystemUnit_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new SystemUnitAddPage());
         }
 
         private void BtnEditSystemUnit_Click(object sender, RoutedEventArgs e)

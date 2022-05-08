@@ -187,11 +187,41 @@
     <Compile Include="Pages\MultimediaSystem\ComponetAddPage.xaml.cs">
       <DependentUpon>ComponetAddPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MultimediaSystem\EquipmentsAddPage.xaml.cs">
+      <DependentUpon>EquipmentsAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\EquipmentsListPage.xaml.cs">
+      <DependentUpon>EquipmentsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\KeyboardsAddPage.xaml.cs">
+      <DependentUpon>KeyboardsAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\KeyboardsListPage.xaml.cs">
+      <DependentUpon>KeyboardsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\MonitorAddPage.xaml.cs">
+      <DependentUpon>MonitorAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\MonitorsListPage.xaml.cs">
+      <DependentUpon>MonitorsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\MouseAddPage.xaml.cs">
+      <DependentUpon>MouseAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\MouseListPage.xaml.cs">
+      <DependentUpon>MouseListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MultimediaSystem\OSAddPage.xaml.cs">
       <DependentUpon>OSAddPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MultimediaSystem\OSListPage.xaml.cs">
       <DependentUpon>OSListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\StatusDeviceAddPage.xaml.cs">
+      <DependentUpon>StatusDeviceAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\StatusDeviceListPage.xaml.cs">
+      <DependentUpon>StatusDeviceListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MultimediaSystem\SystemUnitAddPage.xaml.cs">
       <DependentUpon>SystemUnitAddPage.xaml</DependentUpon>
@@ -204,6 +234,12 @@
     </Compile>
     <Compile Include="Pages\MultimediaSystem\TypeComponentListPage.xaml.cs">
       <DependentUpon>TypeComponentListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\TypesEquipmentAddPage.xaml.cs">
+      <DependentUpon>TypesEquipmentAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\TypesEquipmentListPage.xaml.cs">
+      <DependentUpon>TypesEquipmentListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
@@ -331,11 +367,51 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\MultimediaSystem\EquipmentsAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\EquipmentsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\KeyboardsAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\KeyboardsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\MonitorAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\MonitorsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\MouseAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\MouseListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MultimediaSystem\OSAddPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MultimediaSystem\OSListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\StatusDeviceAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\StatusDeviceListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -352,6 +428,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MultimediaSystem\TypeComponentListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\TypesEquipmentAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\TypesEquipmentListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

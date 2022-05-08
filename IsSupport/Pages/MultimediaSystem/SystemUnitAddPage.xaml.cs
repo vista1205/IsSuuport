@@ -20,9 +20,14 @@ namespace IsSupport.Pages.MultimediaSystem
     /// </summary>
     public partial class SystemUnitAddPage : Page
     {
+        SystemUnits _systemUnits = new SystemUnits();
         public SystemUnitAddPage()
         {
             InitializeComponent();
+            CmbListComponents.ItemsSource = Helper.GetIsSupportContext().Components.ToList();
+            CmbListComputers.ItemsSource = Helper.GetIsSupportContext().Computers.ToList();
+            CmbListStatusDevice.ItemsSource=Helper.GetIsSupportContext().StatusDevice.ToList();
+            DataContext = _systemUnits;
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -30,13 +35,31 @@ namespace IsSupport.Pages.MultimediaSystem
             if (Visibility == Visibility.Visible)
             {
                 Helper.GetIsSupportContext().ChangeTracker.Entries().ToList().ForEach(x => x.Reload());
-                
+               // DgrListComponents.ItemsSource = _systemUnitComponents.ToList();
             }
         }
 
+        List<SystemUnitComponents> _systemUnitComponents = new List<SystemUnitComponents>();
         private void BtnAddComponent_Click(object sender, RoutedEventArgs e)
         {
+            var selectedComponent = CmbListComponents.SelectedItem as Components;
+            SystemUnitComponents systemUnitComponents = new SystemUnitComponents()
+            {
+                Count = Int32.Parse(TbCountComponents.Text),
+                ComponentID = selectedComponent.ID,
+            };
+            _systemUnitComponents.Add(systemUnitComponents);
+            //DgrListComponents.ItemsSource=_systemUnitComponents.ToList();
+        }
 
+        private void BtnAddSystemUnit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

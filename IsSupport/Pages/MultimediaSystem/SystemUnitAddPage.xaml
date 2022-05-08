@@ -16,6 +16,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -28,20 +29,24 @@
         <TextBlock Text="Выберите Компьютер" Grid.Row="3" Style="{StaticResource TextBlockDefault}"/>
         <TextBlock Text="Статус системного блока" Grid.Row="4" Style="{StaticResource TextBlockDefault}"/>
         <TextBlock Text="Выберите компоненты" Grid.Row="5" Style="{StaticResource TextBlockDefault}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SeralNumber}" Style="{StaticResource TextBoxDefault}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding InventoryNumber}" Style="{StaticResource TextBoxDefault}"/>
+        <TextBox Name="TbTitle" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
+        <TextBox Name="TbSerialNumber" Grid.Row="1" Grid.Column="1" Text="{Binding SeralNumber}" Style="{StaticResource TextBoxDefault}"/>
+        <TextBox Name="TbInventoryNumber" Grid.Row="2" Grid.Column="1" Text="{Binding InventoryNumber}" Style="{StaticResource TextBoxDefault}"/>
         <ComboBox x:Name="CmbListComputers" Grid.Column="1" Grid.Row="3" DisplayMemberPath="ID" ItemsSource="{Binding Computers}"/>
         <ComboBox x:Name="CmbListStatusDevice" Grid.Row="4" Grid.Column="1" DisplayMemberPath="Title" ItemsSource="{Binding StatusDevice}"/>
         <WrapPanel Orientation="Vertical" Grid.Row="5" Grid.Column="1">
-            <ComboBox x:Name="CmbListComponents" Grid.Row="5" Grid.Column="1" DisplayMemberPath="Title" ItemsSource="{Binding Components}"/>
+            <ComboBox x:Name="CmbListComponents" DisplayMemberPath="Title" ItemsSource="{Binding Components}"/>
+            <TextBox Name="TbCountComponents" Style="{StaticResource TextBoxDefault}"/>
             <Button x:Name="BtnAddComponent" Content="Добавить" Style="{StaticResource ButtonDefault}" Click="BtnAddComponent_Click"/>
         </WrapPanel>
-        <DataGrid x:Name="DgrListComponents" Grid.Column="2" Grid.RowSpan="6">
+        <!--<DataGrid x:Name="DgrListComponents" Grid.Column="2" Grid.RowSpan="6" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="100" Header="Тип"/>
-                <DataGridTextColumn Width="100" Header="Название"/>
+                <DataGridTextColumn Width="100" Header="Тип" Binding="{Binding TypeComponentID}"/>
+                <DataGridTextColumn Width="100" Header="Название" Binding="{Binding ComponentID}"/>
+                <DataGridTextColumn Width="50" Header="Кол-во" Binding="{Binding Count}"/>
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>-->
+        <Button Name="BtnAddSystemUnit" Grid.Row="6" Content="Сохранить" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddSystemUnit_Click"/>
+        <Button Name="BtnCancel" Grid.Row="6" Grid.Column="2" Content="Отмена" Style="{StaticResource ButtonStatusCartridg}" Click="BtnCancel_Click"/>
     </Grid>
 </Page>

@@ -1,7 +1,6 @@
 ﻿using IsSupport.Pages;
 using IsSupport.Pages.Cartridgs;
 using IsSupport.Pages.MultimediaSystem;
-using IsSupport.Pages.MultimediaSystems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -135,6 +134,46 @@ namespace IsSupport
         private void ComponentAdd_Click(object sender, RoutedEventArgs e)
         {
             MyFrame.Content = new ComponetAddPage();
+        }
+
+        private void StatusDeviceList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new StatusDeviceListPage();
+        }
+
+        private void StatusDeviceAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new StatusDeviceAddPage();
+        }
+
+        private void KeyboardsList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new KeyboardsListPage();
+        }
+
+        private void KeyboardAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new KeyboardsAddPage();
+        }
+
+        private void MouseList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new MouseListPage();
+        }
+
+        private void MouseAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new MouseAddPage();
+        }
+
+        private void MonitorsList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new MonitorsListPage();
+        }
+
+        private void AddMonitor_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new MonitorAddPage();
         }
     }
 }

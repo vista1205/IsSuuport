@@ -1,0 +1,37 @@
+﻿<Page x:Class="IsSupport.Pages.MultimediaSystem.MonitorAddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MonitorAddPage" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Наименование мыши" Grid.Row="0" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Серийный номер" Grid.Row="1" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Инвентарный номер" Grid.Row="2" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Компютер" Grid.Row="3" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Статус мыши" Grid.Row="4" Style="{StaticResource TextBlockDefault}"/>
+        <TextBox Name="TbTitleMonitor" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}" Grid.Row="0" Grid.Column="1"/>
+        <TextBox Name="TbSerialNumberMonitor" Text="{Binding SerialNumber}" Style="{StaticResource TextBoxDefault}" Grid.Row="1" Grid.Column="1"/>
+        <TextBox Name="TbInventoryNumberMonitor" Text="{Binding InventoryNumber}" Style="{StaticResource TextBoxDefault}" Grid.Row="2" Grid.Column="1"/>
+        <ComboBox Name="CmbListComputer" DisplayMemberPath="ID" SelectedItem="{Binding Computers}" Grid.Row="3" Grid.Column="3"/>
+        <ComboBox Name="CmbListStatusDevice" DisplayMemberPath="Title" SelectedItem="{Binding StatusDevice}" Grid.Row="4" Grid.Column="1"/>
+        <Button Name="BtnAddMonitor" Grid.Row="5" Content="Сохранить" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddMonitor_Click"/>
+        <Button Name="BtnCancel" Grid.Row="6" Grid.Column="1" Content="Отмена" Style="{StaticResource ButtonStatusCartridg}" Click="BtnCancel_Click"/>
+    </Grid>
+</Page>

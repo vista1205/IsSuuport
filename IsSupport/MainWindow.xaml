@@ -46,8 +46,8 @@
                 <MenuItem Header="Оборудование">
                     <MenuItem Header="Список"/>
                     <MenuItem Header="Клавиатуры">
-                        <MenuItem Header="Список"/>
-                        <MenuItem Header="Добавить"/>
+                        <MenuItem x:Name="KeyboardsList" Click="KeyboardsList_Click" Header="Список"/>
+                        <MenuItem x:Name="KeyboardAdd" Click="KeyboardAdd_Click" Header="Добавить"/>
                         <MenuItem Header="Отчёт"/>
                     </MenuItem>
                     <MenuItem Header="Системный блок">
@@ -62,18 +62,18 @@
                             <MenuItem x:Name="TypeComponentAdd" Click="TypeComponentAdd_Click" Header="Добавить"/>
                         </MenuItem>
                         <MenuItem Header="Мыши">
-                            <MenuItem Header="Список"/>
-                            <MenuItem Header="Добавить"/>
+                            <MenuItem x:Name="MouseList" Click="MouseList_Click" Header="Список"/>
+                            <MenuItem x:Name="MouseAdd" Click="MouseAdd_Click" Header="Добавить"/>
                             <MenuItem Header="Отчёт"/>
                         </MenuItem>
                         <MenuItem Header="Мониторы">
-                            <MenuItem Header="Список"/>
-                            <MenuItem Header="Добавить"/>
+                            <MenuItem x:Name="MonitorsList" Click="MonitorsList_Click" Header="Список"/>
+                            <MenuItem x:Name="AddMonitor" Click="AddMonitor_Click" Header="Добавить"/>
                             <MenuItem Header="Отчёт"/>
                         </MenuItem>
                         <MenuItem Header="Статус устройства">
-                            <MenuItem Header="Список"/>
-                            <MenuItem Header="Добавить"/>
+                            <MenuItem x:Name="StatusDeviceList" Click="StatusDeviceList_Click" Header="Список"/>
+                            <MenuItem x:Name="StatusDeviceAdd" Click="StatusDeviceAdd_Click" Header="Добавить"/>
                         </MenuItem>
                         <MenuItem Header="Отчёт"/>
                     </MenuItem>

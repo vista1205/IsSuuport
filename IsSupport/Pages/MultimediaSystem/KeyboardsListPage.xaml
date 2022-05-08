@@ -1,0 +1,40 @@
+﻿<Page x:Class="IsSupport.Pages.MultimediaSystem.KeyboardsListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="KeyboardsListPage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBlock Text="Сотриторвка по статусу" Margin="5,2,0,0"/>
+            <ComboBox Name="CmbListStatusDevice" DisplayMemberPath="Title" SelectionChanged="CmbListStatusDevice_SelectionChanged" Margin="5,2,0,0"/>
+            <TextBlock Text="Поиск по наименованию" Margin="5,2,0,0"/>
+            <TextBox x:Name="SearchBoxTitle" KeyUp="SearchBoxTitle_KeyUp" Width="100" Margin="15,2,0,0"/>
+        </WrapPanel>
+        <DataGrid Name="DgrListKeyboards" AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="200" Header="Наименование" Binding="{Binding Title}"/>
+                <DataGridTextColumn Width="150" Header="Серийный номер" Binding="{Binding SerialNumber}"/>
+                <DataGridTextColumn Width="100" Header="Компютер" Binding="{Binding Computers.ID}"/>
+                <DataGridTextColumn Width="250" Header="Статус" Binding="{Binding StatusDevice.Title}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button x:Name="BtnAddKeyboard" Click="BtnAddKeyboard_Click" Content="Добавить" Style="{StaticResource SystemUnitsButton}"/>
+            <Button x:Name="BtnEditKeyboard" Click="BtnEditKeyboard_Click" Content="Изменить" Style="{StaticResource SystemUnitsButton}"/>
+            <Button x:Name="BtnCancelKeyboard" Click="BtnCancelKeyboard_Click" Content="Назад" Style="{StaticResource SystemUnitsButton}"/>
+        </StackPanel>
+    </Grid>
+</Page>

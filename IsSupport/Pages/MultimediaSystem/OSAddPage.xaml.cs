@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IsSupport.Pages.MultimediaSystems
+namespace IsSupport.Pages.MultimediaSystem
 {
     /// <summary>
     /// Логика взаимодействия для OSAddPage.xaml
