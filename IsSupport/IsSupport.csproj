@@ -247,6 +247,12 @@
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Room\RoomAddPage.xaml.cs">
+      <DependentUpon>RoomAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Room\RoomListPage.xaml.cs">
+      <DependentUpon>RoomListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Partial.cs" />
     <Compile Include="Printers.cs">
       <DependentUpon>IsSupportModel.tt</DependentUpon>
@@ -444,6 +450,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Room\RoomAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Room\RoomListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

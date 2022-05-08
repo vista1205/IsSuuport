@@ -36,8 +36,8 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Кабинеты">
-                    <MenuItem Header="Список"/>
-                    <MenuItem Header="Добавить"/>
+                    <MenuItem Name="RoomsList" Click="RoomsList_Click" Header="Список"/>
+                    <MenuItem Name="RoomAdd" Click="RoomAdd_Click" Header="Добавить"/>
                     <MenuItem Header="Мультимедийная система">
                         <MenuItem Header="Список"/>
                         <MenuItem Header="Добавиьт"/>
@@ -87,15 +87,11 @@
                     </MenuItem>                    
                 </MenuItem>
                 <MenuItem Header="Прочее оборудование">
-                    <MenuItem Header="Список"/>
-                    <MenuItem Header="Добавить"/>
-                    <MenuItem Header="Статус устройства">
-                        <MenuItem Header="Список"/>
-                        <MenuItem Header="Добавить"/>
-                    </MenuItem>
+                    <MenuItem Name="EquipmentsList" Click="EquipmentsList_Click" Header="Список"/>
+                    <MenuItem Name="EquipmentsAdd" Click="EquipmentsAdd_Click" Header="Добавить"/>
                     <MenuItem Header="Тип оборудования">
-                        <MenuItem Header="Список"/>
-                        <MenuItem Header="Добавить"/>
+                        <MenuItem Name="TypesEquipmentList" Click="TypesEquipmentList_Click" Header="Список"/>
+                        <MenuItem Name="TypesEquipmentAdd" Click="TypesEquipmentAdd_Click" Header="Добавить"/>
                         <MenuItem Header="Отчёт"/>
                     </MenuItem>
                 </MenuItem>
