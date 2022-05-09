@@ -20,9 +20,11 @@ namespace IsSupport.Pages.MultimediaSystem
     /// </summary>
     public partial class MonitorsListPage : Page
     {
+        List<Monitors> monitors = new List<Monitors>();
         public MonitorsListPage()
         {
             InitializeComponent();
+            monitors=Helper.GetIsSupportContext().Monitors.ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -37,12 +39,13 @@ namespace IsSupport.Pages.MultimediaSystem
         private void CmbListStatusDevice_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var statusMonitor = (CmbListStatusDevice.SelectedItem as Monitors).ID;
-            DgrListMonitor.ItemsSource = Helper.GetIsSupportContext().Monitors.Where(x => x.StatusDeviceID == statusMonitor).ToList();
+            DgrListMonitor.ItemsSource = monitors.Where(x => x.StatusDeviceID == statusMonitor).ToList();
         }
 
         private void SearchBoxTitle_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrListMonitor.ItemsSource = Helper.GetIsSupportContext().Monitors.Where(x => x.SerialNumber.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant())).ToList();
+            var filter = monitors.Where(x => x.SerialNumber.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant()));
+            DgrListMonitor.ItemsSource = filter;
         }
 
         private void BtnAddMonitor_Click(object sender, RoutedEventArgs e)

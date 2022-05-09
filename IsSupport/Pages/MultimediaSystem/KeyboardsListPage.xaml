@@ -20,7 +20,7 @@
         <WrapPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
             <TextBlock Text="Сотриторвка по статусу" Margin="5,2,0,0"/>
             <ComboBox Name="CmbListStatusDevice" DisplayMemberPath="Title" SelectionChanged="CmbListStatusDevice_SelectionChanged" Margin="5,2,0,0"/>
-            <TextBlock Text="Поиск по наименованию" Margin="5,2,0,0"/>
+            <TextBlock Text="Поиск по серийному номеру" Margin="5,2,0,0"/>
             <TextBox x:Name="SearchBoxTitle" KeyUp="SearchBoxTitle_KeyUp" Width="100" Margin="15,2,0,0"/>
         </WrapPanel>
         <DataGrid Name="DgrListKeyboards" AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True">

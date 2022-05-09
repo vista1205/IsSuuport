@@ -39,8 +39,8 @@
                     <MenuItem Name="RoomsList" Click="RoomsList_Click" Header="Список"/>
                     <MenuItem Name="RoomAdd" Click="RoomAdd_Click" Header="Добавить"/>
                     <MenuItem Header="Мультимедийная система">
-                        <MenuItem Header="Список"/>
-                        <MenuItem Header="Добавиьт"/>
+                        <MenuItem x:Name="MultimediaSystemsList" Click="MultimediaSystemsList_Click" Header="Список"/>
+                        <MenuItem x:Name="MultimediaSystemsAdd" Click="MultimediaSystemsAdd_Click" Header="Добавиьт"/>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Оборудование">

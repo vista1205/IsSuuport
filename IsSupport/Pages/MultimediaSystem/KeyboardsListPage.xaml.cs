@@ -20,15 +20,19 @@ namespace IsSupport.Pages.MultimediaSystem
     /// </summary>
     public partial class KeyboardsListPage : Page
     {
+        List<Keyboards> keyboard = new List<Keyboards>();
         public KeyboardsListPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            keyboard = Helper.GetIsSupportContext().Keyboards.ToList();
+            CmbListStatusDevice.ItemsSource = Helper.GetIsSupportContext().StatusDevice.ToList();
         }
 
         private void CmbListStatusDevice_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var statusKeyboards = (CmbListStatusDevice.SelectedItem as StatusDevice).ID;
-            DgrListKeyboards.ItemsSource=Helper.GetIsSupportContext().Keyboards.Where(x => x.StatusDeviceID == statusKeyboards);
+            var filter = keyboard.Where(x => x.StatusDeviceID == statusKeyboards);
+            DgrListKeyboards.ItemsSource = filter;
         }
 
         private void BtnAddKeyboard_Click(object sender, RoutedEventArgs e)
@@ -60,7 +64,8 @@ namespace IsSupport.Pages.MultimediaSystem
 
         private void SearchBoxTitle_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrListKeyboards.ItemsSource = Helper.GetIsSupportContext().Keyboards.Where(x => x.SerialNumber.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant())).ToList();
+            var filter = keyboard.Where(x => x.SerialNumber.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant()));
+            DgrListKeyboards.ItemsSource = filter;
         }
     }
 }

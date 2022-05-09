@@ -25,6 +25,8 @@ FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\Monitor
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\MonitorsListPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\MouseAddPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\MouseListPage.xaml;;
+FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\MultimediaSystemsAddPage.xaml;;
+FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\MultimediaSystemsListPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\OSAddPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\OSListPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\StatusDeviceAddPage.xaml;;
@@ -37,4 +39,6 @@ FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\TypesEq
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\MultimediaSystem\TypesEquipmentListPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\OrdersPage.xaml;;
 FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\RegistrationPage.xaml;;
+FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Room\RoomAddPage.xaml;;
+FC:\Users\Family\source\repos\IsSuuport\IsSupport\Pages\Room\RoomListPage.xaml;;
 

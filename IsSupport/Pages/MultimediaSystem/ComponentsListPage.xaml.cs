@@ -31,7 +31,8 @@ namespace IsSupport.Pages.MultimediaSystem
 
         private void SearchBoxTitle_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrListComponents.ItemsSource=components.Where(x=>x.Title.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant())).ToList();
+            var filter = Helper.GetIsSupportContext().Components.Where(x => x.Title.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant()));
+            DgrListComponents.ItemsSource = filter;
         }
 
         private void BtnAddComponent_Click(object sender, RoutedEventArgs e)
@@ -47,7 +48,8 @@ namespace IsSupport.Pages.MultimediaSystem
         private void CmbListTypeComponent_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var typeID = (CmbListTypeComponent.SelectedItem as TypeComponent).ID;
-            DgrListComponents.ItemsSource=components.Where(x=>x.TypeComponentID==typeID).ToList();
+            var filter = components.Where(x => x.TypeComponentID == typeID);
+            DgrListComponents.ItemsSource = filter;
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

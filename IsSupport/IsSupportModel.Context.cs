@@ -34,7 +34,6 @@ namespace IsSupport
         public virtual DbSet<Keyboards> Keyboards { get; set; }
         public virtual DbSet<Monitors> Monitors { get; set; }
         public virtual DbSet<Mouse> Mouse { get; set; }
-        public virtual DbSet<MultimediaSystems> MultimediaSystems { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<OS> OS { get; set; }
         public virtual DbSet<Printers> Printers { get; set; }
@@ -48,5 +47,6 @@ namespace IsSupport
         public virtual DbSet<SystemUnits> SystemUnits { get; set; }
         public virtual DbSet<Components> Components { get; set; }
         public virtual DbSet<SystemUnitComponents> SystemUnitComponents { get; set; }
+        public virtual DbSet<MultimediaSystems> MultimediaSystems { get; set; }
     }
 }

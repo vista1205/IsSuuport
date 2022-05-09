@@ -1,0 +1,27 @@
+﻿<Page x:Class="IsSupport.Pages.MultimediaSystem.MultimediaSystemsAddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MultimediaSystemsAddPage" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Укажите название мультимедиасистемы" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Выберите кабинет" Grid.Row="1" Style="{StaticResource TextBlockDefault}"/>
+        <TextBox x:Name="TbTitleSystem" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
+        <ComboBox Name="CmbRoomsList" DisplayMemberPath="Title" Grid.Row="1" Grid.Column="1" SelectedItem="{Binding Rooms}"/>
+        <Button Name="BtnAddSystem" Content="Сохранить" Grid.Row="2" Click="BtnAddSystem_Click" Style="{StaticResource ButtonStatusCartridg}"/>
+        <Button Name="BtnCancel" Content="Отмена" Grid.Row="2" Grid.Column="1" Click="BtnCancel_Click" Style="{StaticResource ButtonStatusCartridg}"/>
+    </Grid>
+</Page>

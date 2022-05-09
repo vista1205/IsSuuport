@@ -20,9 +20,11 @@ namespace IsSupport.Pages.MultimediaSystem
     /// </summary>
     public partial class MouseListPage : Page
     {
+        List<Mouse> mouse = new List<Mouse>();
         public MouseListPage()
         {
             InitializeComponent();
+            mouse = Helper.GetIsSupportContext().Mouse.ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -34,7 +36,7 @@ namespace IsSupport.Pages.MultimediaSystem
         private void CmbListStatusDevice_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var statusMouse = (CmbListStatusDevice.SelectedItem as StatusDevice).ID;
-            DgrListMouse.ItemsSource = Helper.GetIsSupportContext().Keyboards.Where(x => x.StatusDeviceID == statusMouse);
+            DgrListMouse.ItemsSource = mouse.Where(x => x.StatusDeviceID == statusMouse);
         }
 
         private void BtnAddMouse_Click(object sender, RoutedEventArgs e)
@@ -57,7 +59,8 @@ namespace IsSupport.Pages.MultimediaSystem
 
         private void SearchBoxTitle_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrListMouse.ItemsSource = Helper.GetIsSupportContext().Mouse.Where(x => x.SerialNumber.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant())).ToList();
+            var filter = mouse.Where(x => x.SerialNumber.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant()));
+            DgrListMouse.ItemsSource = filter;
         }
     }
 }

@@ -7,12 +7,12 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OSID" Type="Int32" Nullable="false" />
     <Property Name="MultimediaSystemID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_Computers_MultimediaSystems" FromRole="Computers" ToRole="MultimediaSystems" />
     <NavigationProperty Name="OS" Relationship="Self.FK_Computers_OS" FromRole="Computers" ToRole="OS" />
     <NavigationProperty Name="Keyboards" Relationship="Self.FK_Keyboards_Computers" FromRole="Computers" ToRole="Keyboards" />
     <NavigationProperty Name="Monitors" Relationship="Self.FK_Monitors_Computers" FromRole="Computers" ToRole="Monitors" />
     <NavigationProperty Name="Mouse" Relationship="Self.FK_Mouse_Computers" FromRole="Computers" ToRole="Mouse" />
     <NavigationProperty Name="SystemUnits" Relationship="IsSupportModel.FK_SystemUnits_Computers" FromRole="Computers" ToRole="SystemUnits" />
+    <NavigationProperty Name="MultimediaSystems" Relationship="IsSupportModel.FK_Computers_MultimediaSystems" FromRole="Computers" ToRole="MultimediaSystems" />
   </EntityType>
   <EntityType Name="Employees">
     <Key>
@@ -38,9 +38,9 @@
     <Property Name="StatusDeviceID" Type="Int32" />
     <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="MultimediaSystemID" Type="Int32" />
-    <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_Equipments_MultimediaSystems" FromRole="Equipments" ToRole="MultimediaSystems" />
     <NavigationProperty Name="TypesEquipment" Relationship="Self.FK_Equipments_TypesEquipment" FromRole="Equipments" ToRole="TypesEquipment" />
     <NavigationProperty Name="StatusDevice" Relationship="IsSupportModel.FK_Equipments_StatusDevice" FromRole="Equipments" ToRole="StatusDevice" />
+    <NavigationProperty Name="MultimediaSystems" Relationship="IsSupportModel.FK_Equipments_MultimediaSystems" FromRole="Equipments" ToRole="MultimediaSystems" />
   </EntityType>
   <EntityType Name="HistoryKartridj">
     <Key>
@@ -119,16 +119,6 @@
     <NavigationProperty Name="Computers" Relationship="Self.FK_Mouse_Computers" FromRole="Mouse" ToRole="Computers" />
     <NavigationProperty Name="StatusDevice" Relationship="IsSupportModel.FK_Mouse_StatusDevice" FromRole="Mouse" ToRole="StatusDevice" />
   </EntityType>
-  <EntityType Name="MultimediaSystems">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RoomID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Computers" Relationship="Self.FK_Computers_MultimediaSystems" FromRole="MultimediaSystems" ToRole="Computers" />
-    <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipments_MultimediaSystems" FromRole="MultimediaSystems" ToRole="Equipments" />
-    <NavigationProperty Name="Rooms" Relationship="Self.FK_MultimediaSystems_Rooms" FromRole="MultimediaSystems" ToRole="Rooms" />
-  </EntityType>
   <EntityType Name="Orders">
     <Key>
       <PropertyRef Name="ID" />
@@ -170,8 +160,8 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Kartridjs" Relationship="Self.FK_Kartridjs_Rooms" FromRole="Rooms" ToRole="Kartridjs" />
-    <NavigationProperty Name="MultimediaSystems" Relationship="Self.FK_MultimediaSystems_Rooms" FromRole="Rooms" ToRole="MultimediaSystems" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Rooms" FromRole="Rooms" ToRole="Orders" />
+    <NavigationProperty Name="MultimediaSystems" Relationship="IsSupportModel.FK_MultimediaSystems_Rooms" FromRole="Rooms" ToRole="MultimediaSystems" />
   </EntityType>
   <EntityType Name="StatusKartridj">
     <Key>
@@ -218,18 +208,6 @@
     <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipments_TypesEquipment" FromRole="TypesEquipment" ToRole="Equipments" />
   </EntityType>
-  <Association Name="FK_Computers_MultimediaSystems">
-    <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="1" />
-    <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MultimediaSystems">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Computers">
-        <PropertyRef Name="MultimediaSystemID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Computers_OS">
     <End Role="OS" Type="Self.OS" Multiplicity="1" />
     <End Role="Computers" Type="Self.Computers" Multiplicity="*" />
@@ -287,18 +265,6 @@
       </Principal>
       <Dependent Role="Orders">
         <PropertyRef Name="EmployeeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Equipments_MultimediaSystems">
-    <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="0..1" />
-    <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MultimediaSystems">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Equipments">
-        <PropertyRef Name="MultimediaSystemID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -374,18 +340,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MultimediaSystems_Rooms">
-    <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
-    <End Role="MultimediaSystems" Type="Self.MultimediaSystems" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Rooms">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="MultimediaSystems">
-        <PropertyRef Name="RoomID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Orders_Rooms">
     <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -420,7 +374,6 @@
     <EntitySet Name="Keyboards" EntityType="Self.Keyboards" />
     <EntitySet Name="Monitors" EntityType="Self.Monitors" />
     <EntitySet Name="Mouse" EntityType="Self.Mouse" />
-    <EntitySet Name="MultimediaSystems" EntityType="Self.MultimediaSystems" />
     <EntitySet Name="Orders" EntityType="Self.Orders" />
     <EntitySet Name="OS" EntityType="Self.OS" />
     <EntitySet Name="Printers" EntityType="Self.Printers" />
@@ -430,10 +383,6 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TypeComponent" EntityType="Self.TypeComponent" />
     <EntitySet Name="TypesEquipment" EntityType="Self.TypesEquipment" />
-    <AssociationSet Name="FK_Computers_MultimediaSystems" Association="Self.FK_Computers_MultimediaSystems">
-      <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
-      <End Role="Computers" EntitySet="Computers" />
-    </AssociationSet>
     <AssociationSet Name="FK_Computers_OS" Association="Self.FK_Computers_OS">
       <End Role="OS" EntitySet="OS" />
       <End Role="Computers" EntitySet="Computers" />
@@ -453,10 +402,6 @@
     <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Orders" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Equipments_MultimediaSystems" Association="Self.FK_Equipments_MultimediaSystems">
-      <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
-      <End Role="Equipments" EntitySet="Equipments" />
     </AssociationSet>
     <AssociationSet Name="FK_Equipments_TypesEquipment" Association="Self.FK_Equipments_TypesEquipment">
       <End Role="TypesEquipment" EntitySet="TypesEquipment" />
@@ -481,10 +426,6 @@
     <AssociationSet Name="FK_Kartridjs_StatusKartridj" Association="Self.FK_Kartridjs_StatusKartridj">
       <End Role="StatusKartridj" EntitySet="StatusKartridj" />
       <End Role="Kartridjs" EntitySet="Kartridjs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MultimediaSystems_Rooms" Association="Self.FK_MultimediaSystems_Rooms">
-      <End Role="Rooms" EntitySet="Rooms" />
-      <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
     </AssociationSet>
     <AssociationSet Name="FK_Orders_Rooms" Association="Self.FK_Orders_Rooms">
       <End Role="Rooms" EntitySet="Rooms" />
@@ -533,6 +474,19 @@
     <AssociationSet Name="FK_SystemUnitComponents_SystemUnits" Association="IsSupportModel.FK_SystemUnitComponents_SystemUnits">
       <End Role="SystemUnits" EntitySet="SystemUnits" />
       <End Role="SystemUnitComponents" EntitySet="SystemUnitComponents" />
+    </AssociationSet>
+    <EntitySet Name="MultimediaSystems" EntityType="IsSupportModel.MultimediaSystems" />
+    <AssociationSet Name="FK_Computers_MultimediaSystems" Association="IsSupportModel.FK_Computers_MultimediaSystems">
+      <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+      <End Role="Computers" EntitySet="Computers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipments_MultimediaSystems" Association="IsSupportModel.FK_Equipments_MultimediaSystems">
+      <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
+      <End Role="Equipments" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MultimediaSystems_Rooms" Association="IsSupportModel.FK_MultimediaSystems_Rooms">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="MultimediaSystems" EntitySet="MultimediaSystems" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="StatusDevice">
@@ -689,6 +643,53 @@
       </Principal>
       <Dependent Role="SystemUnitComponents">
         <PropertyRef Name="ComponentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MultimediaSystems">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="RoomID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Computers" Relationship="IsSupportModel.FK_Computers_MultimediaSystems" FromRole="MultimediaSystems" ToRole="Computers" />
+    <NavigationProperty Name="Equipments" Relationship="IsSupportModel.FK_Equipments_MultimediaSystems" FromRole="MultimediaSystems" ToRole="Equipments" />
+    <NavigationProperty Name="Rooms" Relationship="IsSupportModel.FK_MultimediaSystems_Rooms" FromRole="MultimediaSystems" ToRole="Rooms" />
+  </EntityType>
+  <Association Name="FK_Computers_MultimediaSystems">
+    <End Type="IsSupportModel.MultimediaSystems" Role="MultimediaSystems" Multiplicity="1" />
+    <End Type="IsSupportModel.Computers" Role="Computers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MultimediaSystems">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Computers">
+        <PropertyRef Name="MultimediaSystemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipments_MultimediaSystems">
+    <End Type="IsSupportModel.MultimediaSystems" Role="MultimediaSystems" Multiplicity="0..1" />
+    <End Type="IsSupportModel.Equipments" Role="Equipments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MultimediaSystems">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Equipments">
+        <PropertyRef Name="MultimediaSystemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MultimediaSystems_Rooms">
+    <End Type="IsSupportModel.Rooms" Role="Rooms" Multiplicity="1" />
+    <End Type="IsSupportModel.MultimediaSystems" Role="MultimediaSystems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MultimediaSystems">
+        <PropertyRef Name="RoomID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

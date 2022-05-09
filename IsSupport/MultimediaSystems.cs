@@ -22,6 +22,7 @@ namespace IsSupport
         }
     
         public int ID { get; set; }
+        public string Title { get; set; }
         public int RoomID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

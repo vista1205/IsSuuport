@@ -31,12 +31,13 @@ namespace IsSupport.Pages.MultimediaSystem
 
         private void SearchBoxSerial_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrListSystemUnit.ItemsSource = unitsList.Where(x => x.SeralNumber.ToUpperInvariant().Contains(SearchBoxSerial.Text.ToUpperInvariant())).ToList();
+            var filter = unitsList.Where(x => x.SeralNumber.ToUpperInvariant().Contains(SearchBoxSerial.Text.ToUpperInvariant()));
+            DgrListSystemUnit.ItemsSource = filter;
         }
-
         private void SearchBoxInvent_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrListSystemUnit.ItemsSource = unitsList.Where(x=>x.InventoryNumber.ToUpperInvariant().Contains(SearchBoxInvent.Text.ToUpperInvariant())).ToList();
+            var filter = unitsList.Where(x => x.InventoryNumber.ToUpperInvariant().Contains(SearchBoxInvent.Text.ToUpperInvariant()));
+            DgrListSystemUnit.ItemsSource = filter;
         }
 
         private void BtnAddSystemUnit_Click(object sender, RoutedEventArgs e)
@@ -57,7 +58,7 @@ namespace IsSupport.Pages.MultimediaSystem
         private void CmbListStatusDevice_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var idStatus = (CmbListStatusDevice.SelectedItem as StatusDevice).ID;
-            DgrListSystemUnit.ItemsSource=Helper.GetIsSupportContext().SystemUnits.Where(x=>x.StatusDeviceID==idStatus).ToList();
+            DgrListSystemUnit.ItemsSource=unitsList.Where(x=>x.StatusDeviceID==idStatus).ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="IsSupportModel.Keyboards" Width="1.5" PointX="10.5" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="IsSupportModel.Monitors" Width="1.5" PointX="7.5" PointY="20.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IsSupportModel.Mouse" Width="1.5" PointX="10.5" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="IsSupportModel.MultimediaSystems" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
         <EntityTypeShape EntityType="IsSupportModel.Orders" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="IsSupportModel.OS" Width="1.5" PointX="3" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="IsSupportModel.Printers" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
@@ -24,20 +23,17 @@
         <EntityTypeShape EntityType="IsSupportModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IsSupportModel.TypeComponent" Width="1.5" PointX="5.25" PointY="30.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IsSupportModel.TypesEquipment" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
-        <AssociationConnector Association="IsSupportModel.FK_Computers_MultimediaSystems" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Computers_OS" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Keyboards_Computers" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Monitors_Computers" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Mouse_Computers" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Orders_Employees" ManuallyRouted="false" />
-        <AssociationConnector Association="IsSupportModel.FK_Equipments_MultimediaSystems" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Equipments_TypesEquipment" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_HistoryKartridj_Kartridjs" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_HistoryOrder_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Kartridjs_Printers" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Kartridjs_Rooms" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Kartridjs_StatusKartridj" ManuallyRouted="false" />
-        <AssociationConnector Association="IsSupportModel.FK_MultimediaSystems_Rooms" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Orders_Rooms" ManuallyRouted="false" />
         <AssociationConnector Association="IsSupportModel.FK_Orders_StatusOrders" ManuallyRouted="false" />
         <EntityTypeShape EntityType="IsSupportModel.StatusDevice" Width="1.5" PointX="1.25" PointY="19.875" />
@@ -53,6 +49,10 @@
         <EntityTypeShape EntityType="IsSupportModel.SystemUnitComponents" Width="1.5" PointX="9.75" PointY="27.75" />
         <AssociationConnector Association="IsSupportModel.FK_SystemUnitComponents_Components" />
         <AssociationConnector Association="IsSupportModel.FK_SystemUnitComponents_SystemUnits" />
+        <EntityTypeShape EntityType="IsSupportModel.MultimediaSystems" Width="1.5" PointX="3" PointY="16.875" />
+        <AssociationConnector Association="IsSupportModel.FK_Computers_MultimediaSystems" />
+        <AssociationConnector Association="IsSupportModel.FK_Equipments_MultimediaSystems" />
+        <AssociationConnector Association="IsSupportModel.FK_MultimediaSystems_Rooms" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

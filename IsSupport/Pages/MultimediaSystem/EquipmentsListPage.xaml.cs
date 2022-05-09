@@ -20,11 +20,13 @@ namespace IsSupport.Pages.MultimediaSystem
     /// </summary>
     public partial class EquipmentsListPage : Page
     {
+        List<Equipments> equipmentsList = new List<Equipments>();
         public EquipmentsListPage()
         {
             InitializeComponent();
             CmbStatusDeviceList.ItemsSource=Helper.GetIsSupportContext().StatusDevice.ToList();
             CmbTypeEquipmentList.ItemsSource=Helper.GetIsSupportContext().TypesEquipment.ToList();
+            equipmentsList = Helper.GetIsSupportContext().Equipments.ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -39,18 +41,19 @@ namespace IsSupport.Pages.MultimediaSystem
         private void CmbTypeEquipmentList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var filter = (CmbTypeEquipmentList.SelectedItem as TypesEquipment).ID;
-            DgrEquipmentsList.ItemsSource=Helper.GetIsSupportContext().Equipments.Where(x=>x.TypeEquipmentID==filter).ToList();
+            DgrEquipmentsList.ItemsSource=equipmentsList.Where(x=>x.TypeEquipmentID==filter).ToList();
         }
 
         private void CmbStatusDeviceList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var filter = (CmbStatusDeviceList.SelectedItem as StatusDevice).ID;
-            DgrEquipmentsList.ItemsSource = Helper.GetIsSupportContext().Equipments.Where(x => x.StatusDeviceID == filter).ToList();
+            DgrEquipmentsList.ItemsSource = equipmentsList.Where(x => x.StatusDeviceID == filter).ToList();
         }
 
         private void TbSearchSN_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrEquipmentsList.ItemsSource = Helper.GetIsSupportContext().Equipments.Where(x => x.SerialNumber.ToUpperInvariant().Contains(TbSearchSN.Text.ToUpperInvariant())).ToList();
+            var filter = equipmentsList.Where(x => x.SerialNumber.ToUpperInvariant().Contains(TbSearchSN.Text.ToUpperInvariant()));
+            DgrEquipmentsList.ItemsSource = filter;
         }
 
         private void BtnAddEquipments_Click(object sender, RoutedEventArgs e)

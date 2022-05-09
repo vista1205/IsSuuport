@@ -107,14 +107,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MultimediaSystems">
-      <EntityTypeMapping TypeName="IsSupportModel.MultimediaSystems">
-        <MappingFragment StoreEntitySet="MultimediaSystems">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="IsSupportModel.Orders">
         <MappingFragment StoreEntitySet="Orders">
@@ -237,6 +229,15 @@
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
           <ScalarProperty Name="SystemUnitID" ColumnName="SystemUnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MultimediaSystems">
+      <EntityTypeMapping TypeName="IsSupportModel.MultimediaSystems">
+        <MappingFragment StoreEntitySet="MultimediaSystems">
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

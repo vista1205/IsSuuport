@@ -211,6 +211,12 @@
     <Compile Include="Pages\MultimediaSystem\MouseListPage.xaml.cs">
       <DependentUpon>MouseListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MultimediaSystem\MultimediaSystemsAddPage.xaml.cs">
+      <DependentUpon>MultimediaSystemsAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\MultimediaSystemsListPage.xaml.cs">
+      <DependentUpon>MultimediaSystemsListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MultimediaSystem\OSAddPage.xaml.cs">
       <DependentUpon>OSAddPage.xaml</DependentUpon>
     </Compile>
@@ -402,6 +408,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MultimediaSystem\MouseListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\MultimediaSystemsAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\MultimediaSystemsListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

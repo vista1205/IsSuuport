@@ -206,5 +206,15 @@ namespace IsSupport
         {
             MyFrame.Content = new RoomAddPage();
         }
+
+        private void MultimediaSystemsList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new MultimediaSystemsListPage();
+        }
+
+        private void MultimediaSystemsAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content=new MultimediaSystemsAddPage();
+        }
     }
 }

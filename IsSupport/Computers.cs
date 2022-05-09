@@ -27,7 +27,6 @@ namespace IsSupport
         public int OSID { get; set; }
         public int MultimediaSystemID { get; set; }
     
-        public virtual MultimediaSystems MultimediaSystems { get; set; }
         public virtual OS OS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Keyboards> Keyboards { get; set; }
@@ -37,5 +36,6 @@ namespace IsSupport
         public virtual ICollection<Mouse> Mouse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SystemUnits> SystemUnits { get; set; }
+        public virtual MultimediaSystems MultimediaSystems { get; set; }
     }
 }

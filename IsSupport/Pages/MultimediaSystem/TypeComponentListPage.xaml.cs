@@ -48,7 +48,8 @@ namespace IsSupport.Pages.MultimediaSystem
 
         private void SearchBoxTitle_KeyUp(object sender, KeyEventArgs e)
         {
-            DgrListTypeComponents.ItemsSource=typeComponents.Where(x=>x.Title.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant())).ToList();
+            var filter = typeComponents.Where(x => x.Title.ToUpperInvariant().Contains(SearchBoxTitle.Text.ToUpperInvariant()));
+            DgrListTypeComponents.ItemsSource = filter;
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

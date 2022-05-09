@@ -67,6 +67,11 @@ namespace IsSupport.Pages.Room
                 Helper.GetIsSupportContext().SaveChanges();
                 NavigationService.GoBack();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return;
+            }
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

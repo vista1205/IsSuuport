@@ -18,8 +18,8 @@ namespace IsSupport
         public Rooms()
         {
             this.Kartridjs = new HashSet<Kartridjs>();
-            this.MultimediaSystems = new HashSet<MultimediaSystems>();
             this.Orders = new HashSet<Orders>();
+            this.MultimediaSystems = new HashSet<MultimediaSystems>();
         }
     
         public int ID { get; set; }
@@ -28,8 +28,8 @@ namespace IsSupport
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kartridjs> Kartridjs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MultimediaSystems> MultimediaSystems { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MultimediaSystems> MultimediaSystems { get; set; }
     }
 }
