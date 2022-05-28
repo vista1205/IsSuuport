@@ -23,7 +23,8 @@ namespace IsSupport
         public AddEmployee()
         {
             InitializeComponent();
-            MyFrameAddEmployee.Content = new AutorizationPage();
+            MyFrameAddEmployee.Content = new AutorizationPage();            
         }
     }
+
 }

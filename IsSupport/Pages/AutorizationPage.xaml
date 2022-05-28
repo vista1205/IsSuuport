@@ -6,7 +6,15 @@
       xmlns:local="clr-namespace:IsSupport.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="600"
-      Title="AutorizationPage">
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      Title="Авторизация">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -18,12 +26,12 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Логин:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefault}"></TextBlock>
-        <TextBlock Text="Пароль:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefault}"></TextBlock>
-        <Button x:Name="AutorizationButton" Content="Авторизоваться" Click="AutorizationButton_Click" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ButtonDefault}" IsDefault="True"></Button>
-        <TextBox x:Name="LoginTextBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource TextBoxDefault}"/>
-        <PasswordBox x:Name="PassordTextBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource PasswordBoxDefault}"/>
-        <Button x:Name="RegistrationButton" Content="Зарегестрироваться" Click="RegistrationButton_Click" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonDefault}"/>
+        <TextBlock Text="Логин:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
+        <TextBlock Text="Пароль:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
+        <Button x:Name="AutorizationButton" Content="Авторизоваться" Click="AutorizationButton_Click" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" IsDefault="True" Cursor="Hand"></Button>
+        <TextBox x:Name="LoginTextBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="175" Style="{DynamicResource MaterialDesignTextBox}" Cursor="Arrow"/>
+        <PasswordBox x:Name="PassordTextBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="175" Height="30" Style="{DynamicResource MaterialDesignPasswordBox}" Cursor="Arrow"/>
+        <Button x:Name="RegistrationButton" Content="Зарегестрироваться" Click="RegistrationButton_Click" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
     </Grid>

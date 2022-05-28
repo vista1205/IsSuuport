@@ -60,6 +60,6 @@ namespace IsSupport.Pages
                 Helper helper = new Helper();
                 helper.CloseWindow();
             }
-        } 
+        }
     }
 }
