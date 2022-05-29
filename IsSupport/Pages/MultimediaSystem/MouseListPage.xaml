@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MouseListPage" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Мыши: Список" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
@@ -14,27 +14,52 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
-            <TextBlock Text="Сотриторвка по статусу" Margin="5,2,0,0"/>
-            <ComboBox Name="CmbListStatusDevice" DisplayMemberPath="Title" SelectionChanged="CmbListStatusDevice_SelectionChanged" Margin="5,2,0,0"/>
-            <TextBlock Text="Поиск по наименованию" Margin="5,2,0,0"/>
-            <TextBox x:Name="SearchBoxTitle" KeyUp="SearchBoxTitle_KeyUp" Width="100" Margin="15,2,0,0"/>
+            <TextBlock Text="Сотриторвка по статусу" Margin="5,15,0,0" Style="{DynamicResource MaterialDesignTextBlock}"/>
+            <ComboBox Name="CmbListStatusDevice" DisplayMemberPath="Title" SelectionChanged="CmbListStatusDevice_SelectionChanged" Margin="5,2,0,0"
+                      Style="{DynamicResource MaterialDesignOutlinedComboBox}" SelectedIndex="0" Width="175"/>
+            <TextBlock Text="Поиск по наименованию" Margin="5,15,0,0" Style="{DynamicResource MaterialDesignTextBlock}"/>
+            <TextBox x:Name="SearchBoxTitle" KeyUp="SearchBoxTitle_KeyUp" Width="120" Margin="15,2,0,0" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
         </WrapPanel>
         <DataGrid Name="DgrListMouse" AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="200" Header="Наименование" Binding="{Binding Title}"/>
-                <DataGridTextColumn Width="150" Header="Серийный номер" Binding="{Binding SerialNumber}"/>
-                <DataGridTextColumn Width="100" Header="Компютер" Binding="{Binding Computers.ID}"/>
-                <DataGridTextColumn Width="250" Header="Статус" Binding="{Binding StatusDevice.Title}"/>
+                <DataGridTextColumn Width="200" Header="Наименование" Binding="{Binding Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="150" Header="Серийный номер" Binding="{Binding SerialNumber}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="Компютер" Binding="{Binding Computers.ID}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="250" Header="Статус" Binding="{Binding StatusDevice.Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <Button x:Name="BtnAdd" Click="BtnAddMouse_Click" Content="Добавить" Style="{StaticResource SystemUnitsButton}"/>
-            <Button x:Name="BtnEditMouse" Click="BtnEditMouse_Click" Content="Изменить" Style="{StaticResource SystemUnitsButton}"/>
-            <Button x:Name="BtnCancelMouse" Click="BtnCancelMouse_Click" Content="Назад" Style="{StaticResource SystemUnitsButton}"/>
+            <Button x:Name="BtnAdd" Click="BtnAddMouse_Click" Content="Добавить" Margin="0,15,0,15"/>
+            <Button x:Name="BtnEditMouse" Click="BtnEditMouse_Click" Content="Изменить"/>
+            <Button x:Name="BtnCancelMouse" Click="BtnCancelMouse_Click" Content="Назад" Margin="0,15,0,0"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TypesEquipmentAddPage" Background="White">
+      Title="Типы прочего оборудования: Добавление/Редактирование" Background="White">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,11 +17,11 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Text="Наименоание статуса" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Grid.Row="1" Text="Описание статуса" Style="{StaticResource TextBlockDefault}"/>
-        <Button Name="BtnAddTypesEquipment" Content="Сохранить" Grid.Row="2" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddTypesEquipment_Click"/>
-        <TextBox Name="TbTitleTypesEquipment" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxDefault}" Text="{Binding Title}"/>
-        <TextBox Name="TbDescriptionTypesEquipment" Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxDefault}" Text="{Binding Description}" TextWrapping="Wrap" AcceptsReturn="True"/>
-        <Button Name="BtnCancel" Content="Отмена" Style="{StaticResource ButtonStatusCartridg}" Grid.Row="2" Grid.Column="1" Click="BtnCancel_Click"/>
+        <TextBlock Grid.Row="0" Text="Наименоание статуса" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Text="Описание статуса" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="BtnAddTypesEquipment" Content="Сохранить" Grid.Row="2" Width="150" Click="BtnAddTypesEquipment_Click"/>
+        <TextBox Name="TbTitleTypesEquipment" Grid.Row="0" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="2" VerticalContentAlignment="Center" Text="{Binding Title}"/>
+        <TextBox Name="TbDescriptionTypesEquipment" Grid.Row="1" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="2" VerticalContentAlignment="Center" Text="{Binding Description}" TextWrapping="Wrap" AcceptsReturn="True"/>
+        <Button Name="BtnCancel" Content="Отмена" Width="150" Grid.Row="2" Grid.Column="1" Click="BtnCancel_Click"/>
     </Grid>
 </Page>

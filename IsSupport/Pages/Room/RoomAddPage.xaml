@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.Room"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RoomAddPage" Background="White">
+      Title="Кабинеты: Добавление/Редактированние" Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -17,9 +17,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Укажите номер кабинета" Style="{StaticResource TextBlockDefault}"/>
-        <Button Name="BtnAddRoom" Grid.Row="1" Content="Сохранить" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddRoom_Click"/>
-        <TextBox Name="TbTitleRoom" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
-        <Button Name="BtnCancel" Grid.Row="1" Grid.Column="1" Content="Отмена" Style="{StaticResource ButtonStatusCartridg}" Click="BtnCancel_Click"/>
+        <TextBlock Text="Укажите номер кабинета" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="BtnAddRoom" Grid.Row="1" Content="Сохранить" Width="150" Click="BtnAddRoom_Click"/>
+        <TextBox Name="TbTitleRoom" Grid.Column="1" Text="{Binding Title}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="2" VerticalContentAlignment="Center"/>
+        <Button Name="BtnCancel" Grid.Row="1" Grid.Column="1" Content="Отмена" Width="150" Click="BtnCancel_Click"/>
     </Grid>
 </Page>

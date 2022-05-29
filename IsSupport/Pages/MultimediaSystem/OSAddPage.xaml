@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OSAddPage">
+      Title="Операционная система: Добавление">
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
@@ -18,11 +18,11 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Наименование операционной системы" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Grid.Row="1" Text="Разрядность операционной системы" Style="{StaticResource TextBlockDefault}"/>
-        <Button Grid.Row="2" Click="BtnAddOS_Click" Name="BtnAddOS" Content="Добавить" Style="{StaticResource ButtonStatusCartridg}"/>
-        <TextBox Name="TbNameOS" Text="{Binding Title}" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxDefault}"/>
-        <TextBox x:Name="TbByteOS" Text="{Binding BitDepth}" Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxDefault}"/>
-        <Button Name="BtnCancelOS" Click="BtnCancelOS_Click" Content="Отмена" Grid.Row="2" Grid.Column="1" Style="{StaticResource ButtonStatusCartridg}"/>
+        <TextBlock Text="Наименование операционной системы" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Text="Разрядность операционной системы" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Row="2" Click="BtnAddOS_Click" Name="BtnAddOS" Content="Добавить" Width="150"/>
+        <TextBox Name="TbNameOS" Text="{Binding Title}" Grid.Row="0" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <TextBox x:Name="TbByteOS" Text="{Binding BitDepth}" Grid.Row="1" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <Button Name="BtnCancelOS" Click="BtnCancelOS_Click" Content="Отмена" Grid.Row="2" Grid.Column="1" Width="150"/>
     </Grid>
 </Page>

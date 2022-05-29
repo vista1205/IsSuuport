@@ -6,14 +6,14 @@
       xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CartList">
+      Title="Список картриджей">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" Grid.Row="0">
             <Menu>
@@ -23,12 +23,12 @@
                 <MenuItem Name="ListCartКefuelMenu" Click="ListCartКefuelMenu_Click" Header="На заправке"/>
             </Menu>
         </WrapPanel>
-        <WrapPanel Orientation="Horizontal" Grid.Row="1">
-            <TextBlock Text="Сотриторвка по принтеру" Margin="5,2,0,0"/>
-            <ComboBox Name="CmbPrintFilter" SelectedIndex="0" DisplayMemberPath="Title" SelectionChanged="CmbPrintFilter_SelectionChanged" Margin="5,2,0,0"/>
-            <TextBlock Text="Поиск по номеру картриджа" Margin="5,2,0,0"/>
-            <TextBox x:Name="SearchBox" KeyUp="SearchBox_KeyUp" Width="100" Margin="15,2,0,0"/>
-            <Button x:Name="BtnRemoveCartridg" Visibility="Collapsed" Click="BtnRemoveCartridg_Click" Margin="15,2,0,0"/>
+        <WrapPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock Text="Сотриторвка по принтеру" Margin="5,15,0,0"/>
+            <ComboBox Name="CmbPrintFilter" SelectedIndex="0" Width="200" DisplayMemberPath="Title" SelectionChanged="CmbPrintFilter_SelectionChanged" Margin="5,2,0,2" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+            <TextBlock Text="Поиск по номеру картриджа" Margin="5,15,0,0"/>
+            <TextBox x:Name="SearchBox" KeyUp="SearchBox_KeyUp" VerticalContentAlignment="Center" Width="150" Margin="15,0,0,2" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Cursor="Arrow"/>
+            <Button x:Name="BtnRemoveCartridg" Visibility="Collapsed" Click="BtnRemoveCartridg_Click" Margin="15,2,0,0" Cursor="Hand"/>
         </WrapPanel>
         <DataGrid x:Name="DGridCartridgeList" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2" SelectionChanged="DGridCartridgeList_SelectionChanged">
             <DataGrid.Columns>
@@ -39,7 +39,12 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="*">
+                <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="100">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.TextAlignment" Value="Center"/>
@@ -47,7 +52,12 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Номер картриджа" Binding="{Binding NumberOfKartridj}" Width="*">
+                <DataGridTextColumn Header="Номер" Binding="{Binding NumberOfKartridj}" Width="90">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.TextAlignment" Value="Center"/>
@@ -56,6 +66,11 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Тип Принтера" Binding="{Binding Printers.Title}" Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.TextAlignment" Value="Center"/>
@@ -63,7 +78,12 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Дата приобретения" Binding="{Binding DatePay, StringFormat=\{0:dd.MM.yy HH:mm\}}" Width="*">
+                <DataGridTextColumn Header="Дата приобретения" Binding="{Binding DatePay, StringFormat=\{0:dd.MM.yy HH:mm\}}" Width="162">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.TextAlignment" Value="Center"/>
@@ -80,8 +100,13 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Добавить картридж" Name="BtnAddCartridge" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left"
-                Style="{StaticResource ButtonDefault}" Margin="5,2,0,0"
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Button Content="Добавить картридж" Name="BtnAddCartridge" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left"
+                Margin="5,2,0,0"
                 Click="BtnAddCartridge_Click"/>
+            <Button Content="Списать картридж" Name="BtnDeleteCartridge" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left"
+                Margin="10,2,0,0"
+                Click="BtnDeleteCartridge_Click" Visibility="Hidden"/>
+        </StackPanel>        
     </Grid>
 </Page>

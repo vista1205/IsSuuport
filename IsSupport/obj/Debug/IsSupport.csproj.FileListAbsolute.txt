@@ -249,3 +249,8 @@ C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\MultimediaSys
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\MultimediaSystem\TypesEquipmentListPage.baml
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Room\RoomAddPage.baml
 C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\Room\RoomListPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignColors.dll
+C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignThemes.Wpf.xml

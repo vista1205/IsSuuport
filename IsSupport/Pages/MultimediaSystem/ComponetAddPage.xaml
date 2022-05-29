@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ComponetAddPage" Background="White">
+      Title="Компоненты для ПК: Добавление/Редактирование" Background="White">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,13 +19,13 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Наименование компонента" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Тип компонента" Style="{StaticResource TextBlockDefault}" Grid.Row="1"/>
-        <TextBlock Text="Описание компонента" Style="{StaticResource TextBlockDefault}" Grid.Row="2"/>
-        <TextBox x:Name="TbTitleComponent" Text="{Binding Title}" Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxDefault}"/>
-        <ComboBox x:Name="CmbListTypeComponent" DisplayMemberPath="Title" SelectedItem="{Binding TypeComponent}" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="TbDescription" Text="{Binding Description}" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="BtnAddComponent" Content="Сохранить" Grid.Row="4" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddComponent_Click"/>
-        <Button x:Name="BtnCancel" Content="Отмена" Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonStatusCartridg}" Click="BtnCancel_Click"/>
+        <TextBlock Text="Наименование компонента" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Тип компонента" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+        <TextBlock Text="Описание компонента" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2"/>
+        <TextBox x:Name="TbTitleComponent" Text="{Binding Title}" Grid.Row="0" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <ComboBox x:Name="CmbListTypeComponent" DisplayMemberPath="Title" SelectedItem="{Binding TypeComponent}" Grid.Row="1" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <TextBox x:Name="TbDescription" Text="{Binding Description}" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="1" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <Button x:Name="BtnAddComponent" Content="Сохранить" Grid.Row="4" Width="150" Click="BtnAddComponent_Click"/>
+        <Button x:Name="BtnCancel" Content="Отмена" Grid.Row="4" Grid.Column="1" Width="150" Click="BtnCancel_Click"/>
     </Grid>
 </Page>

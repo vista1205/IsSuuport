@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MonitorAddPage" Background="White">
+      Title="Мониторы: Добавление/Редактирование" Background="White">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,17 +21,19 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Наименование мыши" Grid.Row="0" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Серийный номер" Grid.Row="1" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Инвентарный номер" Grid.Row="2" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Компютер" Grid.Row="3" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Статус мыши" Grid.Row="4" Style="{StaticResource TextBlockDefault}"/>
-        <TextBox Name="TbTitleMonitor" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}" Grid.Row="0" Grid.Column="1"/>
-        <TextBox Name="TbSerialNumberMonitor" Text="{Binding SerialNumber}" Style="{StaticResource TextBoxDefault}" Grid.Row="1" Grid.Column="1"/>
-        <TextBox Name="TbInventoryNumberMonitor" Text="{Binding InventoryNumber}" Style="{StaticResource TextBoxDefault}" Grid.Row="2" Grid.Column="1"/>
-        <ComboBox Name="CmbListComputer" DisplayMemberPath="ID" SelectedItem="{Binding Computers}" Grid.Row="3" Grid.Column="3"/>
-        <ComboBox Name="CmbListStatusDevice" DisplayMemberPath="Title" SelectedItem="{Binding StatusDevice}" Grid.Row="4" Grid.Column="1"/>
-        <Button Name="BtnAddMonitor" Grid.Row="5" Content="Сохранить" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddMonitor_Click"/>
-        <Button Name="BtnCancel" Grid.Row="6" Grid.Column="1" Content="Отмена" Style="{StaticResource ButtonStatusCartridg}" Click="BtnCancel_Click"/>
+        <TextBlock Text="Наименование мыши" Grid.Row="0" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Серийный номер" Grid.Row="1" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Инвентарный номер" Grid.Row="2" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Компютер" Grid.Row="3" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Статус мыши" Grid.Row="4" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Name="TbTitleMonitor" Text="{Binding Title}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Grid.Row="0" Grid.Column="1"/>
+        <TextBox Name="TbSerialNumberMonitor" Text="{Binding SerialNumber}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Grid.Row="1" Grid.Column="1"/>
+        <TextBox Name="TbInventoryNumberMonitor" Text="{Binding InventoryNumber}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Grid.Row="2" Grid.Column="1"/>
+        <ComboBox Name="CmbListComputer" DisplayMemberPath="ID" SelectedItem="{Binding Computers}" Grid.Row="3" Grid.Column="3"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <ComboBox Name="CmbListStatusDevice" DisplayMemberPath="Title" SelectedItem="{Binding StatusDevice}" Grid.Row="4" Grid.Column="1"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <Button Name="BtnAddMonitor" Grid.Row="5" Content="Сохранить" Width="150" Click="BtnAddMonitor_Click"/>
+        <Button Name="BtnCancel" Grid.Row="6" Grid.Column="1" Content="Отмена" Width="150" Click="BtnCancel_Click"/>
     </Grid>
 </Page>

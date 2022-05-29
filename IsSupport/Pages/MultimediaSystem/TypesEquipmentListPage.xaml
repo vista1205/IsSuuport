@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TypesEquipmentListPage" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Типы прочего оборудования: Список" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,14 +15,26 @@
         </Grid.ColumnDefinitions>
         <DataGrid Name="DgrTypesEquipmentList" AutoGenerateColumns="False" Grid.Column="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding Title}" Width="100"/>
-                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="auto"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Title}" Width="100">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="auto">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Vertical" Grid.Column="1">
-            <Button Name="BtnAddTypesEquipment" Content="Добавить" Style="{StaticResource SystemUnitsButton}" Click="BtnAddTypesEquipment_Click"/>
-            <Button Name="BtnEditTypesEquipment" Content="Изменить" Style="{StaticResource SystemUnitsButton}" Click="BtnEditTypesEquipment_Click"/>
-            <Button Name="BtnCancel" Content="Назад" Style="{StaticResource SystemUnitsButton}" Click="BtnCancel_Click"/>
+            <Button Name="BtnAddTypesEquipment" Content="Добавить" Margin="0,15,0,15" Click="BtnAddTypesEquipment_Click"/>
+            <Button Name="BtnEditTypesEquipment" Content="Изменить" Click="BtnEditTypesEquipment_Click"/>
+            <Button Name="BtnCancel" Content="Назад" Margin="0,15,0,0" Click="BtnCancel_Click"/>
         </StackPanel>
     </Grid>
 </Page>

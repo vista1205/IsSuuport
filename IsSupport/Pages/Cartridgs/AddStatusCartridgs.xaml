@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddStatusCartridgs">
+      Title="Добавление статуса картриджа">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -18,14 +18,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Название статуса" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Grid.Row="1" Text="Описание статуса" Style="{StaticResource TextBlockDefault}"/>
-        <TextBox Name="TxbTitleStatusCartridg" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}" Grid.Row="0" Grid.Column="1"
-                 AcceptsReturn="True" TextWrapping="Wrap"/>
-        <TextBox Name="TxtDescriptionStatusCartridg" Text="{Binding Description}" Style="{StaticResource TextBoxDefault}" Grid.Row="1" Grid.Column="1"
-                 AcceptsReturn="True" TextWrapping="Wrap"/>
-        <Button Name="SaveStatusCartridg" Click="SaveStatusCartridg_Click" Content="Сохранить" Grid.Row="2" Grid.Column="0" Style="{StaticResource ButtonStatusCartridg}"/>
-        <Button Name="BackStatusCartridg" Click="BackStatusCartridg_Click" Content="Назад" Grid.Row="2" Grid.Column="1" Style="{StaticResource ButtonStatusCartridg}"/>
+        <TextBlock Text="Название статуса" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Text="Описание статуса" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Name="TxbTitleStatusCartridg" Text="{Binding Title}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1"
+                 AcceptsReturn="True" TextWrapping="Wrap" Margin="5"/>
+        <TextBox Name="TxtDescriptionStatusCartridg" Text="{Binding Description}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="1"
+                 AcceptsReturn="True" TextWrapping="Wrap" Margin="5"/>
+        <Button Name="SaveStatusCartridg" Click="SaveStatusCartridg_Click" Content="Сохранить" Grid.Row="2" Grid.Column="0" Width="150"/>
+        <Button Name="BackStatusCartridg" Click="BackStatusCartridg_Click" Content="Назад" Grid.Row="2" Grid.Column="1" Width="150"/>
     </Grid>
     
 </Page>

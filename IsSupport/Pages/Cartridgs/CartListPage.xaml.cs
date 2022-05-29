@@ -168,6 +168,39 @@ namespace IsSupport.Pages.Cartridgs
                     BtnRemoveCartridg.Content = "Принять с заправки";
                     break;
             }
+            BtnDeleteCartridge.Visibility = DGridCartridgeList.SelectedItems.Count > 0 && DGridCartridgeList.SelectedItems.Count < 2 ? Visibility.Visible : Visibility.Hidden;
+        }
+
+        private void BtnDeleteCartridge_Click(object sender, RoutedEventArgs e)
+        {
+            var cartridgeDelete = DGridCartridgeList.SelectedItems.Cast<Kartridjs>().ToList();
+            int oldStatus=0;
+            foreach(Kartridjs kartridjs in cartridgeDelete)
+            {
+                oldStatus = kartridjs.StatusID;
+                kartridjs.StatusID = 5;
+                kartridjs.RoomID = 1;
+            }
+            Helper.GetIsSupportContext().SaveChanges();
+            switch (oldStatus)
+            {
+                case 1:
+                    Helper.GetIsSupportContext().ChangeTracker.Entries().ToList().ForEach(x => x.Reload());
+                    DGridCartridgeList.ItemsSource = Helper.GetIsSupportContext().Kartridjs.Where(x => x.StatusID == 1).ToList();
+                    break;
+                case 2:
+                    Helper.GetIsSupportContext().ChangeTracker.Entries().ToList().ForEach(x => x.Reload());
+                    DGridCartridgeList.ItemsSource = kart.Where(x => x.StatusID == 2).ToList();
+                    break;
+                case 3:
+                    Helper.GetIsSupportContext().ChangeTracker.Entries().ToList().ForEach(x => x.Reload());
+                    DGridCartridgeList.ItemsSource = kart.Where(x => x.StatusID == 3).ToList();
+                    break;
+                case 4:
+                    Helper.GetIsSupportContext().ChangeTracker.Entries().ToList().ForEach(x => x.Reload());
+                    DGridCartridgeList.ItemsSource = kart.Where(x => x.StatusID == 4).ToList();
+                    break;
+            }
         }
     }
 }

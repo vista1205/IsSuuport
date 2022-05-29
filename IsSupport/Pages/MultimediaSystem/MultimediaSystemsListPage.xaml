@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MultimediaSystemsListPage" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Мультимедиасисема: Список" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,23 +14,35 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
-            <TextBlock Text="Поиск по наименованию" Style="{StaticResource TextBlockDefault}"/>
-            <TextBox Name="TbSearchBox" Style="{StaticResource TextBoxDefault}" KeyUp="TbSearchBox_KeyUp" Margin="10,0,0,0"/>
+            <TextBlock Text="Поиск по наименованию" Style="{DynamicResource MaterialDesignTextBlock}" Margin="5,15,0,0"/>
+            <TextBox Name="TbSearchBox" Style="{DynamicResource MaterialDesignOutlinedTextBox}" KeyUp="TbSearchBox_KeyUp" Margin="10,0,0,0" Width="150" Cursor="Arrow"/>
         </StackPanel>
         <DataGrid Name="DgrMultimediaSystemssList" Grid.Row="1" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название системы" Binding="{Binding Title}" Width="auto"/>
-                <DataGridTextColumn Header="Номер кабинета" Binding="{Binding Rooms.Title}" Width="auto"/>
+                <DataGridTextColumn Header="Название системы" Binding="{Binding Title}" Width="auto">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Номер кабинета" Binding="{Binding Rooms.Title}" Width="auto">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
-            <Button Name="BtnAddMultimediaSystems" Content="Добавить" Style="{StaticResource SystemUnitsButton}" Click="BtnAddMultimediaSystems_Click"/>
-            <Button Name="BtnEditMultimediaSystems" Content="Изменить" Style="{StaticResource SystemUnitsButton}" Click="BtnEditMultimediaSystems_Click"/>
-            <Button Name="BtnCancel" Content="Назад" Style="{StaticResource SystemUnitsButton}" Click="BtnCancel_Click"/>
+            <Button Name="BtnAddMultimediaSystems" Content="Добавить" Margin="0,15,0,15" Click="BtnAddMultimediaSystems_Click"/>
+            <Button Name="BtnEditMultimediaSystems" Content="Изменить" Click="BtnEditMultimediaSystems_Click"/>
+            <Button Name="BtnCancel" Content="Назад" Margin="0,15,0,0" Click="BtnCancel_Click"/>
         </StackPanel>
     </Grid>
 </Page>

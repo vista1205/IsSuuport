@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MultimediaSystemsAddPage" Background="White">
+      Title="Мультимедиасистема: Добавление/Редактирование" Background="White">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,11 +17,11 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Укажите название мультимедиасистемы" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Выберите кабинет" Grid.Row="1" Style="{StaticResource TextBlockDefault}"/>
-        <TextBox x:Name="TbTitleSystem" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
-        <ComboBox Name="CmbRoomsList" DisplayMemberPath="Title" Grid.Row="1" Grid.Column="1" SelectedItem="{Binding Rooms}"/>
-        <Button Name="BtnAddSystem" Content="Сохранить" Grid.Row="2" Click="BtnAddSystem_Click" Style="{StaticResource ButtonStatusCartridg}"/>
-        <Button Name="BtnCancel" Content="Отмена" Grid.Row="2" Grid.Column="1" Click="BtnCancel_Click" Style="{StaticResource ButtonStatusCartridg}"/>
+        <TextBlock Text="Укажите название мультимедиасистемы" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Выберите кабинет" Grid.Row="1" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="TbTitleSystem" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <ComboBox Name="CmbRoomsList" DisplayMemberPath="Title" Grid.Row="1" Grid.Column="1" SelectedItem="{Binding Rooms}" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <Button Name="BtnAddSystem" Content="Сохранить" Grid.Row="2" Click="BtnAddSystem_Click" Width="150"/>
+        <Button Name="BtnCancel" Content="Отмена" Grid.Row="2" Grid.Column="1" Click="BtnCancel_Click" Width="150"/>
     </Grid>
 </Page>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CartridgRecevingPage">
+      Title="Получение картриджа из кабинета">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -19,17 +19,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="TblAbout" Text="Выберите картридж, который сдают:" Grid.ColumnSpan="3" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock x:Name="TblAbout" Text="Выберите картридж, который сдают:" Grid.ColumnSpan="3" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <ComboBox Name="CmbRecevingCartridg" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                  SelectedItem="{Binding Kartridjs}" SelectedValue="NumberOfKartridj" DisplayMemberPath="NumberOfKartridj"/>
+                  SelectedItem="{Binding Kartridjs}" SelectedValue="NumberOfKartridj" DisplayMemberPath="NumberOfKartridj" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         <!--IsEditable="True" IsTextSearchEnabled="False" TextBoxBase.TextChanged="CmbRecevingCartridg_TextChanged"/>-->
         <Button Name="BtnRecevingKartridg" Click="BtnRecevingKartridg_Click" Content="Принять"
-                Style="{StaticResource ButtonDefault}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Width="150" VerticalAlignment="Center" HorizontalAlignment="Center"
                 Grid.Row="2"
                 />
         <Button Name="BtnRecevingBack" Click="BtnRecevingBack_Click" Content="Отмена"
-                Style="{StaticResource ButtonDefault}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                Grid.Row="2" Grid.Column="2"
+                Width="150" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Grid.Row="2" Grid.Column="2" Cursor="Hand"
                 />
     </Grid>
 </Page>

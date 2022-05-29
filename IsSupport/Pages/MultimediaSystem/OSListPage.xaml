@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OSListPage" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Операционная система: Список" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
@@ -14,12 +14,24 @@
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Grid.Column="1">
-            <Button Name="BtnAddOS" Click="BtnAddOS_Click" Content="Добавить" Style="{StaticResource ButtonStatusCartridg}" Margin="0,10,0,0"/>
+            <Button Name="BtnAddOS" Click="BtnAddOS_Click" Content="Добавить" Width="150" Margin="0,10,0,0"/>
         </StackPanel>
-        <DataGrid Name="DgrListOS" AutoGenerateColumns="False">
+        <DataGrid Name="DgrListOS" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование ОС" Binding="{Binding Title}"/>
-                <DataGridTextColumn Header="Разярдность ОС" Binding="{Binding BitDepth}"/>
+                <DataGridTextColumn Header="Наименование ОС" Binding="{Binding Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Разярдность ОС" Binding="{Binding BitDepth}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

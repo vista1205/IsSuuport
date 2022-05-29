@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddOrdersPage">
+      Title="Регистрация заявки">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -19,15 +19,16 @@
             <ColumnDefinition Width="239*"/>
             <ColumnDefinition Width="561*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Регистрация заявки, все поля обязательные к заполнению!" Style="{StaticResource TextBlockDefault}" Grid.Row="0" Grid.ColumnSpan="2" 
+        <TextBlock Text="Регистрация заявки, все поля обязательные к заполнению!" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" Grid.Row="0" Grid.ColumnSpan="2" 
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Text="Описание заявки" Style="{StaticResource TextBlockDefault}" Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Text="Выберите кабинет" Style="{StaticResource TextBlockDefault}" Grid.Row="2" Grid.Column="0"/>
-        <Button x:Name="BtnAddOrders" Click="BtnAddOrders_Click" Content="Зарегестрировать" Style="{StaticResource ButtonDefault}" Grid.Row="3" Grid.Column="1"></Button>
-        <TextBox AcceptsReturn="True" TextWrapping="Wrap" x:Name="TextDescription" Text="{Binding Description}" Grid.Row="1" Grid.Column="1" Margin="5,10,10,10"></TextBox>
+        <TextBlock Text="Описание заявки" Style="{DynamicResource MaterialDesignTextBlock}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Выберите кабинет" Style="{DynamicResource MaterialDesignTextBlock}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="BtnAddOrders" Click="BtnAddOrders_Click" Content="Зарегестрировать" Width="150" Grid.Row="3" Grid.Column="1"></Button>
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap" x:Name="TextDescription" Text="{Binding Description}" Grid.Row="1" Grid.Column="1" Margin="5,10,10,10" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Cursor="Arrow"></TextBox>
         <ComboBox SelectedItem="{Binding Rooms}" Grid.Column="1" x:Name="ComboRooms" DisplayMemberPath="Title"
                   IsEditable="True" IsTextSearchCaseSensitive="False" TextBoxBase.TextChanged="ComboRooms_TextChanged" Margin="5,10,10,10" Grid.Row="2"
-                  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="BtnBack" Click="BtnBack_Click" Content="Отмена" Style="{StaticResource ButtonDefault}" Grid.Row="3" Grid.Column="0"/>
+                  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <Button x:Name="BtnBack" Click="BtnBack_Click" Content="Отмена" Width="150" Grid.Row="3" Grid.Column="0"/>
     </Grid>
 </Page>

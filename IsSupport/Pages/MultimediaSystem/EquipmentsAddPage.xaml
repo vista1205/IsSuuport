@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EquipmentsAddPage" Background="White">
+      Title="Прочее оборудование: Добавление/Редактирование" Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,21 +23,21 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Наименование техники" Grid.Row="0" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Тип техники" Grid.Row="1" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Серийный номер" Grid.Row="2" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Инвентарный номер" Grid.Row="3" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Статус устройства" Grid.Row="4" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Описание устройства" Grid.Row="5" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Номер мультимедиасистемы" Grid.Row="6" Style="{StaticResource TextBlockDefault}"/>
-        <Button Name="BtnAddEquipments" Content="Сохранить" Style="{StaticResource ButtonStatusCartridg}" Grid.Row="7" Click="BtnAddEquipments_Click"/>
-        <TextBox Name="TbTitleEquipments" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
-        <ComboBox Name="CmbTypeEquipmentList" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Title" SelectedItem="{Binding TypesEquipment}"/>
-        <TextBox Name="TbSerialNumberEquipments" Grid.Row="2" Grid.Column="1" Text="{Binding SerialNumber}" Style="{StaticResource TextBoxDefault}"/>
-        <TextBox Name="TbInventoryNumberEquipments" Grid.Row="3" Grid.Column="1" Text="{Binding InventoryNumber}" Style="{StaticResource TextBoxDefault}"/>
-        <ComboBox Name="CmbStatusDeviceList" Grid.Row="4" Grid.Column="1" DisplayMemberPath="Title" SelectedItem="{Binding StatusDevice}"/>
-        <TextBox Name="TbDescriptionEquipments" Grid.Row="5" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource TextBoxWrap}"/>
-        <ComboBox Name="CmbMultimediaSystemsList" Grid.Row="6" Grid.Column="1" DisplayMemberPath="ID" SelectedItem="{Binding MultimediaSystems}"/>
-        <Button Name="BtnCancel" Content="Отмена" Style="{StaticResource ButtonStatusCartridg}" Grid.Row="7" Grid.Column="1" Click="BtnCancel_Click"/>
+        <TextBlock Text="Наименование техники" Grid.Row="0" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Тип техники" Grid.Row="1" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Серийный номер" Grid.Row="2" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Инвентарный номер" Grid.Row="3" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Статус устройства" Grid.Row="4" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Описание устройства" Grid.Row="5" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Номер мультимедиасистемы" Grid.Row="6" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Name="BtnAddEquipments" Content="Сохранить" Width="150" Grid.Row="7" Click="BtnAddEquipments_Click"/>
+        <TextBox Name="TbTitleEquipments" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <ComboBox Name="CmbTypeEquipmentList" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Title" SelectedItem="{Binding TypesEquipment}" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <TextBox Name="TbSerialNumberEquipments" Grid.Row="2" Grid.Column="1" Text="{Binding SerialNumber}" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <TextBox Name="TbInventoryNumberEquipments" Grid.Row="3" Grid.Column="1" Text="{Binding InventoryNumber}" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <ComboBox Name="CmbStatusDeviceList" Grid.Row="4" Grid.Column="1" DisplayMemberPath="Title" SelectedItem="{Binding StatusDevice}" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <TextBox Name="TbDescriptionEquipments" Grid.Row="5" Grid.Column="1" Text="{Binding Description}" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <ComboBox Name="CmbMultimediaSystemsList" Grid.Row="6" Grid.Column="1" DisplayMemberPath="ID" SelectedItem="{Binding MultimediaSystems}" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <Button Name="BtnCancel" Content="Отмена" Width="150" Grid.Row="7" Grid.Column="1" Click="BtnCancel_Click" Cursor="Hand"/>
     </Grid>
 </Page>

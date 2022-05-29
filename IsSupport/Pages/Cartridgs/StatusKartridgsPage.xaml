@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="StatusKartridgsPage" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Список статусов для картриджей" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
@@ -16,6 +16,11 @@
         <DataGrid AutoGenerateColumns="False" Name="DgrStatusCartridgList" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Наименование статуса" Binding="{Binding Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
@@ -24,6 +29,11 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Описание статуса" Binding="{Binding Description}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
@@ -40,11 +50,11 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Name="AddStatusCartridg" Click="AddStatusCartridg_Click" Grid.Row="0" Content="Добавить статус" Style="{StaticResource ButtonStatusCartridg}"
+            <Button Name="AddStatusCartridg" Click="AddStatusCartridg_Click" Grid.Row="0" Content="Добавить статус"
                     VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Button Name="EditStatusCartridg" Click="EditStatusCartridg_Click" Grid.Row="1" Content="Изменить статус" Style="{StaticResource ButtonStatusCartridg}"
+            <Button Name="EditStatusCartridg" Click="EditStatusCartridg_Click" Grid.Row="1" Content="Изменить статус" 
                     VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Button Name="StatusCartridgBack" Click="StatusCartridgBack_Click" Grid.Row="3" Content="Назад" Style="{StaticResource ButtonStatusCartridg}"
+            <Button Name="StatusCartridgBack" Click="StatusCartridgBack_Click" Grid.Row="3" Content="Назад" 
                     VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
     </Grid>

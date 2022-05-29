@@ -6,11 +6,11 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EquipmentsListPage" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Прочее оборудование: Список" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -18,28 +18,72 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-            <TextBlock Text="Фильтр по типу" Style="{StaticResource TextBlockDefault}"/>
-            <ComboBox Name="CmbTypeEquipmentList" DisplayMemberPath="Title" SelectionChanged="CmbTypeEquipmentList_SelectionChanged"/>
-            <TextBlock Text="Фильтр по состоянию" Style="{StaticResource TextBlockDefault}"/>
-            <ComboBox Name="CmbStatusDeviceList" DisplayMemberPath="Title" SelectionChanged="CmbStatusDeviceList_SelectionChanged"/>
-            <TextBlock Text="Поиск по серийному номеру" Style="{StaticResource TextBlockDefault}"/>
-            <TextBox Name="TbSearchSN" KeyUp="TbSearchSN_KeyUp" Style="{StaticResource TextBoxDefault}"/>
+            <TextBlock Text="Фильтр по типу" Style="{DynamicResource MaterialDesignTextBlock}" Margin="2,15,0,0"/>
+            <ComboBox Name="CmbTypeEquipmentList" DisplayMemberPath="Title" SelectionChanged="CmbTypeEquipmentList_SelectionChanged"
+                      Style="{DynamicResource MaterialDesignOutlinedComboBox}" SelectedIndex="0" Width="150"/>
+            <TextBlock Text="Фильтр по состоянию" Style="{DynamicResource MaterialDesignTextBlock}" Margin="2,15,0,0"/>
+            <ComboBox Name="CmbStatusDeviceList" DisplayMemberPath="Title" SelectionChanged="CmbStatusDeviceList_SelectionChanged"
+                      Style="{DynamicResource MaterialDesignOutlinedComboBox}" SelectedIndex="0" Width="150"/>
+            <TextBlock Text="Поиск по серийному номеру" Style="{DynamicResource MaterialDesignTextBlock}" Margin="2,15,0,0"/>
+            <TextBox Name="TbSearchSN" KeyUp="TbSearchSN_KeyUp" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Width="100"/>
         </StackPanel>
         <DataGrid Name="DgrEquipmentsList" AutoGenerateColumns="False" Grid.Row="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding Title}"/>
-                <DataGridTextColumn Header="Тип техники" Binding="{Binding TypesEquipment.Title}"/>
-                <DataGridTextColumn Header="Серийный номер" Binding="{Binding SerialNumber}"/>
-                <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding InventoryNumber}"/>
-                <DataGridTextColumn Header="Статус" Binding="{Binding StatusDevice.Title}"/>
-                <DataGridTextColumn Header="Описание" Binding="{Binding Description}"/>
-                <DataGridTextColumn Header="Мультимедиасистема" Binding="{Binding MultimediaSystems.ID}"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Тип техники" Binding="{Binding TypesEquipment.Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Серийный номер" Binding="{Binding SerialNumber}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding InventoryNumber}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Статус" Binding="{Binding StatusDevice.Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Мультимедиасистема" Binding="{Binding MultimediaSystems.Title}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
-            <Button x:Name="BtnAddEquipments" Content="Добавить" Style="{StaticResource SystemUnitsButton}" Click="BtnAddEquipments_Click"/>
-            <Button x:Name="BtnEditEquipments" Content="Изменить" Style="{StaticResource SystemUnitsButton}" Click="BtnEditEquipments_Click"/>
-            <Button x:Name="BtnCancel" Content="Назад" Style="{StaticResource SystemUnitsButton}" Click="BtnCancel_Click"/>
+            <Button x:Name="BtnAddEquipments" Content="Добавить" Margin="0,15,0,15" Click="BtnAddEquipments_Click"/>
+            <Button x:Name="BtnEditEquipments" Content="Изменить" Margin="0,0,0,15" Click="BtnEditEquipments_Click"/>
+            <Button x:Name="BtnCancel" Content="Назад" Click="BtnCancel_Click"/>
         </StackPanel>
     </Grid>
 </Page>

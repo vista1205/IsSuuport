@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.MultimediaSystem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SystemUnitAddPage" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Системный блок: Комплектование" Background="White" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,21 +23,23 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Наименование" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Серийный номер" Grid.Row="1" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Инвентарный номер" Grid.Row="2" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Выберите Компьютер" Grid.Row="3" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Статус системного блока" Grid.Row="4" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Выберите компоненты" Grid.Row="5" Style="{StaticResource TextBlockDefault}"/>
-        <TextBox Name="TbTitle" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
-        <TextBox Name="TbSerialNumber" Grid.Row="1" Grid.Column="1" Text="{Binding SeralNumber}" Style="{StaticResource TextBoxDefault}"/>
-        <TextBox Name="TbInventoryNumber" Grid.Row="2" Grid.Column="1" Text="{Binding InventoryNumber}" Style="{StaticResource TextBoxDefault}"/>
-        <ComboBox x:Name="CmbListComputers" Grid.Column="1" Grid.Row="3" DisplayMemberPath="ID" ItemsSource="{Binding Computers}"/>
-        <ComboBox x:Name="CmbListStatusDevice" Grid.Row="4" Grid.Column="1" DisplayMemberPath="Title" ItemsSource="{Binding StatusDevice}"/>
+        <TextBlock Text="Наименование" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Серийный номер" Grid.Row="1" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Инвентарный номер" Grid.Row="2" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Выберите Компьютер" Grid.Row="3" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Статус системного блока" Grid.Row="4" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Выберите компоненты" Grid.Row="5" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Name="TbTitle" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="2"/>
+        <TextBox Name="TbSerialNumber" Grid.Row="1" Grid.Column="1" Text="{Binding SeralNumber}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="2"/>
+        <TextBox Name="TbInventoryNumber" Grid.Row="2" Grid.Column="1" Text="{Binding InventoryNumber}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="2"/>
+        <ComboBox x:Name="CmbListComputers" Grid.Column="1" Grid.Row="3" DisplayMemberPath="ID" ItemsSource="{Binding Computers}"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        <ComboBox x:Name="CmbListStatusDevice" Grid.Row="4" Grid.Column="1" DisplayMemberPath="Title" ItemsSource="{Binding StatusDevice}"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         <WrapPanel Orientation="Vertical" Grid.Row="5" Grid.Column="1">
-            <ComboBox x:Name="CmbListComponents" DisplayMemberPath="Title" ItemsSource="{Binding Components}"/>
-            <TextBox Name="TbCountComponents" Style="{StaticResource TextBoxDefault}"/>
-            <Button x:Name="BtnAddComponent" Content="Добавить" Style="{StaticResource ButtonDefault}" Click="BtnAddComponent_Click"/>
+            <ComboBox x:Name="CmbListComponents" DisplayMemberPath="Title" ItemsSource="{Binding Components}" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+            <TextBox Name="TbCountComponents" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Width="50"/>
+            <Button x:Name="BtnAddComponent" Content="Добавить" Click="BtnAddComponent_Click"/>
         </WrapPanel>
         <!--<DataGrid x:Name="DgrListComponents" Grid.Column="2" Grid.RowSpan="6" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -46,7 +48,7 @@
                 <DataGridTextColumn Width="50" Header="Кол-во" Binding="{Binding Count}"/>
             </DataGrid.Columns>
         </DataGrid>-->
-        <Button Name="BtnAddSystemUnit" Grid.Row="6" Content="Сохранить" Style="{StaticResource ButtonStatusCartridg}" Click="BtnAddSystemUnit_Click"/>
-        <Button Name="BtnCancel" Grid.Row="6" Grid.Column="2" Content="Отмена" Style="{StaticResource ButtonStatusCartridg}" Click="BtnCancel_Click"/>
+        <Button Name="BtnAddSystemUnit" Grid.Row="6" Content="Сохранить" Width="150" Click="BtnAddSystemUnit_Click"/>
+        <Button Name="BtnCancel" Grid.Row="6" Grid.Column="2" Content="Отмена" Width="150" Click="BtnCancel_Click"/>
     </Grid>
 </Page>

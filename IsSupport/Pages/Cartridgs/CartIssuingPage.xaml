@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CartReceivingAndIssuing">
+      Title="Выдача картриджа">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -18,17 +18,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Выберите картридж для выдачи:" Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockDefault}"/>
-        <TextBlock Text="Выберите кабинет, куда будет передаваться:" Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockDefault}"/>
+        <TextBlock Text="Выберите картридж для выдачи:" Grid.Row="0" Grid.Column="0" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Выберите кабинет, куда будет передаваться:" Grid.Row="1" Grid.Column="0" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <ComboBox x:Name="CmbCartridgIssue" SelectedItem="{Binding Kartridjs}" SelectedValue="NumberOfKartridj" Grid.Row="0"
                   Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                  DisplayMemberPath="NumberOfKartridj" />
+                  DisplayMemberPath="NumberOfKartridj" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         <!--IsEditable="True" IsTextSearchEnabled="False" TextBoxBase.TextChanged="CmbCartridgIssue_TextChanged"/>-->
         <ComboBox Name="CmbRoomsCartridg" SelectedItem="{Binding Kartridjs.Rooms}" 
                   Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" 
-                  HorizontalContentAlignment="Center" DisplayMemberPath="Title" />
+                  HorizontalContentAlignment="Center" DisplayMemberPath="Title" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         <!--IsEditable="True" IsTextSearchEnabled="False" TextBoxBase.TextChanged="CmbRoomsCartridg_TextChanged"/>-->
-        <Button Grid.Row="2" Click="BtnKartridgIssue_Click" Grid.Column="0" Name="BtnKartridgIssue" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Выдать" Style="{StaticResource ButtonDefault}"/>
-        <Button Grid.Row="2" Click="BtnKartridgReturn_Click" Grid.Column="1" Name="BtnKartridgReturn" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Отмена" Style="{StaticResource ButtonDefault}"/>
+        <Button Grid.Row="2" Click="BtnKartridgIssue_Click" Grid.Column="0" Name="BtnKartridgIssue" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Выдать" Width="150"/>
+        <Button Grid.Row="2" Click="BtnKartridgReturn_Click" Grid.Column="1" Name="BtnKartridgReturn" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Отмена" Width="150"/>
     </Grid>
 </Page>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IsSupport.Pages.Cartridgs"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddPrintersPage">
+      Title="Добавление типа принтера">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -19,14 +19,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Добавление нового принтера" Style="{StaticResource TextBlockDefault}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Добавление нового принтера" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Введите название принтера" Style="{StaticResource TextBlockDefault}"/>
-            <TextBox Grid.Row="1" Name="TxbAdditlePrinters" Text="{Binding Title}" Style="{StaticResource TextBoxDefault}"/>
+            <TextBlock Grid.Row="0" Text="Введите название принтера" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="1" Name="TxbAdditlePrinters" Text="{Binding Title}" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -34,12 +34,12 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0">
-                <TextBlock Text="Выберите изображение для принтера" Style="{StaticResource TextBlockDefault}"/>
+                <TextBlock Text="Выберите изображение для принтера" Style="{DynamicResource MaterialDesignTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>            
-            <Button Name="BtnAddImagePrinters" Click="BtnAddImagePrinters_Click" Content="Выбрать изображение" Style="{StaticResource ButtonDefault}" Grid.Row="1"/>
+            <Button Name="BtnAddImagePrinters" Click="BtnAddImagePrinters_Click" Content="Выбрать изображение" Grid.Row="1"/>
         </Grid>
         <Image x:Name="PreviewImage" Margin="5,2,0,0" Stretch="Fill" Grid.Column="2" Grid.Row="1"></Image>
-        <Button Name="BtnAddPrinters" Click="BtnAddPrinters_Click" Grid.Row="2" Grid.Column="0" Content="Добавить" Style="{StaticResource ButtonDefault}"/>
-        <Button Name="BtnPrintersCancel" Click="BtnPrintersCancel_Click" Grid.Row="2" Grid.Column="2" Content="Отмена" Style="{StaticResource ButtonDefault}"/>
+        <Button Name="BtnAddPrinters" Click="BtnAddPrinters_Click" Grid.Row="2" Grid.Column="0" Content="Добавить"/>
+        <Button Name="BtnPrintersCancel" Click="BtnPrintersCancel_Click" Grid.Row="2" Grid.Column="2" Content="Отмена"/>
     </Grid>
 </Page>
