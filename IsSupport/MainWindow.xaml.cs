@@ -216,5 +216,15 @@ namespace IsSupport
         {
             MyFrame.Content=new MultimediaSystemsAddPage();
         }
+
+        private void ComputersList_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new ComputersListPage();
+        }
+
+        private void ComputerAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new ComputersAddPage();
+        }
     }
 }

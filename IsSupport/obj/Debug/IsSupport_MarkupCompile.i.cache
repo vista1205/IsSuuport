@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\obj\Debug\
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\
 IsSupport
 none
 false
 DEBUG;TRACE
-C:\Users\kozlovvo\source\repos\IsSuuport\IsSupport\App.xaml
-411697622899
+C:\Users\Family\source\repos\IsSuuport\IsSupport\App.xaml
+43-97227896
 2347139001
-7772958369
-30916443617
-AddEmployee.xaml;MainWindow.xaml;Pages\AddOrdersPage.xaml;Pages\AutorizationPage.xaml;Pages\Cartridgs\AddKartridgPage.xaml;Pages\Cartridgs\AddPrintersPage.xaml;Pages\Cartridgs\AddStatusCartridgs.xaml;Pages\Cartridgs\CartListPage.xaml;Pages\Cartridgs\CartIssuingPage.xaml;Pages\Cartridgs\CartridgeIssueListPage.xaml;Pages\Cartridgs\CartridgePage.xaml;Pages\Cartridgs\CartridgeRefuelListPage.xaml;Pages\Cartridgs\CartridgeWaitingListPage.xaml;Pages\Cartridgs\CartridgRecevingPage.xaml;Pages\Cartridgs\StatusKartridgsPage.xaml;Pages\MultimediaSystem\ComponentsListPage.xaml;Pages\MultimediaSystem\ComponetAddPage.xaml;Pages\MultimediaSystem\EquipmentsAddPage.xaml;Pages\MultimediaSystem\EquipmentsListPage.xaml;Pages\MultimediaSystem\KeyboardsAddPage.xaml;Pages\MultimediaSystem\KeyboardsListPage.xaml;Pages\MultimediaSystem\MonitorAddPage.xaml;Pages\MultimediaSystem\MonitorsListPage.xaml;Pages\MultimediaSystem\MouseAddPage.xaml;Pages\MultimediaSystem\MouseListPage.xaml;Pages\MultimediaSystem\MultimediaSystemsAddPage.xaml;Pages\MultimediaSystem\MultimediaSystemsListPage.xaml;Pages\MultimediaSystem\OSAddPage.xaml;Pages\MultimediaSystem\OSListPage.xaml;Pages\MultimediaSystem\StatusDeviceAddPage.xaml;Pages\MultimediaSystem\StatusDeviceListPage.xaml;Pages\MultimediaSystem\SystemUnitAddPage.xaml;Pages\MultimediaSystem\SystemUnitsListPage.xaml;Pages\MultimediaSystem\TypeComponentAddPage.xaml;Pages\MultimediaSystem\TypeComponentListPage.xaml;Pages\MultimediaSystem\TypesEquipmentAddPage.xaml;Pages\MultimediaSystem\TypesEquipmentListPage.xaml;Pages\OrdersPage.xaml;Pages\RegistrationPage.xaml;Pages\Room\RoomAddPage.xaml;Pages\Room\RoomListPage.xaml;
+79-576944812
+30994012311
+AddEmployee.xaml;MainWindow.xaml;Pages\AddOrdersPage.xaml;Pages\AutorizationPage.xaml;Pages\Cartridgs\AddKartridgPage.xaml;Pages\Cartridgs\AddPrintersPage.xaml;Pages\Cartridgs\AddStatusCartridgs.xaml;Pages\Cartridgs\CartListPage.xaml;Pages\Cartridgs\CartIssuingPage.xaml;Pages\Cartridgs\CartridgeIssueListPage.xaml;Pages\Cartridgs\CartridgePage.xaml;Pages\Cartridgs\CartridgeRefuelListPage.xaml;Pages\Cartridgs\CartridgeWaitingListPage.xaml;Pages\Cartridgs\CartridgRecevingPage.xaml;Pages\Cartridgs\StatusKartridgsPage.xaml;Pages\MultimediaSystem\ComponentsListPage.xaml;Pages\MultimediaSystem\ComponetAddPage.xaml;Pages\MultimediaSystem\ComputersAddPage.xaml;Pages\MultimediaSystem\ComputersListPage.xaml;Pages\MultimediaSystem\EquipmentsAddPage.xaml;Pages\MultimediaSystem\EquipmentsListPage.xaml;Pages\MultimediaSystem\KeyboardsAddPage.xaml;Pages\MultimediaSystem\KeyboardsListPage.xaml;Pages\MultimediaSystem\MonitorAddPage.xaml;Pages\MultimediaSystem\MonitorsListPage.xaml;Pages\MultimediaSystem\MouseAddPage.xaml;Pages\MultimediaSystem\MouseListPage.xaml;Pages\MultimediaSystem\MultimediaSystemsAddPage.xaml;Pages\MultimediaSystem\MultimediaSystemsListPage.xaml;Pages\MultimediaSystem\OSAddPage.xaml;Pages\MultimediaSystem\OSListPage.xaml;Pages\MultimediaSystem\StatusDeviceAddPage.xaml;Pages\MultimediaSystem\StatusDeviceListPage.xaml;Pages\MultimediaSystem\SystemUnitAddPage.xaml;Pages\MultimediaSystem\SystemUnitsListPage.xaml;Pages\MultimediaSystem\TypeComponentAddPage.xaml;Pages\MultimediaSystem\TypeComponentListPage.xaml;Pages\MultimediaSystem\TypesEquipmentAddPage.xaml;Pages\MultimediaSystem\TypesEquipmentListPage.xaml;Pages\OrdersPage.xaml;Pages\RegistrationPage.xaml;Pages\Room\RoomAddPage.xaml;Pages\Room\RoomListPage.xaml;
 
-False
+True
 

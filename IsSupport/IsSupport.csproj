@@ -196,6 +196,12 @@
     <Compile Include="Pages\MultimediaSystem\ComponetAddPage.xaml.cs">
       <DependentUpon>ComponetAddPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MultimediaSystem\ComputersAddPage.xaml.cs">
+      <DependentUpon>ComputersAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MultimediaSystem\ComputersListPage.xaml.cs">
+      <DependentUpon>ComputersListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MultimediaSystem\EquipmentsAddPage.xaml.cs">
       <DependentUpon>EquipmentsAddPage.xaml</DependentUpon>
     </Compile>
@@ -385,6 +391,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MultimediaSystem\ComponetAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\ComputersAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MultimediaSystem\ComputersListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

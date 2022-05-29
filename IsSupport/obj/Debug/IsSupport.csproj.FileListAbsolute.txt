@@ -254,3 +254,7 @@ C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignThemes.
 C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignColors.pdb
 C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Family\source\repos\IsSuuport\IsSupport\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\MultimediaSystem\ComputersAddPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\MultimediaSystem\ComputersListPage.g.cs
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\MultimediaSystem\ComputersAddPage.baml
+C:\Users\Family\source\repos\IsSuuport\IsSupport\obj\Debug\Pages\MultimediaSystem\ComputersListPage.baml

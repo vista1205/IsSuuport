@@ -86,8 +86,8 @@
                         <MenuItem Header="Отчёт"/>
                     </MenuItem>
                     <MenuItem Header="Компьютер">
-                        <MenuItem Header="Список"/>
-                        <MenuItem Header="Добавить"/>
+                        <MenuItem x:Name="ComputersList" Click="ComputersList_Click" Header="Список"/>
+                        <MenuItem x:Name="ComputerAdd" Click="ComputerAdd_Click" Header="Добавить"/>
                         <MenuItem Header="ОС">
                             <MenuItem Header="Список" Name="OSList" Click="OSList_Click"/>
                             <MenuItem Header="Добавить" Name="AddNewOS" Click="AddNewOS_Click"/>
