@@ -3,6 +3,7 @@ using IsSupport.Pages.Cartridgs;
 using IsSupport.Pages.MultimediaSystem;
 using IsSupport.Pages.Room;
 using System;
+using IsSupport.WindowsReport;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -225,6 +226,12 @@ namespace IsSupport
         private void ComputerAdd_Click(object sender, RoutedEventArgs e)
         {
             MyFrame.Content = new ComputersAddPage();
+        }
+
+        private void ReportOrdersWindow_Click(object sender, RoutedEventArgs e)
+        {
+            ReportOrders reportOrders = new ReportOrders();
+            reportOrders.Show();
         }
     }
 }

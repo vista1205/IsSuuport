@@ -29,7 +29,7 @@
                 <MenuItem Header="Заявки">
                     <MenuItem x:Name="ListOrdersMenu" Click="ListOrdersMenu_Click" Header="Список"/>
                     <MenuItem x:Name="AddOrdersPageMenu" Click="AddOrdersPageMenu_Click" Header="Зарегестрировать"/>
-                    <MenuItem Header="Отчёт"/>
+                    <MenuItem x:Name="ReportOrdersWindow" Header="Отчёт" Click="ReportOrdersWindow_Click"/>
                 </MenuItem>
                 <MenuItem Header="Картриджи">
                     <MenuItem x:Name="ListCartridgeMenu" Click="ListCartridgeMenu_Click" Header="Список"/>

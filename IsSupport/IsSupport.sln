@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsSupport", "IsSupport.csproj", "{0B098861-6467-4A2D-ACF5-E8E60B62A65B}"
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ReportsIsSupport", "..\ReportsIsSupport\ReportsIsSupport.rptproj", "{C81F52DA-2628-4DBE-9C31-7D390E886E31}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0B098861-6467-4A2D-ACF5-E8E60B62A65B} = {0B098861-6467-4A2D-ACF5-E8E60B62A65B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

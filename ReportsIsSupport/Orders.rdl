@@ -16,13 +16,22 @@
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>IsSupport</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@EmployeeSurname">
+            <Value>=Parameters!EmployeeSurname.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StatusOrdersTitle">
+            <Value>=Parameters!StatusOrdersTitle.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>SELECT        HistoryOrder.OrderID AS [Номер заявки], CONVERT(date, Orders.DateCreatet) AS [Дата создания], Orders.DateClose AS [Дата закрытия], Orders.Description AS Описание, Rooms.Title AS Кабинет, 
                          StatusOrders.Title AS Состояние, CONVERT(time(0), Orders.DateCreatet) AS [Время создания], Employees.Surname AS Фамилия, Employees.Name AS Имя
 FROM            HistoryOrder INNER JOIN
                          Orders ON HistoryOrder.OrderID = Orders.ID INNER JOIN
                          Rooms ON Orders.RoomID = Rooms.ID INNER JOIN
                          StatusOrders ON HistoryOrder.StatusOrderID = StatusOrders.ID INNER JOIN
-                         Employees ON HistoryOrder.EmployeeID = Employees.ID</CommandText>
+                         Employees ON HistoryOrder.EmployeeID = Employees.ID
+WHERE        (Employees.Surname = @EmployeeSurname) AND (StatusOrders.Title = @StatusOrdersTitle)</CommandText>
       </Query>
       <Fields>
         <Field Name="Номер_заявки">
@@ -63,6 +72,31 @@ FROM            HistoryOrder INNER JOIN
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DSET_Employee">
+      <Query>
+        <DataSourceName>IsSupport</DataSourceName>
+        <CommandText>Select distinct Surname from dbo.Employees</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Surname">
+          <DataField>Surname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DSET_StatusOrders">
+      <Query>
+        <DataSourceName>IsSupport</DataSourceName>
+        <CommandText>SELECT DISTINCT Title
+FROM            StatusOrders</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Title">
+          <DataField>Title</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -72,28 +106,28 @@ FROM            HistoryOrder INNER JOIN
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.55353cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.29374cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>5.51625cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.94438cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.07667cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.55292cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.97084cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.12958cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -637,7 +671,7 @@ FROM            HistoryOrder INNER JOIN
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>2.97625cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox200">
                         <CanGrow>true</CanGrow>
@@ -686,7 +720,7 @@ FROM            HistoryOrder INNER JOIN
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>2.97625cm</Size>
                     <CellContents>
                       <Textbox Name="Дата_создания">
                         <CanGrow>true</CanGrow>
@@ -727,21 +761,153 @@ FROM            HistoryOrder INNER JOIN
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>1.50495cm</Top>
-            <Left>2.03412cm</Left>
+            <Top>6.34683cm</Top>
+            <Left>4.97099cm</Left>
             <Height>1.2cm</Height>
-            <Width>22.5cm</Width>
+            <Width>25.01416cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Департамент образования администрации города Томска</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>ШКОЛА "ПЕРСПЕКТИВА" Г.ТОМСКА</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>0.7021cm</Top>
+            <Left>7.94724cm</Left>
+            <Height>2.55792cm</Height>
+            <Width>20.05354cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>ОТЧЕТ</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Об исполнении заявок</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Техническими специалистами</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>3.43641cm</Top>
+            <Left>7.94724cm</Left>
+            <Height>2.08167cm</Height>
+            <Width>20.05354cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>3.55208in</Height>
         <Style />
       </Body>
-      <Width>11.62761in</Width>
+      <Width>13.9091in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
@@ -754,10 +920,48 @@ FROM            HistoryOrder INNER JOIN
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="EmployeeSurname">
+      <DataType>String</DataType>
+      <Prompt>Фаилия сотрудника</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DSET_Employee</DataSetName>
+          <ValueField>Surname</ValueField>
+          <LabelField>Surname</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="StatusOrdersTitle">
+      <DataType>String</DataType>
+      <Prompt>Статус заявки</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DSET_StatusOrders</DataSetName>
+          <ValueField>Title</ValueField>
+          <LabelField>Title</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>EmployeeSurname</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>StatusOrdersTitle</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
